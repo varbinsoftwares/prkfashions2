@@ -13,7 +13,7 @@ class Api extends REST_Controller {
         $this->load->model('Movie');
         $this->load->library('session');
         $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] :"" ;
     }
 
     public function index() {
