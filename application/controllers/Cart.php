@@ -17,7 +17,7 @@ class Cart extends CI_Controller {
         }
 
         $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] :"" ;
     }
 
     function redirectCart() {
