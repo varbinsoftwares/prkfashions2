@@ -873,7 +873,9 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where("id", $value['category_id']);
             $query = $this->db->get("category");
             $category = $query->row_array();
+            if($category){
             $value = array_merge($value, $category);
+            }
             array_push($newproducts, $value);
         }
         $limilist = [0, 6, 12, 18];
