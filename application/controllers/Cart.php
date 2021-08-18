@@ -175,10 +175,10 @@ class Cart extends CI_Controller {
 
             $checkaddress = $this->session->userdata('shipping_address');
 
-            if ($checkaddress['zipcode'] == 'Pickup') {
-                $address = $checkaddress;
-                $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
-            }
+//            if ($checkaddress['zipcode'] == 'Pickup') {
+//                $address = $checkaddress;
+//                $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
+//            }
 
             //place order
 
