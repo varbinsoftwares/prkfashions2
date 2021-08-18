@@ -27,11 +27,11 @@ switch ($baselink) {
           $adminlinkmain = $baselink . "/shopadmin";
         break;
     default:
-        $adminlinkmain = "https://admin.octopuscart.com/";
+        $adminlinkmain = "https://admin.prkfashions.com/";
 }
 
 define('ADMINURL', $adminlinkmain);
-define('PRODUCTIMAGELINK', "https://admin.octopuscart.com/assets/product_images/");
+define('PRODUCTIMAGELINK', "https://admin.prkfashions.com/assets/product_images/");
 
 
 
