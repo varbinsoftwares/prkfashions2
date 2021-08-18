@@ -259,7 +259,7 @@
                                 <nav class="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
                                     <!-- Logo -->
                                     <a class="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="<?php echo site_url("/"); ?>" aria-label="Electro">
-                                        <img src="<?php echo base_url(); ?>assets/images/logo3.jpeg" style="width: 170px;">
+                                        <img src="<?php echo base_url(); ?>assets/images/logo.png" style="width: 170px;">
 
                                     </a>
                                     <!-- End Logo -->
