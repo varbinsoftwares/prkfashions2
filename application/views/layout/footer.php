@@ -14,7 +14,7 @@
                             <h2 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h2>
                         </div>
                         <div class="col my-4 my-md-0">
-                            <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$20 coupon for first shopping.</strong></h5>
+                            <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>Great offers for first shopping.</strong></h5>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                 <div class="col-lg-5">
                     <div class="mb-6">
                         <a href="#" class="d-inline-block">
-                            <img src="<?php echo base_url(); ?>assets/images/logo.png" style="    height: 50px;">
+                            <img src="<?php echo base_url(); ?>assets/images/logos.jpeg" style="    height: 50px;">
                         </a>
                     </div>
                     <div class="mb-4">
@@ -53,37 +53,45 @@
                             </div>
                             <div class="col pl-3">
                                 <div class="font-size-13 font-weight-light">Got questions? Call us 24/7!</div>
-                                <a href="tel:+(852) 6878 4014" class="font-size-20 text-gray-90">+(852) 6878 4014 </a>
+                                <a href="tel:+(852) 6878 4014" class="font-size-20 text-gray-90">(+91) 9516041729 </a>
                             </div>
                         </div>
                     </div>
                     <div class="mb-4">
                         <h6 class="mb-1 font-weight-bold">Contact info</h6>
                         <address class="">
-                           Flat B, 4th Floor,<br> Yen Chun Mansion,<br>
-                                    Block 18-26 Portland Street,<br>
-                                    Yau Ma Tei, Kowloon, Hong Kong
+                    
+                        11/2 Baser-Colony, Mandsaur,<br>
+                        MP, India<br>
+
+                        Mail  :   pavitramod11@gmail.com
+                        
                         </address>
                     </div>
                     <div class="my-4 my-md-4">
                         <ul class="list-inline mb-0 opacity-7">
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
-                                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="https://in.pinterest.com/pavitrakumarmod/_created/">
+                                    <span class="fab fa-pinterest btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="https://in.linkedin.com/in/pavitrakumarmod1110943631431b6">
+                                    <span class="fab fa-linkedin btn-icon__inner"></span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-0">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="https://www.google.com/maps/uv?pb=!1s0x39642d112161873f%3A0x69dd82b8022083e5!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP7sbQekDfQD7eGci3SXaEm66jvZgaUNtdz9fd3%3Dw135-h160-k-no!5sprk%20fashions%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e10!2sAF1QipP7sbQekDfQD7eGci3SXaEm66jvZgaUNtdz9fd3&hl=en&sa=X&ved=2ahUKEwiysb_RlpnyAhWyyDgGHQGLAYgQoiowZ3oFCIkBEAM">
                                     <span class="fab fa-google btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="https://twitter.com/ModPavitra">
                                     <span class="fab fa-twitter btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
-                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="#">
+                                <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle" href="https://www.instagram.com/luckymandsaur/">
                                     <span class="fab fa-instagram btn-icon__inner"></span>
                                 </a>
                             </li>
@@ -96,36 +104,40 @@
                             <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Smart Television
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Mens wear
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">HI FI Audio System
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Shirt collection
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Portable Trolley Speaker
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">T-shirt for men
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Boom box
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Latest jeans
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Trousers and shorts
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Radio & MP3 Player
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">jackets
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Washing Machine
-                                    </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Mattress</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Accessories</a></li>
                             </ul>
                             <!-- End List Group -->
                         </div>
 
                         <div class="col-12 col-md mb-4 mb-md-0">
+                        <h6 class="mb-3 font-weight-bold">Useful Links</h6>
                             <!-- List Group -->
-                            <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6">
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Stand Fan
+                            <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent ">
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Home
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Ceiling Fan
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">About Us
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Microwave Oven
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Contact Us
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Toaster Oven
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Blogs
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Food Processor
+                                <li><a class="list-group-item list-group-item-action" href="https://www.justdial.com/Mandsaur/Prk-Fashion-Near-Bus-Office-Mandsaur-H-O/9999P7427-7427-210425113100-I2R3_BZDET">Justdial
                                     </a></li>
+                                <li><a class="list-group-item list-group-item-action" href="https://linktr.ee/prkfashions">Linktree
+                                    </a></li> 
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Submit queries
+                                    </a></li>       
                             </ul>
                             <!-- End List Group -->
                         </div>
@@ -154,7 +166,7 @@
     <div class="bg-gray-14 py-2">
         <div class="container">
             <div class="flex-center-between d-block d-md-flex">
-                <div class="mb-3 mb-md-0">© <a href="#" class="font-weight-bold text-gray-90">Octopouscart.com</a> - All rights Reserved</div>
+                <div class="mb-3 mb-md-0">© <a href="https://prkfashions.com/" class="font-weight-bold text-gray-90">Prkfashions.com</a> - All rights Reserved by  <a href="https://www.varbin.com/" class="font-weight-bold text-yellow-90">Varbin Softwares</a></div>
                 <div class="text-md-right">
                     <span class="d-inline-block bg-white border rounded p-1">
                         <img class="max-width-5" src="<?php echo base_url(); ?>assets/theme2/img/100X60/img1.jpg" alt="Image Description">

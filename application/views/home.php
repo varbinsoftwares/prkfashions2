@@ -26,6 +26,7 @@ $this->load->view('layout/header');
             <div class="container min-height-420 overflow-hidden">
                 <div class="js-slick-carousel u-slick"
                      data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1">
+                   
                     <div class="js-slide">
                         <div class="row pt-7 py-md-0">
                             <div class="d-none d-wd-block offset-1"></div>
@@ -38,9 +39,9 @@ $this->load->view('layout/header');
                                     <h1 class="font-size-46 text-lh-50 font-weight-light mb-8"
                                         data-scs-animation-in="fadeInUp"
                                         data-scs-animation-delay="200">
-                                        Shop from the latest collection of Earrings for women & girls online. 
+                                        Shop from the latest collection of Shirts for men online. </br>
 
-                                        <stong class="font-weight-bold">40% OFF</stong>
+                                        <stong class="font-weight-bold">MIN. 40% OFF</stong>
                                     </h1>
                                     <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
@@ -52,12 +53,70 @@ $this->load->view('layout/header');
                             <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
                                  data-scs-animation-in="fadeInRight"
                                  data-scs-animation-delay="500">
-                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo base_url(); ?>assets/theme2/img/416X420/neckless.png" alt="Image Description">
+                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo base_url(); ?>assets/theme2/img/416X420/1.jpg" alt="Image Description">
                             </div>
                         </div>
                     </div>
+                    <div class="js-slide">
+                        <div class="row pt-7 py-md-0">
+                            <div class="d-none d-wd-block offset-1"></div>
+                            <div class="col-xl col col-md-6 mt-md-8 mt-lg-8">
+                                <div class="ml-xl-4">
+                                    <h6 class="font-size-15 font-weight-bold mb-2 text-cyan"
+                                        data-scs-animation-in="fadeInUp">
+                                        NEW ARRIVAL DAILY
+                                    </h6>
+                                    <h1 class="font-size-46 text-lh-50 font-weight-light mb-8"
+                                        data-scs-animation-in="fadeInUp"
+                                        data-scs-animation-delay="200">
+                                        We have latest and trending arrival of jeans for men. </br>
 
+                                        <stong class="font-weight-bold">Great Discounts</stong>
+                                    </h1>
+                                    <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                       data-scs-animation-in="fadeInUp"
+                                       data-scs-animation-delay="300">
+                                        Start Buying
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
+                                 data-scs-animation-in="fadeInRight"
+                                 data-scs-animation-delay="500">
+                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo base_url(); ?>assets/theme2/img/416X420/2.jpg" alt="Image Description">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="js-slide">
+                        <div class="row pt-7 py-md-0">
+                            <div class="d-none d-wd-block offset-1"></div>
+                            <div class="col-xl col col-md-6 mt-md-8 mt-lg-8">
+                                <div class="ml-xl-4">
+                                    <h6 class="font-size-15 font-weight-bold mb-2 text-cyan"
+                                        data-scs-animation-in="fadeInUp">
+                                        WE FOLLOW THE TREND
+                                    </h6>
+                                    <h1 class="font-size-46 text-lh-50 font-weight-light mb-8"
+                                        data-scs-animation-in="fadeInUp"
+                                        data-scs-animation-delay="200">
+                                        Trending and classy collection for womens. </br>
 
+                                        <stong class="font-weight-bold">Lowest Price</stong>
+                                    </h1>
+                                    <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                       data-scs-animation-in="fadeInUp"
+                                       data-scs-animation-delay="300">
+                                        Start Buying
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
+                                 data-scs-animation-in="fadeInRight"
+                                 data-scs-animation-delay="500">
+                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo base_url(); ?>assets/theme2/img/416X420/3.jpg" alt="Image Description">
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -73,7 +132,7 @@ $this->load->view('layout/header');
                 </div>
                 <div class="media-body text-center">
                     <span class="d-block font-weight-bold text-dark">Free Delivery</span>
-                    <div class=" text-secondary">from $300</div>
+                    <div class=" text-secondary">from 499/-</div>
                 </div>
             </div>
             <!-- End Feature List -->
@@ -96,7 +155,7 @@ $this->load->view('layout/header');
                     <i class="text-primary ec ec-returning font-size-46"></i>
                 </div>
                 <div class="media-body text-center">
-                    <span class="d-block font-weight-bold text-dark">365 Days</span>
+                    <span class="d-block font-weight-bold text-dark">7 Days</span>
                     <div class=" text-secondary">for free return</div>
                 </div>
             </div>
@@ -114,6 +173,7 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
+ 
 
     <!--one and other section-->
     <div class="container">
@@ -296,13 +356,13 @@ $this->load->view('layout/header');
                         <a class="text-gray-90 btn btn-outline-primary border-width-2 rounded-pill py-1 px-4 font-size-15 text-lh-19 font-size-15-md" href="#">Top 20</a>
                     </li>
                     <li class="nav-item flex-shrink-0 flex-md-shrink-1">
-                        <a class="nav-link text-gray-8" href="#">Phones & Tablets</a>
+                        <a class="nav-link text-gray-8" href="#">Shirts</a>
                     </li>
                     <li class="nav-item flex-shrink-0 flex-md-shrink-1">
-                        <a class="nav-link text-gray-8" href="#">Laptops & Computers</a>
+                        <a class="nav-link text-gray-8" href="#">Jeans</a>
                     </li>
                     <li class="nav-item flex-shrink-0 flex-md-shrink-1">
-                        <a class="nav-link text-gray-8" href="#"> Video Cameras</a>
+                        <a class="nav-link text-gray-8" href="#">Jackets</a>
                     </li>
                 </ul>
             </dv>
@@ -360,15 +420,15 @@ $this->load->view('layout/header');
         <!-- Full banner -->
         <div class="mb-6">
             <a href="../shop/shop.html" class="d-block text-gray-90">
-                <div class="" style="background-image: url(<?php echo base_url(); ?>assets/theme2/img/1400X206/img1.jpg);">
+                <div class="" style="background-image: url(<?php echo base_url(); ?>assets/theme2/img/1400X206/img3.jpg);">
                     <div class="space-top-2-md p-4 pt-6 pt-md-8 pt-lg-6 pt-xl-8 pb-lg-4 px-xl-8 px-lg-6">
                         <div class="flex-horizontal-center mt-lg-3 mt-xl-0 overflow-auto overflow-md-visble">
-                            <h1 class="text-lh-38 font-size-32 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">SHOP AND <strong>SAVE BIG</strong> ON HOTTEST TABLETS</h1>
+                            <h1 class="text-lh-38 font-size-32 font-weight-light mb-0 flex-shrink-0 flex-md-shrink-1">SHOP AND <strong>SAVE BIG</strong> ON LATEST COLLECTION</h1>
                             <div class="ml-5 flex-content-center flex-shrink-0">
                                 <div class="bg-primary rounded-lg px-6 py-2">
                                     <em class="font-size-14 font-weight-light">STARTING AT</em>
                                     <div class="font-size-30 font-weight-bold text-lh-1">
-                                        <sup class="">$</sup>79<sup class="">99</sup>
+                                        <sup class=""></sup>199<sup class="">/-</sup>
                                     </div>
                                 </div>
                             </div>

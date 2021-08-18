@@ -210,7 +210,7 @@
                     <div class="container">
                         <div class="d-flex align-items-center">
                             <div class="topbar-left">
-                                <a href="#" class="text-gray-110 font-size-13 u-header-topbar__nav-link">Welcome to Worldwide Octopuscart Store</a>
+                                <a href="#" class="text-gray-110 font-size-13 u-header-topbar__nav-link">Welcome to Our Prk Fashions Store</a>
                             </div>
                             <div class="topbar-right ml-auto">
                                 <ul class="list-inline mb-0">
@@ -223,8 +223,8 @@
                                             <!-- Language -->
                                             <div class="position-relative">
                                                 <a id="languageDropdownInvoker" class="dropdown-nav-link dropdown-toggle d-flex align-items-center u-header-topbar__nav-link font-weight-normal" href="javascript:;" role="button" aria-controls="languageDropdown" aria-haspopup="true" aria-expanded="false" data-unfold-event="hover" data-unfold-target="#languageDropdown" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                                                    <span class="d-inline-block d-sm-none">US</span>
-                                                    <span class="d-none d-sm-inline-flex align-items-center"><i class="ec ec-dollar mr-1"></i> Dollar (US)</span>
+                                                    <span class="d-inline-block d-sm-none">India</span>
+                                                    <span class="d-none d-sm-inline-flex align-items-center"><i class="ec ec-rupees mr-1"></i> INR (IN)</span>
                                                 </a>
 
                                                 <div id="languageDropdown" class="dropdown-menu dropdown-unfold u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="languageDropdownInvoker" style="animation-duration: 300ms; left: 0px;">
@@ -259,7 +259,7 @@
                                 <nav class="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
                                     <!-- Logo -->
                                     <a class="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="<?php echo site_url("/"); ?>" aria-label="Electro">
-                                        <img src="<?php echo base_url(); ?>assets/images/logo73.png" style="width: 170px;">
+                                        <img src="<?php echo base_url(); ?>assets/images/logo3.jpeg" style="width: 170px;">
 
                                     </a>
                                     <!-- End Logo -->
@@ -304,6 +304,16 @@
                                                                     <img src="<?php echo base_url(); ?>assets/images/logo.png">
                                                                 </a>
                                                                 <!-- End Logo -->
+
+                                                            </div>
+                                                            <div class="menu">
+                                                              <ul class="list-group">
+                                                                <li class="list-group-item"><a href="">HOME</a></li>
+                                                                <li class="list-group-item"><a href="">ABOUT US</a></li>
+                                                                <li class="list-group-item"><a href="">CONTACT US</a></li>
+                                                                <li class="list-group-item"><a href="">BLOGS</a></li>
+                                                           
+                                                             </ul>           
 
                                                             </div>
                                                         </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px; height: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>

@@ -1,5 +1,5 @@
 <?php
-$this->load->view('layout/header_1');
+$this->load->view('layout/header');
 ?> <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main">
     <!-- breadcrumb -->
@@ -30,7 +30,7 @@ $this->load->view('layout/header_1');
                     <div class="border-bottom border-color-1 mb-5">
                         <h3 class="section-title mb-0 pb-2 font-size-25">Leave us a Message</h3>
                     </div>
-                    <p class="max-width-830-xl text-gray-90">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
+                    <p class="max-width-830-xl text-gray-90">Visit us in the local area or contact us through our booking form for any enquiries.We believe that all of our customers deserve only the very best.</p>
                     <form class="js-validate" novalidate="novalidate">
                         <div class="row">
                             <div class="col-md-6">
@@ -92,14 +92,13 @@ $this->load->view('layout/header_1');
                     <h3 class="section-title mb-0 pb-2 font-size-25">Our Address</h3>
                 </div>
                 <address class="mb-6 text-lh-23">
-                    Room AB, 9/F, Golden Sun Centre, <br/>59/67 Bonham Strand West, <br/>Sheung Wan, Hong Kong
-
-                    <div class="">Support: +(852) 2368 7651</div>
-                    <div class="">Email: <a class="text-blue text-decoration-on" href="">info@jsw.com</a></div>
+                11/2 Baser-Colony Mandsaur,  <br/>MP, India.
+                    <div class="">Support: (+91) 9516041729</div>
+                    <div class="">Email: <a class="text-blue text-decoration-on" href="">pavitramod11@gmail.com</a></div>
                 </address>
                 <h5 class="font-size-14 font-weight-bold mb-3">Opening Hours</h5>
-                <div class="">Monday to Friday: 9am-9pm</div>
-                <div class="mb-6">Saturday to Sunday: 9am-11pm</div>
+                <div class="">Monday to sunday: 9am-9pm</div>
+                
             </div>
         </div>
 

@@ -1,5 +1,5 @@
 <?php
-$this->load->view('layout/header_1');
+$this->load->view('layout/header');
 ?> <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main">
     <div class="bg-img-hero mb-14" style="background-image: url(<?php echo base_url(); ?>assets/theme2/images/aboutback.jpg);">
@@ -7,7 +7,9 @@ $this->load->view('layout/header_1');
             <div class="flex-content-center max-width-620-lg flex-column mx-auto text-center min-height-564">
                 <h1 class="h1 font-weight-bold">About Us</h1>
                 <p class="text-gray-39 font-size-18 text-lh-default">
-We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.
+                Welcome to prk-fashions, a men’s clothing store where we sell only the best outfits, articles, and accessories. Whether you are looking to buy casual wear, something for a corporate event or an outfit for a formal occasion, you can count on us to find you just what you need. We stock a wide range of brands and items, including some from luxury designer outfits. Don’t worry, we have something to suit everyone at any budget. Visit us in the local area or contact us through our booking form for any enquiries.We believe that all of our customers deserve only the very best.
+
+
                 </p>
             </div>
         </div>
@@ -19,22 +21,22 @@ We are manufacturers and distributors of electronics worldwide! We have various 
                 <div class="row">
                     <div class="col-lg-6 mb-5 mb-lg-8">
                         <h3 class="font-size-18 font-weight-semi-bold text-gray-39 mb-4">What we really do?</h3>
-                        <p class="text-gray-90">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
+                        <p class="text-gray-90">We provide best quality of mens wear, womens wear, kids wear products at affordable price range so everyone can follow trend and enjoy their outfit. </p>
                     </div>
                     <div class="col-lg-6 mb-5 mb-lg-8">
                         <h3 class="font-size-18 font-weight-semi-bold text-gray-39 mb-4">Our Vision</h3>
                         <p class="text-gray-90">
-We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.                        </p>
+                                   Nowadays, fashion becomes a trend and important for most of the people. we are online service provider for latest outfits for men, women, and kids.  </p>
                     </div>
                     <div class="col-lg-6 mb-5 mb-lg-8">
-                        <h3 class="font-size-18 font-weight-semi-bold text-gray-39 mb-4">History of the Company</h3>
+                        <h3 class="font-size-18 font-weight-semi-bold text-gray-39 mb-4">Our Products</h3>
                         <p class="text-gray-90">
-We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.                        </p>
+we sell all mens wear like shirts, t-shirts, jeans, trousers, jackets, denim, shorts, mens accessories.         </p>
                     </div>
                     <div class="col-lg-6 mb-5 mb-lg-8">
                         <h3 class="font-size-18 font-weight-semi-bold text-gray-39 mb-4">Cooperate with Us!</h3>
                         <p class="text-gray-90">
-We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.                        </p>
+Corporate and trust with our services, we believe in quality products and provide best.        </p>
                     </div>
                 </div>
             </div>
@@ -64,7 +66,8 @@ We are manufacturers and distributors of electronics worldwide! We have various 
                                  aria-labelledby="basicsHeadingOne"
                                  data-parent="#basicsAccordion1">
                                 <div class="card-body">
-                                    <p class="mb-0">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
+                                <p class="mb-0">Our service are 24/7 hr open With customer support.</p>
+                               
                                 </div>
                             </div>
                         </div>
@@ -91,7 +94,8 @@ We are manufacturers and distributors of electronics worldwide! We have various 
                                  aria-labelledby="basicsHeadingTwo"
                                  data-parent="#basicsAccordion1">
                                 <div class="card-body">
-                                    <p class="mb-0">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
+                                <p class="mb-0">Best quality product with low price range , so every one can enjoy their favourite fashion trend.</p>
+                               
                                 </div>
                             </div>
                         </div>
@@ -118,7 +122,8 @@ We are manufacturers and distributors of electronics worldwide! We have various 
                                  aria-labelledby="basicsHeadingThree"
                                  data-parent="#basicsAccordion1">
                                 <div class="card-body">
-                                    <p class="mb-0">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
+                                <p class="mb-0">Fastest delivery service with low shipping charges.</p>
+                               
                                 </div>
                             </div>
                         </div>
@@ -145,8 +150,8 @@ We are manufacturers and distributors of electronics worldwide! We have various 
                                  aria-labelledby="basicsHeadingFour"
                                  data-parent="#basicsAccordion1">
                                 <div class="card-body">
-                                    <p class="mb-0">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
-                                </div>
+                                <p class="mb-0">Our customer support will solve your every query anytime.</p>
+                                 </div>
                             </div>
                         </div>
                         <!-- End Card -->
@@ -172,7 +177,7 @@ We are manufacturers and distributors of electronics worldwide! We have various 
                                  aria-labelledby="basicsHeadingFive"
                                  data-parent="#basicsAccordion1">
                                 <div class="card-body">
-                                    <p class="mb-0">We are manufacturers and distributors of electronics worldwide! We have various brands that we have been manufacturing for OEM and ODM for the last 13 years!We have our own in house brand called JSW which we have recently started marketing and have a variety of products under the same label.We are currently looking for partners worldwide for our brand representation and distribution.</p>
+                                <p class="mb-0">Our quality products are our power and custmers loved it.</p>
                                 </div>
                             </div>
                         </div>
