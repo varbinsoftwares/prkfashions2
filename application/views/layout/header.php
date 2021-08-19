@@ -13,18 +13,18 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
 
         <!-- CSS Implementing Plugins -->
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/font-awesome/css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/css/font-electro.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/font-awesome/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/font-electro.css">
 
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/animate.css/animate.min.css">
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/hs-megamenu/src/hs.megamenu.css">
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/fancybox/jquery.fancybox.css">
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/slick-carousel/slick/slick.css">
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/animate.css/animate.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/hs-megamenu/src/hs.megamenu.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/slick-carousel/slick/slick.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
 
         <!-- CSS Electro Template -->
-        <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/css/theme.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/theme.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/customstyle.css">
 
         <!--theme assets-->
@@ -237,7 +237,7 @@
                                     </li>
                                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                                         <!-- Account Sidebar Toggle Button -->
-                                        <a id="sidebarNavToggler" href="<?php echo site_url("Account/profile"); ?>" role="button" class="u-header-topbar__nav-link target-of-invoker-has-unfolds" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
+                                        <a id="sidebarNavToggler" href="<?php echo site_url("Account/login"); ?>" role="button" class="u-header-topbar__nav-link target-of-invoker-has-unfolds" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
                                             <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
                                         </a>
                                         <!-- End Account Sidebar Toggle Button -->
@@ -364,13 +364,10 @@
                                             <!-- End Input -->
                                         </li>
                                         <!-- End Search -->
-                                        <li class="col d-none d-xl-block"><a href="../shop/compare.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compare"><i class="font-size-22 ec ec-user"></i></a></li>
+                                        <li class="col d-none d-xl-block"><a href="<?php echo site_url("Account/profile");?>" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My-Account" data-original-title="Compare"><i class="font-size-22 ec ec-user"></i></a></li>
                                         <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
                                         <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
-                                        <li class="col pr-xl-0 px-2 px-sm-3">
-                                            <a href="<?php
-                                            echo site_url("Cart/details");
-                                            ?>" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="" data-original-title="Cart">
+                                        <li class="col pr-xl-0 px-2 px-sm-3"><a href="<?php echo site_url("Cart/details");?>" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="" data-original-title="Cart">
                                                 <i class="font-size-22 ec ec-shopping-bag"></i>
                                                 <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{globleCartData.total_quantity}}</span>
                                                 <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">{{globleCartData.sub_total_price|currency}}</span>

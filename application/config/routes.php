@@ -58,19 +58,25 @@ $route['contact'] = 'Shop/contactus';
 
 $route['about-us'] = 'Shop/aboutus';
 
+$route['product-detail'] = 'Shop/productdetail';
+
 $route['privacy-policy'] = 'Shop/privacy_policy';
 
 $route['menu/(:any)/(:any)'] = 'Product/productList/$1/$2';
 
-$route['review'] = 'Shop/wall';
+$route['customer-services'] = 'Shop/customer_service';
 
-$route['annual-charity'] = 'Shop/annual_charity';
+$route['product-support'] = 'Shop/product_support';
+
+$route['return-exchange'] = 'Shop/return_exchange';
+
+$route['terms-condition'] = 'Shop/terms_condition';
 
 $route['book-now'] = 'Shop/booknow';
 
 $route['gallery'] = 'Shop/gallery';
 
-$route['loyalty-program'] = 'Shop/loyalprogram';
+$route['profile'] = 'Account/profile';
 
 $route['feedback'] = 'Shop/feedback';
 

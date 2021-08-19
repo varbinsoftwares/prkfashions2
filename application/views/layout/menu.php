@@ -38,7 +38,7 @@ $productcategory3 = [
                                 <a id="TVMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="<?php echo $value['link']; ?>" aria-haspopup="true" aria-expanded="false"><?php echo $value['title'] ?></a>
 
                                 <!-- TV & Audio - Mega Menu -->
-                                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="TVMegaMenu" style="display: none;">
+                                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="MENSMegaMenu" style="display: none;">
                                     <div class="row u-header__mega-menu-wrapper">
 
                                         <div class="col-md-4">
@@ -50,16 +50,16 @@ $productcategory3 = [
                                             <ul class="u-header__sub-menu-nav-group mb-3">
                                                 <?php
                                                 $menuarray = [
-                                                    array("title" => "Shirts", "link" => ""),
-                                                    array("title" => "T-shirts", "link" => ""),
-                                                    array("title" => "Jeans", "link" => ""),
-                                                    array("title" => "Trousers", "link" => ""),
-                                                    array("title" => "Jackets", "link" => ""),
-                                                    array("title" => "Accessories", "link" => ""),
+                                                    array("title" => "Shirts", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "T-shirts", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "Jeans", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "Trousers", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "Jackets", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "Accessories", "link" => "Product/Productlist/0/0/"),
                                                 ];
                                                 foreach ($menuarray as $key => $value) {
                                                     ?>
-                                                    <li><a href="#" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
+                                                    <li><a href="<?php echo site_url();?><?php echo $value['link']; ?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
                                                     <?php
                                                 }
                                                 ?>
@@ -69,14 +69,14 @@ $productcategory3 = [
                                             <ul class="u-header__sub-menu-nav-group mb-3">
                                                 <?php
                                                 $menuarray = [
-                                                    array("title" => "Upto 25% Off", "link" => ""),
-                                                    array("title" => "Upto 50% Off", "link" => ""),
-                                                    array("title" => "Upto 60% Off", "link" => ""),
-                                                    array("title" => "Upto 80% Off", "link" => ""),
+                                                    array("title" => "Upto 25% Off", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "Upto 50% Off", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "Upto 60% Off", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "Upto 80% Off", "link" => "Product/Productlist/0/0/"),
                                                 ];
                                                 foreach ($menuarray as $key => $value) {
                                                     ?>
-                                                    <li><a href="#" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
+                                                    <li><a href="<?php echo site_url();?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
                                                     <?php
                                                 }
                                                 ?>
@@ -90,13 +90,13 @@ $productcategory3 = [
                                             <ul class="u-header__sub-menu-nav-group mb-3">
                                                 <?php
                                                 $menuarray = [
-                                                    array("img" => "jeans1.jpg", "link" => ""),
+                                                    array("img" => "jeans1.jpg", "link" => "Product/Productlist/0/0/"),
                                                   
                                                  
                                                 ];
                                                 foreach ($menuarray as $key => $value) {
                                                     ?>
-                                                    <li><a href="#" class="d-block mb-3">
+                                                    <li><a href="<?php echo site_url();?><?php echo $value['link']; ?>" class="d-block mb-3">
                                                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/<?php echo $value['img']; ?>" alt="Image Description">
                                             </a></li>
                                                     <?php
@@ -109,14 +109,14 @@ $productcategory3 = [
                                             <ul class="u-header__sub-menu-nav-group mb-3">
                                                 <?php
                                                 $menuarray = [
-                                                    array("title" => "Below Rs. 300", "link" => ""),
-                                                    array("title" => "300 - 500", "link" => ""),
-                                                    array("title" => "500 - 600", "link" => ""),
-                                                    array("title" => "600 and Above", "link" => ""),
+                                                    array("title" => "Below Rs. 300", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "300 - 500", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "500 - 600", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "600 and Above", "link" => "Product/Productlist/0/0/"),
                                                 ];
                                                 foreach ($menuarray as $key => $value) {
                                                     ?>
-                                                    <li><a href="#" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
+                                                    <li><a href="https://prkfashions.com/<?php echo $value['link']; ?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
                                                     <?php
                                                 }
                                                 ?>
@@ -126,11 +126,11 @@ $productcategory3 = [
                                        
                                         <div class="col-md-4">
 
-                                            <a href="#" class="d-block mb-3 mt-8">
+                                            <a href="<?php echo site_url();?>Product/Productlist/0/0/" class="d-block mb-3 mt-8">
                                                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/off.jpg" alt="Image Description">
                                             </a>
                                             <p>
-                                                Browse through a wide array of Bracelet Designs crafted with dexterity and buy your favorite from octopuscart jewellery.      
+                                                Browse through a wide array of shirts and latest collection.      
                                             </p>
                                         </div>
                                     </div>

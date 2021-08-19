@@ -87,6 +87,9 @@ class Shop extends CI_Controller {
     public function aboutus() {
         $this->load->view('pages/aboutus');
     }
+    public function productdetail() {
+        $this->load->view('pages/productdetail');
+    }
 
     public function error404() {
         $this->load->view('pages/error404');
@@ -100,12 +103,16 @@ class Shop extends CI_Controller {
         $this->load->view('pages/catalogue');
     }
 
-    public function wall() {
-        $this->load->view('pages/wall');
+    public function customer_service() {
+        $this->load->view('pages/customer_service');
     }
 
-    public function annual_charity() {
-        $this->load->view('pages/annual_charity');
+    public function product_support() {
+        $this->load->view('pages/product_support');
+    }
+
+    public function terms_condition() {
+        $this->load->view('pages/T&C');
     }
 
     public function booknow() {
@@ -187,8 +194,8 @@ class Shop extends CI_Controller {
         $this->load->view('pages/gallery');
     }
 
-    function charityIfram() {
-        $this->load->view('pages/charityIfram');
+    function return_exchange() {
+        $this->load->view('pages/return_exchange');
     }
 
     public function feedback() {

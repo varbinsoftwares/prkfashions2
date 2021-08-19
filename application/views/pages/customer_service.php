@@ -12,7 +12,7 @@ $this->load->view('layout/header');
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
                                 <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">Home</a></li>
-                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">FAQ</li>
+                                <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">Customer-Services</li>
                             </ol>
                         </nav>
                     </div>
@@ -24,7 +24,7 @@ $this->load->view('layout/header');
             <div class="container">
                
                 <div class="mb-12 text-center">
-                    <h1>FAQ's</h1>
+                    <h1>Customer Services</h1>
                 </div>
                 <!-- Basics Accordion -->
                 <div id="basicsAccordion" class="mb-12">

@@ -136,7 +136,7 @@
                                     </a></li>
                                 <li><a class="list-group-item list-group-item-action" href="https://linktr.ee/prkfashions">Linktree
                                     </a></li> 
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Submit queries
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Account/profile') ?>">My Account
                                     </a></li>       
                             </ul>
                             <!-- End List Group -->
@@ -146,13 +146,13 @@
                             <h6 class="mb-3 font-weight-bold">Customer Care</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('/') ?>">My Account</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('terms-condition') ?>">Terms And Conditions</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('privacy-policy') ?>">Privacy Policy</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('/') ?>">Order Tracking</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('/') ?>">Wish List</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('/') ?>">Customer Service</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('/') ?>">Returns / Exchange</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('/') ?>">FAQs</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('/') ?>">Product Support</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('customer-services') ?>">Customer Service</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('return-exchange') ?>">Returns / Exchange</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('faqs') ?>">FAQs</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('product-support') ?>">Product Support</a></li>
                             </ul>
                             <!-- End List Group -->
                         </div>

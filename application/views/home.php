@@ -314,7 +314,7 @@ $this->load->view('layout/header');
                                 <div class="product-item__outer h-100">
                                     <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                         <div class="product-item__body pb-xl-2">
-                                            <div class="mb-2"><a href="#" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
+                                            <div class="mb-2"><a href="https://prkfashions.com/product/productlist/0/0" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
                                             <h5 class="mb-1 product-item__title"><a href="#" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
                                             <div class="mb-2">
                                                 <a href="#" class="d-block text-center">

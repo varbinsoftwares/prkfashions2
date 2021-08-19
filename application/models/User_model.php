@@ -122,8 +122,8 @@ class User_model extends CI_Model {
             
             $customerdetails['customer'] = $customer;
 
-            $htmlsmessage = $this->load->view('Email/registration', $customerdetails, true);
-           echo  $this->email->message($htmlsmessage);
+            echo $htmlsmessage = $this->load->view('Email/registration', $customerdetails, true);
+             $this->email->message($htmlsmessage);
 
 //            $this->email->print_debugger();
 //            $send = $this->email->send();
