@@ -104,18 +104,18 @@
                             <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Mens wear
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Mens wear
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Shirt collection
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Shirt collection
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">T-shirt for men
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">T-shirt for men
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Latest jeans
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Trousers and shorts
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Latest jeans
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Trousers and shorts
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">jackets
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">jackets
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Accessories</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Accessories</a></li>
                             </ul>
                             <!-- End List Group -->
                         </div>
@@ -124,13 +124,13 @@
                         <h6 class="mb-3 font-weight-bold">Useful Links</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent ">
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Home
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url() ?>">Home
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">About Us
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('about-us') ?>">About Us
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Contact Us
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('contact') ?>">Contact Us
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productListView') ?>">Blogs
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url() ?>">Blogs
                                     </a></li>
                                 <li><a class="list-group-item list-group-item-action" href="https://www.justdial.com/Mandsaur/Prk-Fashion-Near-Bus-Office-Mandsaur-H-O/9999P7427-7427-210425113100-I2R3_BZDET">Justdial
                                     </a></li>

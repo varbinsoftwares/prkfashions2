@@ -112,11 +112,11 @@ $productcategory3 = [
                                                     array("title" => "Below Rs. 300", "link" => "Product/Productlist/0/0/"),
                                                     array("title" => "300 - 500", "link" => "Product/Productlist/0/0/"),
                                                     array("title" => "500 - 600", "link" => "Product/Productlist/0/0/"),
-                                                    array("title" => "600 and Above", "link" => "Product/Productlist/0/0/"),
+                                                    array("title" => "600 and Above", "link" => ""),
                                                 ];
                                                 foreach ($menuarray as $key => $value) {
                                                     ?>
-                                                    <li><a href="https://prkfashions.com/<?php echo $value['link']; ?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
+                                                    <li><a href="<?php echo site_url();?><?php echo $value['link']; ?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
                                                     <?php
                                                 }
                                                 ?>
