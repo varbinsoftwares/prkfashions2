@@ -28,167 +28,43 @@ $this->load->view('layout/header');
                 </div>
                 <!-- Basics Accordion -->
                 <div id="basicsAccordion" class="mb-12">
-                    <!-- Card -->
-                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
-                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingOne">
-                            <h5 class="mb-0">
-                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0"
-                                    data-toggle="collapse"
-                                    data-target="#basicsCollapseOner"
-                                    aria-expanded="true"
-                                    aria-controls="basicsCollapseOner">
-                                    What Shipping Methods Are Available?
+                <h4><strong>Our Return policy</strong></h4>
+                <p>Hopefully you love everything you have purchased, but if something does not work out, we’re here to help! 
+                 
+                  All purchases may be returned within 7 days. Please ensure that items are unworn, unwashed, and undamaged.</br> Note: All items must be returned with any original packaging, including any tags the item came with.</p>
+                <ul>
+                    <p>Please see below for exceptions & rules:</p>
+                    <li>Worn items, washed items, or items damaged by customer will not be accepted for return.</li>
+                    <li>Original tags (if applicable) must be attached & intact.</li>
+                    <li>If you feel you have received a defective or damaged item, please contact us within 3 business days of the delivery date.</li>
+                    
+                </ul>
+                  <hr/>
 
-                                    <span class="card-btn-arrow">
-                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                    </span>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="basicsCollapseOner" class="collapse show"
-                            aria-labelledby="basicsHeadingOne"
-                            data-parent="#basicsAccordion">
-                            <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
+                <h4><strong>How do we start a Return</strong></h4>
+                <ul>
+                    <li>
+We ask that if you wish to return an item purchased that you return the item using the same packaging that it was delivered with.
+When mailing a return:</li>
+<li>Please ensure your items are securely packaged! We are not responsible for items that are lost or damaged during their return to our warehouse!</li>
+<li>Please provide either the original receipt or include a piece of paper with your name and order number in the package.</li>
+<li>Send returns to the following address:</li></ul>
 
-                    <!-- Card -->
-                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
-                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingTwo">
-                            <h5 class="mb-0">
-                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
-                                    data-toggle="collapse"
-                                    data-target="#basicsCollapseTwo"
-                                    aria-expanded="false"
-                                    aria-controls="basicsCollapseTwo">
-                                    How Long Will it Take To Get My Package?
 
-                                    <span class="card-btn-arrow">
-                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                    </span>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="basicsCollapseTwo" class="collapse"
-                            aria-labelledby="basicsHeadingTwo"
-                            data-parent="#basicsAccordion">
-                            <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
+11/2 Baser-Colony, Mandsaur,</br>
+MP, India</br>
+Mail : pavitramod11@gmail.com</br>
 
-                    <!-- Card -->
-                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
-                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingThree">
-                            <h5 class="mb-0">
-                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
-                                    data-toggle="collapse"
-                                    data-target="#basicsCollapseThree"
-                                    aria-expanded="false"
-                                    aria-controls="basicsCollapseThree">
-                                    How Do I Track My Order?
+<strong style="font-size:20px;">Return types</strong>
 
-                                    <span class="card-btn-arrow">
-                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                    </span>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="basicsCollapseThree" class="collapse"
-                            aria-labelledby="basicsHeadingThree"
-                            data-parent="#basicsAccordion">
-                            <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
-                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingFour">
-                            <h5 class="mb-0">
-                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
-                                    data-toggle="collapse"
-                                    data-target="#basicsCollapseFour"
-                                    aria-expanded="false"
-                                    aria-controls="basicsCollapseFour">
-                                    How Do I Place an Order?
-
-                                    <span class="card-btn-arrow">
-                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                    </span>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="basicsCollapseFour" class="collapse"
-                            aria-labelledby="basicsHeadingFour"
-                            data-parent="#basicsAccordion">
-                            <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
-                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingFive">
-                            <h5 class="mb-0">
-                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
-                                    data-toggle="collapse"
-                                    data-target="#basicsCollapseFive"
-                                    aria-expanded="false"
-                                    aria-controls="basicsCollapseFive">
-                                    How Should I to Contact if I Have Any Queries?
-
-                                    <span class="card-btn-arrow">
-                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                    </span>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="basicsCollapseFive" class="collapse"
-                            aria-labelledby="basicsHeadingFive"
-                            data-parent="#basicsAccordion">
-                            <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1">
-                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingSix">
-                            <h5 class="mb-0">
-                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn collapsed py-3 font-size-25 border-0"
-                                    data-toggle="collapse"
-                                    data-target="#basicsCollapseSix"
-                                    aria-expanded="false"
-                                    aria-controls="basicsCollapseSix">
-                                    Do I Need an Account to Place an Order?
-
-                                    <span class="card-btn-arrow">
-                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
-                                    </span>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="basicsCollapseSix" class="collapse"
-                            aria-labelledby="basicsHeadingSix"
-                            data-parent="#basicsAccordion">
-                            <div class="card-body pl-0">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Card -->
+<p>
+<b>Return for an exchange:</b><br>
+We cannot provide exchanges or holds due to limited inventory. If an exchange is needed we encourage the customer to place a new order for the item(s) needed and return the other item(s).
+</br><b>Return for a refund:</b></br>
+Must be postmarked within 14 days of the original order date.
+Return shipping costs are the customer’s responsibility. If using a label provided through our return portal, the customer agrees to have the cost of the shipping withheld from their refund.
+</p>      <hr/>
+                  
                 </div>
                 <!-- End Basics Accordion -->
                

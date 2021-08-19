@@ -152,7 +152,7 @@
                                 <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('customer-services') ?>">Customer Service</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('return-exchange') ?>">Returns / Exchange</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('faqs') ?>">FAQs</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('product-support') ?>">Product Support</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('customer-services') ?>">Product Support</a></li>
                             </ul>
                             <!-- End List Group -->
                         </div>

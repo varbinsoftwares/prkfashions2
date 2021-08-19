@@ -19,6 +19,7 @@ if (isset($prefixshopappointment[$cdateshort])) {
     }
 </style>
 <div ng-controller="AppointmentDetails">
+   
     <!-- Inner Page Banner Area Start Here -->
     <div class="inner-page-banner-area" style="    background: url(<?php echo base_url(); ?>assets/images/shop2.jpg);
          background-size: cover;
