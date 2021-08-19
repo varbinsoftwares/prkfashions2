@@ -305,20 +305,162 @@
                                                                 </a>
                                                                 <!-- End Logo -->
 
-                                                            </div>
-                                                            <div class="menu">
-                                                              <ul class="list-group">
-                                                                <li class="list-group-item"><a href="">HOME</a></li>
-                                                                <li class="list-group-item"><a href="">ABOUT US</a></li>
-                                                                <li class="list-group-item"><a href="">CONTACT US</a></li>
-                                                                <li class="list-group-item"><a href="">BLOGS</a></li>
-                                                           
-                                                             </ul>           
+                                                        <!-- List -->
+                                                        <ul id="headerSidebarList" class="u-header-collapse__nav">
+                                                            <!-- Value of the Day -->
+                                                            <li class="">
+                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">Value of the Day</a>
+                                                            </li>
+                                                            <!-- End Value of the Day -->
 
-                                                            </div>
-                                                        </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px; height: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+                                                            <!-- Top 100 Offers -->
+                                                            <li class="">
+                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">Top 100 Offers</a>
+                                                            </li>
+                                                            <!-- End Top 100 Offers -->
+
+                                                            <!-- New Arrivals -->
+                                                            <li class="">
+                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">New Arrivals</a>
+                                                            </li>
+                                                            <!-- End New Arrivals -->
+
+                                                            <!-- Computers & Accessories -->
+                                                            <li class="u-has-submenu u-header-collapse__submenu">
+                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
+                                                                    Mens Wear
+                                                                </a>
+
+                                                                <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                    <ul class="u-header-collapse__nav-list">
+                                                                        <li><span class="u-header-sidebar__sub-menu-title">Mens &amp; Wear</span></li>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Shirts</a></li>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">T-shirts</a></li>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Jeans</a></li>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Trousers</a></li>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Shorts</a></li>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Formal shirts</a></li>
+                                                                        <li><span class="u-header-sidebar__sub-menu-title">Bottom Wear</span></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Jeans</a></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Trousers</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <!-- End Computers & Accessories -->
+
+                                                            <!-- Cameras, Audio & Video -->
+                                                            <li class="u-has-submenu u-header-collapse__submenu">
+                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="#" data-target="#headerSidebarCamerasCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarCamerasCollapse">
+                                                                    Womens Wear
+                                                                </a>
+
+                                                                <div id="headerSidebarCamerasCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                    <ul class="u-header-collapse__nav-list">
+                                                                        <li><span class="u-header-sidebar__sub-menu-title">Top</span></li>
+                                                                      
+                                                                        
+                                                                    
+                                                                        <li><span class="u-header-sidebar__sub-menu-title">Bottom</span></li>
+                                                                       
+                                                                        
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <!-- End Cameras, Audio & Video -->
+
+                                                            <!-- Mobiles & Tablets -->
+                                                            <li class="u-has-submenu u-header-collapse__submenu">
+                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="#" data-target="#headerSidebarMobilesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMobilesCollapse">
+                                                                    Kids Wear
+                                                                </a>
+
+                                                                <div id="headerSidebarMobilesCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                    <ul class="u-header-collapse__nav-list">
+                                                                        <li><span class="u-header-sidebar__sub-menu-title">Kids Wear</span></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="#">Dresses</a></li>
+                                                                    
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <!-- End Mobiles & Tablets -->
+
+                                                            <!-- Movies, Music & Video -->
+                                                            <li class="u-has-submenu u-header-collapse__submenu">
+                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="" data-target="#headerSidebarMoviesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMoviesCollapse">
+                                                                   Shop by Discount
+                                                                </a>
+
+                                                                <div id="headerSidebarMoviesCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                    <ul class="u-header-collapse__nav-list">
+                                                                        
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 25% off</a></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 50% off</a></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 60% off</a></li>
+                                                             
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 80% off</a></li>
+                                                                        
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <!-- End Movies, Music & Video -->
+
+                                                            <!-- TV & Audio -->
+                                                            <li class="u-has-submenu u-header-collapse__submenu">
+                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="javascript:;" data-target="#headerSidebarTvCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarTvCollapse">
+                                                                    Shop by Price
+                                                                </a>
+
+                                                                <div id="headerSidebarTvCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                    <ul class="u-header-collapse__nav-list">
+                                                                        <li><span class="u-header-sidebar__sub-menu-title">Prices</span></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Below 300</a></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">300-500</a></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">500-600</a></li>
+                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Above 600</a></li>
+                                                                        
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <!-- End TV & Audio -->
+                                                            <!-- Accessories -->
+                                                            <li class="u-has-submenu u-header-collapse__submenu">
+                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="#" data-target="#headerSidebarAccessoriesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarAccessoriesCollapse">
+                                                                    Accessories
+                                                                </a>
+
+                                                            </li>
+                                                            <!-- End Accessories -->
+                                                        </ul>
+                                                        <!-- End List -->
+                                                    </div>
+                                                </div>
                                                 <!-- End Content -->
                                             </div>
+                                            <!-- Footer -->
+                                           
+                                            </div> 
+                                            <footer id="SVGwaveWithDots" class=" u-header-sidebar__footer">
+                                                <ul class="list-inline mb-0">
+                                                    <li class="list-inline-item pr-3">
+                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Privacy</a>
+                                                    </li>
+                                                    <li class="list-inline-item pr-3">
+                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Terms</a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">
+                                                            <i class="fas fa-info-circle"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- SVG Background Shape -->
+                                                <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
+                                                    <img class="js-svg-injector" src="https://transvelo.github.io/electro-html/2.0/assets/svg/components/wave-bottom-with-dots.svg" alt="Image Description"
+                                                    data-parent="#SVGwaveWithDots">
+                                                </div>
+                                                <!-- End SVG Background Shape -->
+                                            </footer>
                                         </div>
                                     </div>
                                 </aside>

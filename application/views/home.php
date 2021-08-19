@@ -43,7 +43,7 @@ $this->load->view('layout/header');
 
                                         <stong class="font-weight-bold">MIN. 40% OFF</stong>
                                     </h1>
-                                    <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                    <a href="<?php echo site_url();?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
                                        data-scs-animation-delay="300">
                                         Start Buying
@@ -73,7 +73,7 @@ $this->load->view('layout/header');
 
                                         <stong class="font-weight-bold">Great Discounts</stong>
                                     </h1>
-                                    <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                    <a href="<?php echo site_url();?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
                                        data-scs-animation-delay="300">
                                         Start Buying
@@ -103,7 +103,7 @@ $this->load->view('layout/header');
 
                                         <stong class="font-weight-bold">Lowest Price</stong>
                                     </h1>
-                                    <a href="../shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                    <a href="<?php echo site_url();?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
                                        data-scs-animation-delay="300">
                                         Start Buying
