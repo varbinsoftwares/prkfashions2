@@ -24,7 +24,7 @@ $this->load->view('layout/header');
             <div class="container">
                
                 <div class="mb-12 text-center">
-                    <h1>FAQ's</h1>
+                    <h1>Frequently Asked Questions</h1>
                 </div>
                 <!-- Basics Accordion -->
                 <div id="basicsAccordion" class="mb-12">
@@ -49,7 +49,7 @@ $this->load->view('layout/header');
                             aria-labelledby="basicsHeadingOne"
                             data-parent="#basicsAccordion">
                             <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                                <p class="mb-0">At Prk Fashions, we strive to make each shopping experience outstanding and enriching. Hence, we partner with the best in the industry. We use logistics services of Delhivery, Xpressbees &amp; Ecom Express. We will notify you the name of the partner delivering your order, in advance.</p>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ $this->load->view('layout/header');
                             aria-labelledby="basicsHeadingTwo"
                             data-parent="#basicsAccordion">
                             <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                                <p class="mb-0">It's really quick! We strive to deliver all our orders / products in the fastest time possible. Depending upon your address, the delivery time may vary between 2 - 9 working days. That still won't stop us from trying to get you your order faster. On each product's display page, you can enter your location's pin code to check when you can expect to receive the delivery.</p>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@ $this->load->view('layout/header');
                             aria-labelledby="basicsHeadingThree"
                             data-parent="#basicsAccordion">
                             <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                                <p class="mb-0">You can track your order as soon as it is shipped out. To know the status of your item real time, just tap on the tracking link in the email sent to you. Alternatively, you can also login to Prkfashions.com and visit the ‘My Account' section to know your order status.</p>
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@ $this->load->view('layout/header');
                             aria-labelledby="basicsHeadingFour"
                             data-parent="#basicsAccordion">
                             <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                                <p class="mb-0">Click on the wanted item and "Add to basket" then "Order". Then choose your delivery method, a delivery and billing address, and then proceed to checkout. To do this, first you have to accept the terms and conditions, and then choose one of our payement methods: credit card, Debit card, or Roser.</p>
                             </div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@ $this->load->view('layout/header');
                             aria-labelledby="basicsHeadingFive"
                             data-parent="#basicsAccordion">
                             <div class="card-body pl-0 pb-8">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                                <p class="mb-0">If you require any further information, feel free to <?php echo site_url('contact');?>">contact us</a>  through our <a href="<?php echo site_url('contact');?>">contact page</a> . If you require any further information, let us know. Please feel free to contact us if you need any further information. Please let us know if you have any questions.</p>
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,8 @@ $this->load->view('layout/header');
                             aria-labelledby="basicsHeadingSix"
                             data-parent="#basicsAccordion">
                             <div class="card-body pl-0">
-                                <p class="mb-0">In egestas, libero vitae scelerisque tristique, turpis augue faucibus dolor, at aliquet ligula massa at justo. Donec viverra tortor quis tortor pretium, in pretium risus finibus. Integer viverra pretium auctor. Aliquam eget convallis eros, varius sagittis nulla. Suspendisse potenti. Aenean consequat ex sit amet metus ultrices tristique. Nam ac nunc augue. Suspendisse finibus in dolor eget volutpat.</p>
+                                <p class="mb-0">
+                                    Having an account is not essential as you can select Checkout as Guest to complete an order without logging in. Any orders placed as a guest require you to manually enter your address and payment information and will not be saved for future reference.</p>
                             </div>
                         </div>
                     </div>
