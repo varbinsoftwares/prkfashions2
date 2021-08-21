@@ -507,7 +507,7 @@
                                         </li>
                                         <!-- End Search -->
                                         <li class="col d-none d-xl-block"><a href="<?php echo site_url("Account/profile");?>" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My-Account" data-original-title="Compare"><i class="font-size-22 ec ec-user"></i></a></li>
-                                        <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
+                                      <!--  <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li> -->
                                         <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
                                         <li class="col pr-xl-0 px-2 px-sm-3"><a href="<?php echo site_url("Cart/details");?>" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="" data-original-title="Cart">
                                                 <i class="font-size-22 ec ec-shopping-bag"></i>

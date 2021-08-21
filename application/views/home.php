@@ -21,6 +21,7 @@ $this->load->view('layout/header');
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main">
     <!-- Slider Section -->
+    
     <div class="mb-5">
         <div class="bg-img-hero" style="background-image: url(<?php echo base_url(); ?>assets/theme2/img/1920X422/img1.jpg);">
             <div class="container min-height-420 overflow-hidden">
@@ -181,82 +182,66 @@ $this->load->view('layout/header');
         <div class="mb-5">
             <div class="row">
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="../shop/shop.html" class="d-black text-gray-90">
+                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
-                            <div class="col-6 col-xl-5 col-wd-6 pr-0">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/img/190X150/img1.png" alt="Image Description">
+                            <div class="col-12 col-xl-12 col-wd-6 pr-0">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/jeans1.jpg" alt="Image Description">
                             </div>
-                            <div class="col-6 col-xl-7 col-wd-6">
-                                <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                    UP TO  <strong>75%</strong> ON THE FASHIONS JEWELLERY
-                                </div>
-                                <div class="link text-gray-90 font-weight-bold font-size-15" href="#">
+                        
+                        </div>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
                                     Shop now
                                     <span class="link__icon ml-1">
                                         <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                     </span>
-                                </div>
-                            </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="../shop/shop.html" class="d-black text-gray-90">
+                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
-                            <div class="col-6 col-xl-5 col-wd-6 pr-0">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/img/190X150/img2.png" alt="Image Description">
+                            <div class="col-12 col-xl-12 col-wd-6 pr-0">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/off.jpg" alt="Image Description">
                             </div>
-                            <div class="col-6 col-xl-7 col-wd-6">
-                                <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                    BEST <strong>OFFERS</strong> ON THE MOBILE ACCESSORIES
-                                </div>
-                                <div class="link text-gray-90 font-weight-bold font-size-15" href="#">
+                        
+                        </div>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
                                     Shop now
                                     <span class="link__icon ml-1">
                                         <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                     </span>
-                                </div>
-                            </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="../shop/shop.html" class="d-black text-gray-90">
+                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
-                            <div class="col-6 col-xl-5 col-wd-6 pr-0">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/img/190X150/img3.png" alt="Image Description">
+                            <div class="col-12 col-xl-12 col-wd-6 pr-0">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/ass.jpg" alt="Image Description">
                             </div>
-                            <div class="col-6 col-xl-7 col-wd-6">
-                                <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                    FASHIONS ACCESSORIES START FROM <strong>5$</strong> 
-                                </div>
-                                <div class="link text-gray-90 font-weight-bold font-size-15" href="#">
+                        
+                        </div>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
                                     Shop now
                                     <span class="link__icon ml-1">
                                         <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                     </span>
-                                </div>
-                            </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="../shop/shop.html" class="d-black text-gray-90">
+                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
-                            <div class="col-6 col-xl-5 col-wd-6 pr-0">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/img/190X150/img4.png" alt="Image Description">
+                            <div class="col-12 col-xl-12 col-wd-6 pr-0">
+                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/shirt.jpg" alt="Image Description">
                             </div>
-                            <div class="col-6 col-xl-7 col-wd-6">
-                                <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                    GET <strong>80%</strong> OFF ON PERSONAL CARE
-                                </div>
-                                <div class="link text-gray-90 font-weight-bold font-size-15" href="#">
+                        
+                        </div>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
                                     Shop now
                                     <span class="link__icon ml-1">
                                         <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                     </span>
-                                </div>
-                            </div>
                         </div>
                     </a>
                 </div>
@@ -315,7 +300,7 @@ $this->load->view('layout/header');
                                     <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                         <div class="product-item__body pb-xl-2">
                                             <div class="mb-2"><a href="https://prkfashions.com/product/productlist/0/0" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
-                                            <h5 class="mb-1 product-item__title"><a href="#" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
+                                            <h5 class="mb-1 product-item__title"><a href="<?php echo site_url('product/productdetails/'). $pvalue['id']?>" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
                                             <div class="mb-2">
                                                 <a href="#" class="d-block text-center">
                                                     <img class="img-fluid backgroundsetimage" src="<?php echo base_url(); ?>assets/theme2/img/212X200/blank.png" style="background:url('<?php echo PRODUCTIMAGELINK . $pvalue['file_name'] ?>')" alt="Image Description">

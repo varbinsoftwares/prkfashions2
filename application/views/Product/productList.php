@@ -231,7 +231,7 @@ $image2 = "";
                                     <div class="product-item__inner px-xl-4 p-3">
                                         <div class="product-item__body pb-xl-2">
                                             <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">{{product.category_name}}</a></div>
-                                            <h5 class="mb-1 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">{{product.title}}</a></h5>
+                                            <h5 class="mb-1 product-item__title"><a href="<?php echo site_url();?>product/ProductDetails/" class="text-blue font-weight-bold">{{product.title}}</a></h5>
                                             <div class="mb-2">
                                                 <a href="../shop/single-product-fullwidth.html" class="d-block text-center">
                                                     <img class="img-fluid product_image_set" src="<?php echo base_url(); ?>assets/images/defaultproduct.png" style="background-image:url(<?php echo PRODUCTIMAGELINK ?>{{product.file_name}});background-size: cover;

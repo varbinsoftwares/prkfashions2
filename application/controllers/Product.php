@@ -115,7 +115,7 @@ class Product extends CI_Controller {
             $this->config->set_item('seo_keywords', $prodct_details['keywords']);
             $this->config->set_item('seo_imgurl', imageserver . $prodct_details['file_name']);
 
-            $this->load->view('Product/productDetails', $data);
+            $this->load->view('Product/productdetail', $data);
         } else {
             $this->load->view('errors/html/error_404');
         }

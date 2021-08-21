@@ -58,7 +58,7 @@ $route['contact'] = 'Shop/contactus';
 
 $route['about-us'] = 'Shop/aboutus';
 
-$route['product-detail'] = 'Shop/productdetail';
+$route['product-detail'] = 'Product/productdetail';
 
 $route['privacy-policy'] = 'Shop/privacy_policy';
 
