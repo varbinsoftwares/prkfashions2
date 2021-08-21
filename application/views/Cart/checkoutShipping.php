@@ -176,17 +176,19 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
                                     <div class="panel panel-default">
                                         <div class="panel-heading" role="tab" id="headingOne">
-                                            <h4 class="panel-title">
-                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    <span class="fa-stack">
-                                                        <i class="fa fa-map-marker fa-stack-1x"></i>
-                                                        <i class="ion-bag fa-stack-1x "></i>
-                                                    </span>   Shopping Address
-                                                    <span style="float: right; line-height: 29px;margin-right: 20px" class="ng-binding">
-                                                        <button class="btn btn-primary-dark-w btn-block btn-pill" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;"><i class="fa fa-plus"></i> Add New</button>
-                                                    </span> 
-                                                </a>
-                                            </h4>
+                                            <div class="row" >  
+                                                <h4 class="panel-title">
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        <span class="fa-stack">
+                                                            <i class="fa fa-map-marker fa-stack-1x"></i>
+                                                            <i class="ion-bag fa-stack-1x "></i>
+                                                        </span>   Shopping Address
+                                                        <span style="float: right; line-height: 29px;margin-right: 20px" class="ng-binding">
+                                                            <button class="btn btn-primary-dark-w btn-block btn-pill" data-toggle="modal" data-target="#changeAddress" style="margin-left: 20px;padding: 5px 11px;"><i class="fa fa-plus"></i> Add New</button>
+                                                        </span> 
+                                                    </a>
+                                                </h4>
+                                            </div>
                                         </div>
                                         <!-- Address Details -->
                                         <div class="panel-body">
@@ -194,43 +196,43 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
 
                                                 <div class="row" >  
-                                             
 
+
+                                                    <?php
+                                                    if (count($user_address_details)) {
+                                                        ?>
                                                         <?php
-                                                        if (count($user_address_details)) {
+                                                        foreach ($user_address_details as $key => $value) {
                                                             ?>
-                                                            <?php
-                                                            foreach ($user_address_details as $key => $value) {
-                                                                ?>
-                                                                <div class="col-md-6">
-                                                                    <?php if ($value['status'] == 'default') { ?> 
-                                                                        <div class="checkcart <?php echo $value['status']; ?> ">
-                                                                            <i class="fa fa-check fa-2x"></i>
-                                                                        </div>
-                                                                    <?php } ?> 
-                                                                    <div class=" address_block <?php echo $value['status']; ?> ">
-                                                                        <p>
-                                                                            <?php echo $value['address1']; ?>,<br/>
-                                                                            <?php echo $value['address2']; ?>,<br/>
-                                                                            <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
-                                                                            <br/>
-                                                                            <?php if ($value['status'] != 'default') { ?> 
-                                                                                <a href="<?php echo site_url("Cart/checkoutShipping/?setAddress=" . $value['id']); ?>" class="btn btn-default address_button btn-small ">Select Address</a>
-                                                                            <?php } ?> 
-                                                                        </p>
+                                                            <div class="col-md-6">
+                                                                <?php if ($value['status'] == 'default') { ?> 
+                                                                    <div class="checkcart <?php echo $value['status']; ?> ">
+                                                                        <i class="fa fa-check fa-2x"></i>
                                                                     </div>
+                                                                <?php } ?> 
+                                                                <div class=" address_block <?php echo $value['status']; ?> ">
+                                                                    <p>
+                                                                        <?php echo $value['address1']; ?>,<br/>
+                                                                        <?php echo $value['address2']; ?>,<br/>
+                                                                        <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
+                                                                        <br/>
+                                                                        <?php if ($value['status'] != 'default') { ?> 
+                                                                            <a href="<?php echo site_url("Cart/checkoutShipping/?setAddress=" . $value['id']); ?>" class="btn btn-default address_button btn-small ">Select Address</a>
+                                                                        <?php } ?> 
+                                                                    </p>
                                                                 </div>
-                                                                <?php
-                                                            }
-                                                        } else {
-                                                            ?>
-                                                            <h4 class="text-center "  style="color: red;    width: 100%;
-    padding: 50px 0px;"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
-
+                                                            </div>
                                                             <?php
                                                         }
+                                                    } else {
                                                         ?>
-                                                                         
+                                                        <h4 class="text-center "  style="color: red;    width: 100%;
+                                                            padding: 50px 0px;"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
+
+                                                        <?php
+                                                    }
+                                                    ?>
+
 
                                                 </div>
                                             </div>
@@ -243,7 +245,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                                                 <div class="proceed-button pull-left " >
                                                                     <a href=" <?php echo site_url("Cart/details"); ?>" class="btn btn-primary-dark-w btn-block btn-pill" ><i class="fa fa-arrow-left"></i> View Cart</a>
                                                                 </div>
-                                                                
+
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -259,7 +261,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                     $this->load->view('Cart/checkoutsummary', array('vtype' => 'cart'));
                                     ?>
                                 </div>
-                              
+
                             </div>
                         </div>
                     </div>

@@ -110,7 +110,7 @@ $this->load->view('layout/header');
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <label class="form-label">
-                                   Password
+                                    Password
                                     <span class="text-danger">*</span>
                                 </label>
                                 <input type="password" class="form-control" name="password" placeholder="" aria-label="Jack" required="" data-msg="Please enter your password" data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
@@ -121,7 +121,7 @@ $this->load->view('layout/header');
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <label class="form-label">
-                                   Confirm Password"
+                                    Confirm Password"
                                     <span class="text-danger">*</span>
                                 </label>
                                 <input type="password" class="form-control" name="con_password" placeholder="" aria-label="Jack" required="" data-msg="Please confirm password." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
@@ -129,11 +129,15 @@ $this->load->view('layout/header');
                             <!-- End Input -->
                         </div>
                         <!-- End Form Group -->
-                        <p class="text-gray-90 mb-4">Your personal data will be used to support your experience throughout this website, to manage your account, and for other purposes described in our <a href="#" class="text-blue">privacy policy.</a></p>
+                        <div class="col-md-6">
+                            <p class="text-gray-90 mb-4">Your personal data will be used to support your experience throughout this website, to manage your account, and for other purposes described in our <a href="#" class="text-blue">privacy policy.</a></p>
+                        </div>
                         <!-- Button -->
-                        <div class="mb-6">
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary-dark-w px-5" name="registration" value="registration   ">Register</button>
+                        <div class="col-md-6">
+                            <div class="mb-6">
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary-dark-w px-5" name="registration" value="registration   ">Register</button>
+                                </div>
                             </div>
                         </div>
                         <!-- End Button -->
