@@ -53,7 +53,7 @@
                             </div>
                             <div class="col pl-3">
                                 <div class="font-size-13 font-weight-light">Got questions? Call us 24/7!</div>
-                                <a href="tel:+(852) 6878 4014" class="font-size-20 text-gray-90">(+91) 95160-41729 </a>
+                                <a href="tel:(+91) 95160-41729" class="font-size-20 text-gray-90">(+91) 95160-41729 </a>
                             </div>
                         </div>
                     </div>
