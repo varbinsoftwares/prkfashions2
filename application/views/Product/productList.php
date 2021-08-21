@@ -228,46 +228,49 @@ $image2 = "";
 
                             <li class="col-6 col-md-3 col-wd-2gdot4 product-item {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" >
                                 <div class="product-item__outer h-100">
-                                    <div class="product-item__inner px-xl-4 p-3">
+                                    <div class="product-item__inner px-xl-2 p-0">
                                         <div class="product-item__body pb-xl-2">
-                                            <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5">{{product.category_name}}</a></div>
-                                            <h5 class="mb-1 product-item__title"><a href="<?php echo site_url();?>product/ProductDetails/" class="text-blue font-weight-bold">{{product.title}}</a></h5>
                                             <div class="mb-2">
-                                                <a href="../shop/single-product-fullwidth.html" class="d-block text-center">
+                                                <a href="<?php echo site_url(); ?>product/ProductDetails/{{product.id}}" class="d-block text-center">
                                                     <img class="img-fluid product_image_set" src="<?php echo base_url(); ?>assets/images/defaultproduct.png" style="background-image:url(<?php echo PRODUCTIMAGELINK ?>{{product.file_name}});background-size: cover;
                                                          background-position: center;"   alt="Image Description"/>
                                                 </a>
                                             </div>
-                                            <div class="mb-3">
-                                                <a class="d-inline-flex align-items-center small font-size-14" href="#">
-                                                    <div class="text-warning mr-2">
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="far fa-star text-muted"></small>
+                                            <div class="p-0">
+                                                <div class="mb-2"><a href="<?php echo site_url(); ?>product/ProductDetails/{{product.id}}" class="font-size-12 text-gray-5">{{product.category_name}}</a></div>
+                                                <h5 class="mb-1 product-item__title"><a href="" class="text-blue font-weight-bold">{{product.title}}</a></h5>
+
+                                                <div class="mb-3">
+                                                    <a class="d-inline-flex align-items-center small font-size-14" href="#">
+                                                        <div class="text-warning mr-2">
+                                                            <small class="fas fa-star"></small>
+                                                            <small class="fas fa-star"></small>
+                                                            <small class="fas fa-star"></small>
+                                                            <small class="fas fa-star"></small>
+                                                            <small class="far fa-star text-muted"></small>
+                                                        </div>
+                                                        <span class="text-secondary">(40)</span>
+                                                    </a>
+                                                </div>
+                                                <ul class="font-size-12 p-0 text-gray-110 mb-4">
+                                                    <li class="line-clamp-1 mb-0 list-bullet">{{product.short_description}}</li>
+                                                </ul>
+                                                <div class="text-gray-20 mb-2 font-size-12">SKU: {{product.sku}}</div>
+                                                <div class="flex-center-between mb-1">
+                                                    <div class="prodcut-price">
+                                                        <div class="text-gray-100">{{product.price|currency:"<?php echo globle_currency; ?>"}}</div>
                                                     </div>
-                                                    <span class="text-secondary">(40)</span>
-                                                </a>
-                                            </div>
-                                            <ul class="font-size-12 p-0 text-gray-110 mb-4">
-                                                <li class="line-clamp-1 mb-0 list-bullet">{{product.short_description}}</li>
-                                            </ul>
-                                            <div class="text-gray-20 mb-2 font-size-12">SKU: {{product.sku}}</div>
-                                            <div class="flex-center-between mb-1">
-                                                <div class="prodcut-price">
-                                                    <div class="text-gray-100">{{product.price|currency:"<?php echo globle_currency;?>"}}</div>
-                                                </div>
-                                                <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <button ng-click="addToCart(product.product_id, 1)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></button>
+                                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                                        <button ng-click="addToCart(product.product_id, 1)" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="border-top pt-2 flex-center-between flex-wrap">
-                                                <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                                                <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
-                                            </div>
+<!--                                            <div class="product-item__footer">
+                                                <div class="border-top pt-2 flex-center-between flex-wrap">
+                                                    <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                                                    <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                                                </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                 </div>

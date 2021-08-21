@@ -17,7 +17,7 @@ class Product extends CI_Controller {
     }
 
     //function for product list
-    function ProductList($custom_id, $cat_id) {
+    function ProductList($cat_id) {
 
         $tempcatid = $cat_id;
 
@@ -99,9 +99,17 @@ class Product extends CI_Controller {
         $product = $query->row_array();
         $prodct_details = $product;
         if ($prodct_details) {
+            $pquery = "SELECT pa.attribute, cav.attribute_value FROM product_attribute as pa
+      join category_attribute_value as cav on cav.id = pa.attribute_value_id
+      where pa.product_id = $product_id";
+            $attr_products = $this->Product_model->query_exe($pquery);
+            $data["product_attr"] = $attr_products;
+            $categorie_parent = $this->Product_model->getparent($prodct_details['category_id']);
+            $data["categorie_parent"] = $categorie_parent;
+            
+//            print_r($prodct_details["description"]);
 
-
-
+            $data["product_details"] = $prodct_details;
             $pquery = "SELECT pa.* FROM product_related as pr 
       join products as pa on pa.id = pr.related_product_id
       where pr.product_id = $product_id";
