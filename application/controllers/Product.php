@@ -106,7 +106,7 @@ class Product extends CI_Controller {
             $data["product_attr"] = $attr_products;
             $categorie_parent = $this->Product_model->getparent($prodct_details['category_id']);
             $data["categorie_parent"] = $categorie_parent;
-            
+
 //            print_r($prodct_details["description"]);
 
             $data["product_details"] = $prodct_details;
@@ -116,6 +116,25 @@ class Product extends CI_Controller {
             $product_related = $this->Product_model->query_exe($pquery);
 
             $data["product_related"] = $product_related;
+
+            $this->db->select("title, file_name, id, category_id, price");
+            $this->db->limit(8);
+            $this->db->order_by('id', 'RANDOM');
+            $this->db->where('category_id', $prodct_details['category_id']);
+            $query = $this->db->get("products");
+            $results = $query->result_array();
+            $relatedproducts = [];
+            foreach ($results as $key => $value) {
+                $this->db->select("category_name, id as category_id");
+                $this->db->where("id", $value['category_id']);
+                $query = $this->db->get("category");
+                $category = $query->row_array();
+                if ($category) {
+                    $value = array_merge($value, $category);
+                }
+                array_push($relatedproducts, $value);
+            }
+            $data["relatedproduct"] = $relatedproducts;
 
             $this->config->load('seo_config');
             $this->config->set_item('seo_title', $prodct_details['title']);

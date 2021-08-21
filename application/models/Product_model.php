@@ -846,6 +846,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     public function newArrival() {
         $this->db->select("title, file_name, id, category_id, price");
         $this->db->limit(8);
+        $this->db->order_by('id', 'RANDOM');
+        $this->db->where('category_id!=', '');
         $query = $this->db->get("products");
         $results = $query->result_array();
         $newproducts = [];
@@ -854,8 +856,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where("id", $value['category_id']);
             $query = $this->db->get("category");
             $category = $query->row_array();
-            if($category){
-            $value = array_merge($value, $category);
+            if ($category) {
+                $value = array_merge($value, $category);
             }
             array_push($newproducts, $value);
         }
@@ -865,6 +867,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     public function topProducts() {
         $this->db->select("title, file_name, id, category_id, price");
         $this->db->limit(18);
+        $this->db->where('category_id!=', '');
+        $this->db->order_by('id', 'RANDOM');
         $query = $this->db->get("products");
         $results = $query->result_array();
         $newproducts = [];
@@ -873,8 +877,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where("id", $value['category_id']);
             $query = $this->db->get("category");
             $category = $query->row_array();
-            if($category){
-            $value = array_merge($value, $category);
+            if ($category) {
+                $value = array_merge($value, $category);
             }
             array_push($newproducts, $value);
         }
