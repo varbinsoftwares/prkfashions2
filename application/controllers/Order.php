@@ -25,10 +25,10 @@ class Order extends CI_Controller {
         foreach ($paymentattr as $key => $value) {
             $paymentconf[$value['attr_key']] = $value['attr_val'];
         }
-        $this->mid = $paymentconf['EOPGMid'];
-        $this->secret_code = $paymentconf['EOPGSecretCode'];
-        $this->salesLink = $paymentconf['EOPGSalesLink'];
-        $this->queryLink = $paymentconf['EOPGQueryLink'];
+        $this->mid = "";
+        $this->secret_code = "";
+        $this->salesLink ="";
+        $this->queryLink = "";
     }
 
     public function index() {
