@@ -209,119 +209,62 @@ $this->load->view('layout/header');
                         <div class="mb-4 px-lg-4">
                             <div class="row mb-8">
                                 <div class="col-md-6">
-                                    <div class="mb-3">
+<!--                                    <div class="mb-3">
                                         <h3 class="font-size-18 mb-6">Based on 3 reviews</h3>
                                         <h2 class="font-size-30 font-weight-bold text-lh-1 mb-0">4.3</h2>
                                         <div class="text-lh-1">overall</div>
+                                    </div>-->
+                                    <div class="mb-3">
+                                        <h3 class="font-size-18 mb-6">Be First To Review</h3>
+                                        <h2 class="font-size-30 font-weight-bold text-lh-1 mb-0">0</h2>
+                                        <div class="text-lh-1">overall</div>
                                     </div>
+                                    <?php
+                                    $ratingstructure = array(
+                                        5 => array("count" => "0"),
+                                        4 => array("count" => "0"),
+                                        3 => array("count" => "0"),
+                                        2 => array("count" => "0"),
+                                        1 => array("count" => "0"),
+                                    );
+                                    foreach ($ratingstructure as $rtkey => $rtvalue) {
+                                        ?>
 
-                                    <!-- Ratings -->
-                                    <ul class="list-unstyled">
-                                        <li class="py-1">
-                                            <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="far fa-star text-muted"></small>
+                                        <!-- Ratings -->
+                                        <ul class="list-unstyled">
+                                            <li class="py-1">
+                                                <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
+                                                    <div class="col-auto mb-2 mb-md-0">
+                                                        <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                                                            <?php
+                                                            $muted = "text-muted";
+                                                            for ($i = 4; $i >= 0; $i--) {
+
+                                                                if ($i < $rtkey) {
+                                                                    $muted = "";
+                                                                }
+                                                                ?>
+
+                                                                <small class="fas fa-star <?php echo $muted; ?>"></small>
+
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="col-auto mb-2 mb-md-0">
+                                                        <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
+                                                            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-auto text-right">
-                                                    <span class="text-gray-90">205</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="py-1">
-                                            <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
+                                                    <div class="col-auto text-right">
+                                                        <span class="text-gray-90"><?php echo $rtvalue["count"] ?></span>
                                                     </div>
-                                                </div>
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 53%;" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto text-right">
-                                                    <span class="text-gray-90">55</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="py-1">
-                                            <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto text-right">
-                                                    <span class="text-gray-90">23</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="py-1">
-                                            <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto text-right">
-                                                    <span class="text-muted">0</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="py-1">
-                                            <a class="row align-items-center mx-gutters-2 font-size-1" href="javascript:;">
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                        <small class="fas fa-star"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto mb-2 mb-md-0">
-                                                    <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto text-right">
-                                                    <span class="text-gray-90">4</span>
-                                                </div>
-                                            </a>
-                                        </li>
+                                                </a>
+                                            </li>
+                                            <?php
+                                        }
+                                        ?>
                                     </ul>
                                     <!-- End Ratings -->
                                 </div>
@@ -387,78 +330,78 @@ $this->load->view('layout/header');
                                     <!-- End Form -->
                                 </div>
                             </div>
-                            <!-- Review -->
-                            <div class="border-bottom border-color-1 pb-4 mb-4">
-                                <!-- Review Rating -->
-                                <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
-                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                </div>
-                                <!-- End Review Rating -->
-
-                                <p class="text-gray-90">Fusce vitae nibh mi. Integer posuere, libero et ullamcorper facilisis, enim eros tincidunt orci, eget vestibulum sapien nisi ut leo. Cras finibus vel est ut mollis. Donec luctus condimentum ante et euismod.</p>
-
-                                <!-- Reviewer -->
-                                <div class="mb-2">
-                                    <strong>John Doe</strong>
-                                    <span class="font-size-13 text-gray-23">- April 3, 2019</span>
-                                </div>
-                                <!-- End Reviewer -->
-                            </div>
-                            <!-- End Review -->
-                            <!-- Review -->
-                            <div class="border-bottom border-color-1 pb-4 mb-4">
-                                <!-- Review Rating -->
-                                <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
-                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                    </div>
-                                </div>
-                                <!-- End Review Rating -->
-
-                                <p class="text-gray-90">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse eget facilisis odio. Duis sodales augue eu tincidunt faucibus. Etiam justo ligula, placerat ac augue id, volutpat porta dui.</p>
-
-                                <!-- Reviewer -->
-                                <div class="mb-2">
-                                    <strong>Anna Kowalsky</strong>
-                                    <span class="font-size-13 text-gray-23">- April 3, 2019</span>
-                                </div>
-                                <!-- End Reviewer -->
-                            </div>
-                            <!-- End Review -->
-                            <!-- Review -->
-                            <div class="pb-4 mb-4">
-                                <!-- Review Rating -->
-                                <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
-                                    <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                </div>
-                                <!-- End Review Rating -->
-
-                                <p class="text-gray-90">Sed id tincidunt sapien. Pellentesque cursus accumsan tellus, nec ultricies nulla sollicitudin eget. Donec feugiat orci vestibulum porttitor sagittis.</p>
-
-                                <!-- Reviewer -->
-                                <div class="mb-2">
-                                    <strong>Peter Wargner</strong>
-                                    <span class="font-size-13 text-gray-23">- April 3, 2019</span>
-                                </div>
-                                <!-- End Reviewer -->
-                            </div>
-                            <!-- End Review -->
+                            <!--                             Review 
+                                                        <div class="border-bottom border-color-1 pb-4 mb-4">
+                                                             Review Rating 
+                                                            <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
+                                                                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="far fa-star text-muted"></small>
+                                                                    <small class="far fa-star text-muted"></small>
+                                                                </div>
+                                                            </div>
+                                                             End Review Rating 
+                            
+                                                            <p class="text-gray-90">Fusce vitae nibh mi. Integer posuere, libero et ullamcorper facilisis, enim eros tincidunt orci, eget vestibulum sapien nisi ut leo. Cras finibus vel est ut mollis. Donec luctus condimentum ante et euismod.</p>
+                            
+                                                             Reviewer 
+                                                            <div class="mb-2">
+                                                                <strong>John Doe</strong>
+                                                                <span class="font-size-13 text-gray-23">- April 3, 2019</span>
+                                                            </div>
+                                                             End Reviewer 
+                                                        </div>
+                                                         End Review 
+                                                         Review 
+                                                        <div class="border-bottom border-color-1 pb-4 mb-4">
+                                                             Review Rating 
+                                                            <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
+                                                                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                </div>
+                                                            </div>
+                                                             End Review Rating 
+                            
+                                                            <p class="text-gray-90">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse eget facilisis odio. Duis sodales augue eu tincidunt faucibus. Etiam justo ligula, placerat ac augue id, volutpat porta dui.</p>
+                            
+                                                             Reviewer 
+                                                            <div class="mb-2">
+                                                                <strong>Anna Kowalsky</strong>
+                                                                <span class="font-size-13 text-gray-23">- April 3, 2019</span>
+                                                            </div>
+                                                             End Reviewer 
+                                                        </div>
+                                                         End Review 
+                                                         Review 
+                                                        <div class="pb-4 mb-4">
+                                                             Review Rating 
+                                                            <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
+                                                                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="fas fa-star"></small>
+                                                                    <small class="far fa-star text-muted"></small>
+                                                                </div>
+                                                            </div>
+                                                             End Review Rating 
+                            
+                                                            <p class="text-gray-90">Sed id tincidunt sapien. Pellentesque cursus accumsan tellus, nec ultricies nulla sollicitudin eget. Donec feugiat orci vestibulum porttitor sagittis.</p>
+                            
+                                                             Reviewer 
+                                                            <div class="mb-2">
+                                                                <strong>Peter Wargner</strong>
+                                                                <span class="font-size-13 text-gray-23">- April 3, 2019</span>
+                                                            </div>
+                                                             End Reviewer 
+                                                        </div>
+                                                         End Review -->
                         </div>
                     </div>
                 </div>
@@ -471,77 +414,77 @@ $this->load->view('layout/header');
             <div class="d-flex justify-content-between align-items-center border-bottom border-color-1 flex-lg-nowrap flex-wrap mb-4">
                 <h3 class="section-title mb-0 pb-2 font-size-22">Related products</h3>
             </div>
-                <div class="js-slick-carousel u-slick position-static overflow-hidden u-slick-overflow-visble pb-7 pt-2 px-1"
-                     data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-3 mt-md-0"
-                     data-slides-show="7"
-                     data-slides-scroll="1"
-                     data-arrows-classes="position-absolute top-0 font-size-17 u-slick__arrow-normal top-10"
-                     data-arrow-left-classes="fa fa-angle-left right-1"
-                     data-arrow-right-classes="fa fa-angle-right right-0"
-                     data-responsive='[{
-                     "breakpoint": 1400,
-                     "settings": {
-                     "slidesToShow": 6
-                     }
-                     }, {
-                     "breakpoint": 1200,
-                     "settings": {
-                     "slidesToShow": 4
-                     }
-                     }, {
-                     "breakpoint": 992,
-                     "settings": {
-                     "slidesToShow": 3
-                     }
-                     }, {
-                     "breakpoint": 768,
-                     "settings": {
-                     "slidesToShow": 2
-                     }
-                     }, {
-                     "breakpoint": 554,
-                     "settings": {
-                     "slidesToShow": 2
-                     }
-                     }]'>
+            <div class="js-slick-carousel u-slick position-static overflow-hidden u-slick-overflow-visble pb-7 pt-2 px-1"
+                 data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-3 mt-md-0"
+                 data-slides-show="7"
+                 data-slides-scroll="1"
+                 data-arrows-classes="position-absolute top-0 font-size-17 u-slick__arrow-normal top-10"
+                 data-arrow-left-classes="fa fa-angle-left right-1"
+                 data-arrow-right-classes="fa fa-angle-right right-0"
+                 data-responsive='[{
+                 "breakpoint": 1400,
+                 "settings": {
+                 "slidesToShow": 6
+                 }
+                 }, {
+                 "breakpoint": 1200,
+                 "settings": {
+                 "slidesToShow": 4
+                 }
+                 }, {
+                 "breakpoint": 992,
+                 "settings": {
+                 "slidesToShow": 3
+                 }
+                 }, {
+                 "breakpoint": 768,
+                 "settings": {
+                 "slidesToShow": 2
+                 }
+                 }, {
+                 "breakpoint": 554,
+                 "settings": {
+                 "slidesToShow": 2
+                 }
+                 }]'>
 
-                    <?php
-                    foreach ($relatedproduct as $key => $pvalue) {
-                        ?>
-                        <div class="js-slide products-group">
-                            <div class="product-item">
-                                <div class="product-item__outer h-100">
-                                    <div class="product-item__inner px-wd-4 p-2 p-md-3">
-                                        <div class="product-item__body pb-xl-2">
-                                            <div class="mb-2"><a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
-                                            <h5 class="mb-1 product-item__title"><a href="<?php echo site_url('product/productdetails/') . $pvalue['id'] ?>" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
-                                            <div class="mb-2">
-                                                <a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="d-block text-center">
-                                                    <img class="img-fluid backgroundsetimage" src="<?php echo base_url(); ?>assets/theme2/img/212X200/blank.png" style="background:url('<?php echo PRODUCTIMAGELINK . $pvalue['file_name'] ?>')" alt="Image Description">
-                                                </a>
+                <?php
+                foreach ($relatedproduct as $key => $pvalue) {
+                    ?>
+                    <div class="js-slide products-group">
+                        <div class="product-item">
+                            <div class="product-item__outer h-100">
+                                <div class="product-item__inner px-wd-4 p-2 p-md-3">
+                                    <div class="product-item__body pb-xl-2">
+                                        <div class="mb-2"><a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
+                                        <h5 class="mb-1 product-item__title"><a href="<?php echo site_url('product/productdetails/') . $pvalue['id'] ?>" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
+                                        <div class="mb-2">
+                                            <a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="d-block text-center">
+                                                <img class="img-fluid backgroundsetimage" src="<?php echo base_url(); ?>assets/theme2/img/212X200/blank.png" style="background:url('<?php echo PRODUCTIMAGELINK . $pvalue['file_name'] ?>')" alt="Image Description">
+                                            </a>
+                                        </div>
+                                        <div class="flex-center-between mb-1">
+                                            <div class="prodcut-price">
+                                                <div class="text-gray-100">{{<?php echo $pvalue['price']; ?>|currency:"<?php echo globle_currency; ?>"}}</div>
                                             </div>
-                                            <div class="flex-center-between mb-1">
-                                                <div class="prodcut-price">
-                                                    <div class="text-gray-100">{{<?php echo $pvalue['price']; ?>|currency:"<?php echo globle_currency; ?>"}}</div>
-                                                </div>
-                                                <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                </div>
+                                            <div class="d-none d-xl-block prodcut-add-cart">
+                                                <a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                             </div>
                                         </div>
-
                                     </div>
+
                                 </div>
                             </div>
                         </div>
-                        <?php
-                    }
-                    ?>
+                    </div>
+                    <?php
+                }
+                ?>
 
-                </div>
+            </div>
         </div>
         <!-- End Related products -->
-      
+
     </div>
 
 </main>
@@ -557,28 +500,28 @@ $this->load->view('layout/footer');
 
     $(document).on('mousemove', '.frame', function () {
 
-        var element = {
-            width: $(this).width(),
+    var element = {
+    width: $(this).width(),
             height: $(this).height()
-        };
-        var mouse = {
-            x: event.pageX,
+    };
+    var mouse = {
+    x: event.pageX,
             y: event.pageY
-        };
-        var offset = $(this).offset();
-        var origin = {
-            x: (offset.left + (element.width / 2)),
+    };
+    var offset = $(this).offset();
+    var origin = {
+    x: (offset.left + (element.width / 2)),
             y: (offset.top + (element.height / 2))
-        };
-        var trans = {
-            left: (origin.x - mouse.x) / 2,
+    };
+    var trans = {
+    left: (origin.x - mouse.x) / 2,
             down: (origin.y - mouse.y) / 2
-        };
-        var transform = ("scale(3,3) translateX(" + trans.left + "px) translateY(" + trans.down + "px)");
-        $(this).children(".zoom").css("transform", transform);
+    };
+    var transform = ("scale(3,3) translateX(" + trans.left + "px) translateY(" + trans.down + "px)");
+    $(this).children(".zoom").css("transform", transform);
     });
     $(document).on('mouseleave', '.frame', function () {
-        $(this).children(".zoom").css("transform", "none");
+    $(this).children(".zoom").css("transform", "none");
     });
     //end of zoom
 

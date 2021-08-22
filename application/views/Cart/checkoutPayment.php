@@ -117,16 +117,18 @@ $this->load->view('layout/header');
 
                             <div class="col-lg-7 order-lg-1">
                                 <?php
-                                $this->load->view('Cart/itemblock', array('vtype' => 'useraccount'));
+                                if ($this->checklogin) {
+                                    $this->load->view('Cart/itemblock', array('vtype' => 'useraccount'));
+                                }
                                 ?>
-
+                                <?php
+                                $this->load->view('Cart/itemblock', array('vtype' => 'shipping', "isguest"=>$isguest));
+                                ?>
                                 <?php
                                 $this->load->view('Cart/itemblock', array('vtype' => 'cartdetails'));
                                 ?>
 
-                                <?php
-                                $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
-                                ?>
+
                                 <div class="cart-page-top table-responsive">
                                     <table class="table table-hover">
                                         <tbody id="quantity-holder">

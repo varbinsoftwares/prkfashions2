@@ -52,41 +52,8 @@
                     <div class="border-top border-width-3 border-color-1 pt-3 mb-2">
                         <!-- Basics Accordion -->
                         <div id="basicsAccordion1">
-                            <!-- Card -->
-                            <div class="border-bottom border-color-1 border-dotted-bottom">
-                                <div class="p-2" id="basicsHeadingOne">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="payment_type" name="payment_type"  value="Bank Transfer"> 
-                                        <label class="custom-control-label form-label" for="payment_type" data-toggle="collapse" data-target="#basicsCollapseOnee" aria-expanded="true" aria-controls="basicsCollapseOnee">
-                                            Direct bank transfer
-                                        </label>
-                                    </div>
-                                </div>
-                                <div id="basicsCollapseOnee" class="collapse  border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion1">
-                                    <div class="p-4">
-                                        Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Card -->
+                           
 
-                            <!-- Card -->
-                            <div class="border-bottom border-color-1 border-dotted-bottom">
-                                <div class="p-2" id="basicsHeadingTwo">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="secondStylishRadio1" name="payment_type">
-                                        <label class="custom-control-label form-label" for="secondStylishRadio1" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
-                                            Check payments
-                                        </label>
-                                    </div>
-                                </div>
-                                <div id="basicsCollapseTwo" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingTwo" data-parent="#basicsAccordion1">
-                                    <div class="p-4">
-                                        Please send a check to Store Name. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Card -->
 
                             <!-- Card -->
                             <div class="border-bottom border-color-1 border-dotted-bottom">
@@ -106,40 +73,7 @@
                             </div>
                             <!-- End Card -->
 
-                            <!-- Card -->
-                            <div class="border-bottom border-color-1 border-dotted-bottom">
-                                <div class="p-2" id="basicsHeadingFour">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="Fourpayment_type" name="payment_type" value="PayPal">
-                                        <label class="custom-control-label form-label" for="Fourpayment_type" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
-                                            PayPal 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div id="basicsCollapseFour" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion1">
-                                    <div class="p-4">
-                                        Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Card -->
-
-                            <!-- Card -->
-                            <div class="border-bottom border-color-1 border-dotted-bottom">
-                                <div class="p-2" id="basicsHeadingPayme">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="paymepayment_type" name="payment_type" value="PayMe">
-                                        <label class="custom-control-label form-label" for="paymepayment_type" data-toggle="collapse" data-target="#basicsCollapsePayme" aria-expanded="false" aria-controls="basicsCollapseFour">
-                                            PayMe
-                                        </label>
-                                    </div>
-                                </div>
-                                <div id="basicsCollapsePayme" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion1">
-                                    <div class="p-4">
-                                        You have selected PayMe as your payment method use your PayMe app to complete payment.                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Card -->
+                           
 
                         </div>
                         <!-- End Basics Accordion -->
@@ -161,7 +95,7 @@
                 if (count($user_address_details)) {
                     ?>
                     <div class=" ">
-                        <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3 " >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
+                        <a href=" <?php echo $isguest =="true" ? site_url("CartGuest/checkoutPayment") : site_url("Cart/checkoutPayment"); ?>" class="btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3 " >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
                     </div>
                     <?php
                 }

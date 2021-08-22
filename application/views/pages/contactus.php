@@ -87,7 +87,7 @@ $this->load->view('layout/header');
             </div>
             <div class="col-lg-5 col-xl-6">
                 <div class="mb-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14767.004060519197!2d114.1482444!3d22.2874196!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3fc7db1e3e305b1b!2sGolden%20Sun%20Centre!5e0!3m2!1sen!2sin!4v1596182376443!5m2!1sen!2sin" width="100%" height="228px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>                        </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58286.280540233165!2d75.04041847910158!3d24.070088700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39642d112161873f%3A0x69dd82b8022083e5!2sPrk%20Fashions!5e0!3m2!1sen!2sin!4v1629554532162!5m2!1sen!2sin" width="100%" height="228px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>                        </div>
                 <div class="border-bottom border-color-1 mb-5">
                     <h3 class="section-title mb-0 pb-2 font-size-25">Our Address</h3>
                 </div>

@@ -39,12 +39,12 @@ $this->load->view('layout/header');
                         
 
                         <div class=" woocommerce-MyAccount-content">  
-                            <h6><?php echo $user_details->email; ?> <small><strong>Email (For Login)</strong></small> </h6></br></br>
                             <div class="woocommerce-MyAccount-content "> 
                                 <div class="border-bottom border-color-1 mb-1">
                                     <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Access Your Account</h3>
                                 </div>  </br></br>
-                                
+                                                            <h6><?php echo $user_details->email; ?> <small><strong>Email (For Login)</strong></small> </h6></br></br>
+
                                 <form class="create_account_form row woocommerce-EditAccountForm edit-account" method="post" action="#">
                                     <input type="hidden" name="user_id" value="45">
                                     <ul class="row">
@@ -75,7 +75,7 @@ $this->load->view('layout/header');
 
                                             <label class="form-label">
                                                 Gender
-                                                <select name="gender" class="form-control" style="   background: #f5f5f5;
+                                                <select name="gender" class="form-control woocommerce-Input form-control border-form-control tleft" style="   background: #f5f5f5;
                                                         height: 45px;
                                                         font-size: 12px;
                                                         line-height: 50px;

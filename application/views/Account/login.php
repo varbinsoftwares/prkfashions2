@@ -20,6 +20,7 @@ $this->load->view('layout/header');
         ?>
         <br/>
         <div class="row">
+
             <div class="col-md-5 ml-xl-auto mr-md-auto mr-xl-0 mb-8 mb-md-0">
                 <!-- Title -->
                 <div class="border-bottom border-color-1 mb-6">
@@ -53,12 +54,28 @@ $this->load->view('layout/header');
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary-dark-w px-5" name="signIn">Login</button>
                         </div>
-                        <div class="mb-2">
-                            <a class="text-blue" href="#">Lost your password?</a>
-                        </div>
+                        <!--                        <div class="mb-2">
+                                                    <a class="text-blue" href="#">Lost your password?</a>
+                                                </div>-->
                     </div>
                     <!-- End Button -->
                 </form>
+                <?php
+                if ($next_link === 'checkoutInit') {
+                    ?>
+                    <hr/>
+                    <p>
+                        If you do not want to create an account, click here to checkout as guest
+                    </p>
+                    <h5  >
+                        <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger">
+                            <i class=" fa fa-user"></i> Checkout As Guest <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </h5>
+
+                    <?php
+                }
+                ?>
             </div>
             <div class="col-md-1 d-none d-md-block">
                 <div class="flex-content-center h-100">
@@ -110,7 +127,7 @@ $this->load->view('layout/header');
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <label class="form-label">
-                                   Password
+                                    Password
                                     <span class="text-danger">*</span>
                                 </label>
                                 <input type="password" class="form-control" name="password" placeholder="" aria-label="Jack" required="" data-msg="Please enter your password" data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
@@ -121,7 +138,7 @@ $this->load->view('layout/header');
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <label class="form-label">
-                                   Confirm Password"
+                                    Confirm Password"
                                     <span class="text-danger">*</span>
                                 </label>
                                 <input type="password" class="form-control" name="con_password" placeholder="" aria-label="Jack" required="" data-msg="Please confirm password." data-error-class="u-has-error" data-success-class="u-has-success" autocomplete="off">
@@ -129,11 +146,15 @@ $this->load->view('layout/header');
                             <!-- End Input -->
                         </div>
                         <!-- End Form Group -->
-                        <p class="text-gray-90 mb-4">Your personal data will be used to support your experience throughout this website, to manage your account, and for other purposes described in our <a href="#" class="text-blue">privacy policy.</a></p>
+                        <div class="col-md-6">
+                            <p class="text-gray-90 mb-4">Your personal data will be used to support your experience throughout this website, to manage your account, and for other purposes described in our <a href="#" class="text-blue">privacy policy.</a></p>
+                        </div>
                         <!-- Button -->
-                        <div class="mb-6">
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary-dark-w px-5" name="registration" value="registration   ">Register</button>
+                        <div class="col-md-6">
+                            <div class="mb-6">
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary-dark-w px-5" name="registration" value="registration   ">Register</button>
+                                </div>
                             </div>
                         </div>
                         <!-- End Button -->
