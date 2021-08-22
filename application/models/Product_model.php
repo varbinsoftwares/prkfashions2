@@ -575,7 +575,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             );
             $this->db->insert('user_order_log', $orderlog);
 
-            $subject = "Order Placed - Your Order with www.octopuscart.com [" . $order_no . "] has been successfully placed!";
+            $subject = "Order Placed - Your Order with www.prkfashions.com [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
             if ($checkcode) {
@@ -820,7 +820,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $quantity = $value['quantity'];
             $product_id = $value['product_id'];
 
-            $product_details = $this->productDetails($product_id, $item_id);
+            $product_details = $this->productDetails($product_id);
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
@@ -837,6 +837,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
             $custom_dict = [];
+            print_r($product_dict);
             $this->db->insert('cart', $product_dict);
             $last_id = $this->db->insert_id();
             $display_index = 1;

@@ -20,6 +20,7 @@ $this->load->view('layout/header');
         ?>
         <br/>
         <div class="row">
+
             <div class="col-md-5 ml-xl-auto mr-md-auto mr-xl-0 mb-8 mb-md-0">
                 <!-- Title -->
                 <div class="border-bottom border-color-1 mb-6">
@@ -53,12 +54,28 @@ $this->load->view('layout/header');
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary-dark-w px-5" name="signIn">Login</button>
                         </div>
-                        <div class="mb-2">
-                            <a class="text-blue" href="#">Lost your password?</a>
-                        </div>
+                        <!--                        <div class="mb-2">
+                                                    <a class="text-blue" href="#">Lost your password?</a>
+                                                </div>-->
                     </div>
                     <!-- End Button -->
                 </form>
+                <?php
+                if ($next_link === 'checkoutInit') {
+                    ?>
+                    <hr/>
+                    <p>
+                        If you do not want to create an account, click here to checkout as guest
+                    </p>
+                    <h5  >
+                        <a href="<?php echo site_url("CartGuest/checkoutInit"); ?>" class="btn  btn btn-danger">
+                            <i class=" fa fa-user"></i> Checkout As Guest <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </h5>
+
+                    <?php
+                }
+                ?>
             </div>
             <div class="col-md-1 d-none d-md-block">
                 <div class="flex-content-center h-100">

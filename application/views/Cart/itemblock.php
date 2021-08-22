@@ -7,6 +7,9 @@
     .cardp{
         margin-bottom: 10px;
     }
+    .addressblockuser p{
+        margin: 0px;
+    }
 </style>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2">
     <div class="card card-default">
@@ -51,7 +54,7 @@
                         </tr>
 
                     </tbody>
-                   
+
                 </table>
                 </p>
 
@@ -69,11 +72,19 @@
                     <h3 class="section-title mb-0 pb-2 font-size-18">Login Details</h3>
                 </div>
                 <p class="cardp">
-                    <i class="fa fa-user"></i> <?php echo $this->checklogin["first_name"] . " " . $this->checklogin["last_name"] ?>
-                    (<b>  <?php
-                        echo ($this->checklogin["username"]);
+                    <?php
+                    if ($this->checklogin) {
                         ?>
-                    </b>)
+                        <i class="fa fa-user"></i> <?php echo $this->checklogin["first_name"] . " " . $this->checklogin["last_name"] ?>
+                        (<b>  <?php
+                            echo ($this->checklogin["username"]);
+                            ?>
+                        </b>)
+                        <br/>
+                         
+                        <?php
+                    }
+                    ?>
                 </p>
 
                 <?php
@@ -92,17 +103,27 @@
 
                     <?php
                     if (count($user_address_details)) {
-                        $value = $user_address_details[0];
+                        if($isguest=="true"){
                         ?>
-
-                        <?php echo $value['address1']; ?>,<br/>
-                        <?php echo $value['address2']; ?>,
-                        <?php echo $value['city']; ?>, <br/><?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
-                        <?php
-                    } else {
-                        echo "Choose Shipping Address";
-                    }
+                    <div class="col-md-12 addressblockuser">
+                        <p><i class="fa fa-user"></i> <?php echo $user_details['name']; ?> </p>
+                        <p class="address_guest_p"><i class="fa fa-phone"></i> <?php echo $user_details['contact_no']; ?> </p>
+                        <p class="address_guest_p"><i class="fa fa-envelope"></i> <?php echo $user_details['email']; ?> </p>
+                    </div>
+                    <br/>
+                    <?php
+                        }
+                    $value = $user_address_details[0];
                     ?>
+
+                    <?php echo $value['address1']; ?>,<br/>
+                    <?php echo $value['address2']; ?>,
+                    <?php echo $value['city']; ?>, <br/><?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
+                    <?php
+                } else {
+                    echo "Choose Shipping Address";
+                }
+                ?>
                 </p>
 
                 <?php

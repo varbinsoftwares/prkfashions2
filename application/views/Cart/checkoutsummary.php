@@ -95,7 +95,7 @@
                 if (count($user_address_details)) {
                     ?>
                     <div class=" ">
-                        <a href=" <?php echo site_url("Cart/checkoutPayment"); ?>" class="btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3 " >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
+                        <a href=" <?php echo $isguest =="true" ? site_url("CartGuest/checkoutPayment") : site_url("Cart/checkoutPayment"); ?>" class="btn btn-primary-dark-w btn-block btn-pill font-size-20 mb-3 py-3 " >Choose Payment Method <i class="fa fa-arrow-right"></i></a>
                     </div>
                     <?php
                 }

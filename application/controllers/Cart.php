@@ -17,7 +17,7 @@ class Cart extends CI_Controller {
         }
 
         $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] :"" ;
+        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] : "";
     }
 
     function redirectCart() {
@@ -135,7 +135,7 @@ class Cart extends CI_Controller {
                 redirect('Cart/checkoutPayment');
             }
 
-
+            $data["isguest"] = "false";
             $this->load->view('Cart/checkoutShipping', $data);
         } else {
             redirect('Account/login?page=checkoutInit');
@@ -152,7 +152,7 @@ class Cart extends CI_Controller {
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
 
 
-
+        $data["isguest"] = "false";            
 
         $genstatus = "Confirmation Pending";
 
@@ -165,22 +165,13 @@ class Cart extends CI_Controller {
 
             $user_address_details = $this->User_model->user_address_details($this->user_id);
 
-
-
             $data['user_address_details'] = $user_address_details;
-
 
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
 
             $checkaddress = $this->session->userdata('shipping_address');
 
-//            if ($checkaddress['zipcode'] == 'Pickup') {
-//                $address = $checkaddress;
-//                $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
-//            }
-
-            //place order
 
             if (isset($_POST['place_order'])) {
 
@@ -210,24 +201,11 @@ class Cart extends CI_Controller {
                 $data['user_credits'] = $user_credits;
                 $address = $user_address_details[0];
 
-
-                if ($checkaddress['zipcode'] == 'Pickup') {
-                    $address = $checkaddress;
-                    $data['user_address_details'] = $checkaddress ? [$checkaddress] : [];
-                }
-
-
-
                 $session_cart['shipping_price'] = 0;
                 if ($session_cart['total_price'] > 399) {
                     $session_cart['shipping_price'] = 0;
                 }
-                if ($address['zipcode'] == 'Tsim Sha Tsui') {
-                    $session_cart['shipping_price'] = 0;
-                }
-                if ($address['zipcode'] == 'Pickup') {
-                    $session_cart['shipping_price'] = 0;
-                }
+
                 $session_cart['sub_total_price'] = $session_cart['total_price'];
 
                 $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
@@ -269,7 +247,7 @@ class Cart extends CI_Controller {
 
                 $this->db->insert('user_order', $order_array);
                 $last_id = $this->db->insert_id();
-                $orderno = "OC" . date('Y/m/d') . "/" . $last_id;
+                $orderno = "PRK" . date('Y/m/d') . "/" . $last_id;
                 $orderkey = md5($orderno);
                 $this->db->set('order_no', $orderno);
                 $this->db->set('order_key', $orderkey);
@@ -308,7 +286,7 @@ class Cart extends CI_Controller {
                     case "PayMe":
                         redirect('PaymePayment/initPaymeLogin/' . $orderkey);
                         break;
-                    
+
                     default:
                         redirect('Order/orderdetails/' . $orderkey);
                 }

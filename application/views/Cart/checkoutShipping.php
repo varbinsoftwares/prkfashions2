@@ -133,6 +133,10 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
         color:red;
     }
 
+    .addressblockuser p{
+        margin: 0px;
+    }
+
 </style>
 
 
@@ -171,7 +175,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
 
 
                                 <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12" style="padding: 25px;
-                                     border: 1px solid #000;
+                                     border: 1px solid #000;margin-bottom: 20px;
                                      border-radius: 10px;">
 
                                     <div class="panel panel-default">
@@ -195,46 +199,61 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                             <div class="order-sheet" style="margin-top: 30px">
 
 
-                                                <div class="row" >  
 
 
-                                                    <?php
-                                                    if (count($user_address_details)) {
+
+                                                <?php
+                                                if (count($user_address_details)) {
+                                                    if ($isguest == "true") {
+;
                                                         ?>
+                                                        <div class="col-md-12 addressblockuser">
+                                                            <p><i class="fa fa-user"></i> <?php echo $user_details['name']; ?> </p>
+                                                            <p class="address_guest_p"><i class="fa fa-phone"></i> <?php echo $user_details['contact_no']; ?> </p>
+                                                            <p class="address_guest_p"><i class="fa fa-envelope"></i> <?php echo $user_details['email']; ?> </p>
+                                                            <a href="<?php echo site_url("CartGuest/checkoutShipping/?removeAddress=" . $user_details['email']); ?>" class="btn btn-danger address_button btn-sm "><i class ="fa fa-times"></i> Remove Address</a>
+                                                        </div>
+                                                        <br/>
                                                         <?php
-                                                        foreach ($user_address_details as $key => $value) {
-                                                            ?>
+                                                    }
+                                                    foreach ($user_address_details as $key => $value) {
+                                                        ?>
+                                                        <div class="row" >  
                                                             <div class="col-md-6">
-                                                                <?php if ($value['status'] == 'default') { ?> 
+        <?php if ($value['status'] == 'default') { ?> 
                                                                     <div class="checkcart <?php echo $value['status']; ?> ">
                                                                         <i class="fa fa-check fa-2x"></i>
                                                                     </div>
-                                                                <?php } ?> 
+        <?php } ?> 
                                                                 <div class=" address_block <?php echo $value['status']; ?> ">
                                                                     <p>
+
+
                                                                         <?php echo $value['address1']; ?>,<br/>
                                                                         <?php echo $value['address2']; ?>,<br/>
                                                                         <?php echo $value['city']; ?>, <?php echo $value['state']; ?> <?php echo $value['zipcode']; ?>
                                                                         <br/>
                                                                         <?php if ($value['status'] != 'default') { ?> 
                                                                             <a href="<?php echo site_url("Cart/checkoutShipping/?setAddress=" . $value['id']); ?>" class="btn btn-default address_button btn-small ">Select Address</a>
-                                                                        <?php } ?> 
+        <?php } ?> 
                                                                     </p>
                                                                 </div>
                                                             </div>
                                                             <?php
                                                         }
-                                                    } else {
-                                                        ?>
-                                                        <h4 class="text-center "  style="color: red;    width: 100%;
-                                                            padding: 50px 0px;"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
-
-                                                        <?php
-                                                    }
+                                                        ?>   </div>
+                                                    <?php
+                                                } else {
                                                     ?>
+                                                    <h4 class="text-center "  style="color: red;    width: 100%;
+                                                        padding: 50px 0px;"><i class="fa fa-warning"></i> Please Add Shipping Address</h4>
+
+                                                    <?php
+                                                }
+                                                ?>
 
 
-                                                </div>
+
                                             </div>
                                             <div class="cart-page-top table-responsive">
                                                 <table class="table table-hover">
@@ -258,7 +277,7 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                                 <div class="col-md-5">
 
                                     <?php
-                                    $this->load->view('Cart/checkoutsummary', array('vtype' => 'cart'));
+                                    $this->load->view('Cart/checkoutsummary', array('vtype' => 'cart', "isguest" => $isguest));
                                     ?>
                                 </div>
 
@@ -284,7 +303,32 @@ $delivery_time = $delivery_details ? $delivery_details['delivery_time'] : $deliv
                     <div class="modal-body checkout-form">
 
                         <table class="table">
-                            <tbody><tr>
+                            <tbody>
+                                <tr>
+                                    <td style="line-height: 25px;">
+                                        <span for="name" class=""><b>Full Name</b></span>
+                                    </td>
+                                    <td>
+                                        <input type="text" required="" name="name" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="line-height: 25px;">
+                                        <span for="name" class=""><b>Email Address</b></span>
+                                    </td>
+                                    <td>
+                                        <input type="email" required="" name="email" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="line-height: 25px;">
+                                        <span for="name" class=""><b>Contact No.</b></span>
+                                    </td>
+                                    <td>
+                                        <input type="tel" required="" name="contact_no" class="form-control woocommerce-Input woocommerce-Input--email input-text" value="" style="height: 10%;">
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td style="line-height: 25px;">
                                         <span for="name" class=""><b>Address (Line 1)</b></span>
                                     </td>

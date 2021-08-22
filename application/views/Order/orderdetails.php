@@ -38,18 +38,25 @@ $paymentstatus = "";
     }
 
     .headerorder{
-           padding: 2px 10px;
-    /* text-align: center; */
-    background-color: #fed700;
-    margin-bottom: 10px;
-    color: #000;
-    font-weight: 300;
-    font-size: 14px;
-}
+        padding: 2px 10px;
+        /* text-align: center; */
+        background-color: #fed700;
+        margin-bottom: 10px;
+        color: #000;
+        font-weight: 300;
+        font-size: 14px;
+    }
     .media-body {
         -ms-flex: 1;
         flex: 1;
         margin: 0px 10px;
+    }
+    article.order_box {
+        border: 1px solid #000;
+        padding: 6px;
+        border-radius: 5px;
+        height: 150px;
+        margin: 10px 0px;
     }
 </style>
 
@@ -81,64 +88,66 @@ $paymentstatus = "";
                         <div class="container">
                             <div class="row  "> 
 
-                                <div class="col-md-3" style="    border: 1px solid #000;
-                                     padding: 6px;
+                                <div class="col-md-3" >
+                                    <div class="col-md-12" style="    border: 1px solid #000;
+                                     padding: 6px;border-radius: 5px;
+                                   
                                      border-radius: 5px;">
-                                    <h3 class="headerorder">Order Status</h3>
-
-                                    <?php
-                                    $count = 0;
-                                    $countord = count($order_status);
-                                    foreach ($order_status as $oskey => $osvalue) {
-                                        ?>
-                                        <div class="media" style="border-bottom: 1px solid #000;
-                                             margin-bottom: 10px;
-                                             padding-bottom: 10px;">
-                                            <div class="media-left">
-                                                <a href="#">
-                                                    <i class='icon-circle_1'><?php
-                                                        echo $countord - $count;
-                                                        ?></i>
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading" style="font-size: 15px">  <?php
-                                                    echo $osvalue->status;
-                                                    ?></h4>
-                                                <small style="font-weight:300;font-size:13px">
-                                                    <?php
-                                                    if ($osvalue->status == "Shipped") {
-                                                        echo $osvalue->description;
-                                                    } else {
-                                                        echo $osvalue->remark;
-                                                    }
-                                                    ?>
-
-                                                </small>
-                                                <br/>
-                                                <span style="font-size: 10px;">
-                                                    <i class="fa fa-calendar"></i> 
-                                                    <?php
-                                                    echo $osvalue->c_date . " " . $osvalue->c_time;
-                                                    ?>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <?php
-                                        $count++;
-                                        ?>
+                                        <h3 class="headerorder">Order Status</h3>
 
                                         <?php
-                                    }
-                                    ?>
+                                        $count = 0;
+                                        $countord = count($order_status);
+                                        foreach ($order_status as $oskey => $osvalue) {
+                                            ?>
+                                            <div class="media" style="border-bottom: 1px solid #000;
+                                                 margin-bottom: 10px;
+                                                 padding-bottom: 10px;">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <i class='icon-circle_1'><?php
+                                                            echo $countord - $count;
+                                                            ?></i>
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading" style="font-size: 15px">  <?php
+                                                        echo $osvalue->status;
+                                                        ?></h4>
+                                                    <small style="font-weight:300;font-size:13px">
+                                                        <?php
+                                                        if ($osvalue->status == "Shipped") {
+                                                            echo $osvalue->description;
+                                                        } else {
+                                                            echo $osvalue->remark;
+                                                        }
+                                                        ?>
 
-                                    <button class="btn btn-inverse btn-block" ng-click="sendOrderMail('<?php echo $order_data->order_no; ?>')">
-                                        <i class="fa fa-envelope"></i> Request Order Copy On Mail
-                                    </button>
+                                                    </small>
+                                                    <br/>
+                                                    <span style="font-size: 10px;">
+                                                        <i class="fa fa-calendar"></i> 
+                                                        <?php
+                                                        echo $osvalue->c_date . " " . $osvalue->c_time;
+                                                        ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <?php
+                                            $count++;
+                                            ?>
+
+                                            <?php
+                                        }
+                                        ?>
+
+                                        <button class="btn btn-inverse btn-block" ng-click="sendOrderMail('<?php echo $order_data->order_no; ?>')">
+                                            <i class="fa fa-envelope"></i> Request Order Copy On Mail
+                                        </button>
 
 
 
-
+                                    </div>
                                 </div>
                                 <div class="col-md-9">
                                     <div class="row">
