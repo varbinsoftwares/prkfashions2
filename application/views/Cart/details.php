@@ -63,7 +63,7 @@ $this->load->view('layout/header');
                         </td>
 
                         <td data-title="Total">
-                            <span class="">{{product.total_price|currency:"$"}}</span>
+                            <span class="">{{product.total_price|currency:""}}</span>
                         </td>
                     </tr>
                     <tr>
@@ -125,22 +125,13 @@ $this->load->view('layout/header');
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-md-none">Proceed to checkout</button>
+                <a href="<?php echo site_url("Cart/checkoutInit"); ?>"  class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-md-none">Proceed to checkout</a>
             </div>
         </div>
     </div>
 </div>
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
-<div class="toast" data-autohide="false">
-    <div class="toast-header">
-        <strong class="mr-auto text-primary">Toast Header</strong>
-        <small class="text-muted">5 mins ago</small>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-    </div>
-    <div class="toast-body">
-        Some text inside the toast body
-    </div>
-</div>
+
 
 <?php
 $this->load->view('layout/footer');

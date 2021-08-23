@@ -122,17 +122,17 @@ class User_model extends CI_Model {
             
             $customerdetails['customer'] = $customer;
 
-            echo $htmlsmessage = $this->load->view('Email/registration', $customerdetails, true);
+             $htmlsmessage = $this->load->view('Email/registration', $customerdetails, true);
              $this->email->message($htmlsmessage);
 
-//            $this->email->print_debugger();
-//            $send = $this->email->send();
-//            if ($send) {
-//                echo json_encode("send");
-//            } else {
-//                $error = $this->email->print_debugger(array('headers'));
-//                echo json_encode($error);
-//            }
+            $this->email->print_debugger();
+            $send = $this->email->send();
+            if ($send) {
+                echo json_encode("send");
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+                echo json_encode($error);
+            }
         }
     }
 

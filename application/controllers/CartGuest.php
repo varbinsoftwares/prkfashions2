@@ -16,8 +16,8 @@ class CartGuest extends CI_Controller {
             $this->user_id = 0;
         }
 
-            $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] :"" ;
+        $this->checklogin = $this->session->userdata('logged_in');
+        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] : "";
     }
 
     function redirectCart() {
@@ -44,75 +44,7 @@ class CartGuest extends CI_Controller {
 
     function checkoutInit() {
         $this->redirectCart();
-        $measurement_style = $this->session->userdata('measurement_style');
-        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
-
-        $address = $this->session->userdata('shipping_address');
-        $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
-
-        $address = $this->session->userdata('customer_inforamtion');
-        $data['user_details'] = $address ? $this->session->userdata('customer_inforamtion') : array();
-
-
-        $delivery_details = $this->session->userdata('delivery_details');
-        $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
-
-        $this->load->view('CartGuest/checkoutInit', $data);
-    }
-
-    function checkoutSize() {
-        $this->redirectCart();
-        $address = $this->session->userdata('shipping_address');
-        $data['user_address_details'] = $address ? [$this->session->userdata('shipping_address')] : [];
-
-        $measurement_style = $this->session->userdata('measurement_style');
-        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
-
-        if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
-        } else {
-            $session_cart = $this->Product_model->cartData();
-        }
-
-        $custome_items = $session_cart['custome_items'];
-
-        $data['custome_items'] = $custome_items;
-
-        $this->db->select("group_concat(measurements) as measurement");
-        $this->db->where_in('id', $custome_items);
-        $query = $this->db->get('custome_items');
-        $custome_measurements = $query->row();
-        $data['customitems'] = $custome_measurements;
-
-        $measurementarray = explode(",", $custome_measurements->measurement);
-
-        $this->db->select("*");
-        $this->db->order_by('display_index', 'asc');
-        $this->db->where_in('id', $measurementarray);
-        $query = $this->db->get('measurement');
-        $custome_measurements = $query->result_array();
-        $data['measurements_list'] = $custome_measurements;
-
-
-        if ($this->input->post('submit_measurement')) {
-            $measurement_style = array(
-                'measurement_style' => $this->input->post('measurement_type'),
-                'measurement_dict' => array()
-            );
-            $measurement_title = $this->input->post('measurement_title');
-            $measurement_value = $this->input->post('measurement_value');
-            if ($measurement_title) {
-                foreach ($measurement_title as $key => $value) {
-                    $mvalue = $measurement_value[$key];
-                    $mtitle = $value;
-                    $measurement_style['measurement_dict'][$mtitle] = $mvalue;
-                }
-            }
-
-            $this->session->set_userdata('measurement_style', $measurement_style);
-            redirect('CartGuest/checkoutShipping');
-        }
-        $this->load->view('Cart/checkoutSize', $data);
+        redirect('CartGuest/checkoutShipping');
     }
 
     function checkoutShipping() {
@@ -210,13 +142,12 @@ class CartGuest extends CI_Controller {
 
             redirect('CartGuest/checkoutShipping');
         }
-        $this->load->view('CartGuest/checkoutShipping', $data);
+        $data["isguest"] = "true";
+        $this->load->view('Cart/checkoutShipping', $data);
     }
 
     function checkoutPayment() {
         $this->redirectCart();
-        $measurement_style = $this->session->userdata('measurement_style');
-        $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         $user_address_details = $this->session->userdata('shipping_address');
         $data['user_address_details'] = $user_address_details ? [$this->session->userdata('shipping_address')] : [];
@@ -225,6 +156,7 @@ class CartGuest extends CI_Controller {
         $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
 
         $data['checkoutmode'] = 'Guest';
+        $data["isguest"] = "true";
 
         $delivery_details = $this->session->userdata('delivery_details');
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
@@ -237,7 +169,6 @@ class CartGuest extends CI_Controller {
             $address = $user_address_details;
 
             if ($this->checklogin) {
-
                 $session_cart = $this->Product_model->cartData($this->user_id);
             } else {
                 $session_cart = $this->Product_model->cartData();
@@ -289,48 +220,19 @@ class CartGuest extends CI_Controller {
                 'status' => $genstatus,
                 'payment_mode' => $paymentmathod,
                 'measurement_style' => "",
-                'delivery_date' => $delivery_details['delivery_date'],
-                'delivery_time' => $delivery_details['delivery_time'],
-                'credit_price' => $this->input->post('credit_price') || 0,
+         
             );
 
             $this->db->insert('user_order', $order_array);
-            $last_id = $this->db->insert_id();
-            $orderno = "WL" . date('Ymd') . "" . $last_id;
+             $last_id = $this->db->insert_id();
+            $orderno = "PRK" . date('Ymd') . "" . $last_id;
             $orderkey = md5($orderno);
             $this->db->set('order_no', $orderno);
             $this->db->set('order_key', $orderkey);
             $this->db->where('id', $last_id);
             $this->db->update('user_order');
-
-
-
+            
             $this->Product_model->cartOperationCustomCopyOrder($last_id);
-
-
-            $custome_items = $session_cart['custome_items'];
-            $custome_items_ids = implode(", ", $custome_items);
-            $custome_items_ids_profile = implode("", $custome_items);
-            $custome_items_nameslist = $session_cart['custome_items_name'];
-            $custome_items_names = implode(", ", $custome_items_nameslist);
-
-            $measurement_style_array = $measurement_style['measurement_dict'];
-
-            if (count($measurement_style_array)) {
-                $display_index = 1;
-                foreach ($measurement_style_array as $key => $value) {
-                    $custom_array = array(
-                        'measurement_key' => $key,
-                        'measurement_value' => $value,
-                        'display_index' => $display_index,
-                        'order_id' => $last_id,
-                        'custom_measurement_profile' => 'guest'
-                    );
-                    $this->db->insert('custom_measurement', $custom_array);
-                    $display_index++;
-                }
-            }
-
 
             $order_status_data = array(
                 'c_date' => date('Y-m-d'),
@@ -341,7 +243,6 @@ class CartGuest extends CI_Controller {
                 'remark' => "$genstatus By Using " . $paymentmathod . ",  Waiting For Payment",
             );
             $this->db->insert('user_order_status', $order_status_data);
-//                    $this->Product_model->order_to_vendor($last_id);
 
             $newdata = array(
                 'username' => '',
@@ -351,8 +252,6 @@ class CartGuest extends CI_Controller {
 
             $this->session->unset_userdata($newdata);
             $this->session->sess_destroy();
-
-
             switch ($paymentmathod) {
                 case 'Alipay':
                     redirect('Order/orderPayment/' . $orderkey . "/ALIPAY");
@@ -361,7 +260,7 @@ class CartGuest extends CI_Controller {
                     redirect('Order/orderPayment/' . $orderkey . "/WECHAT");
                     break;
                 default:
-                    redirect('Order/orderdetailsguest/' . $orderkey);
+                    redirect('Order/orderdetails/' . $orderkey);
             }
         }
         $this->load->view('Cart/checkoutPayment', $data);

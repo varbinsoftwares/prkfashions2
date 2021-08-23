@@ -327,7 +327,7 @@ class Account extends CI_Controller {
 
     function testReg() {
         $user_id = $this->user_id;
-        echo $user_id ;
+        echo $user_id;
         $this->User_model->registration_mail($user_id);
     }
 

@@ -73,7 +73,7 @@ class Product_model extends CI_Model {
         $points = ($point) ?
                 " and " . $wordsz[$point / 10] . " " .
                 $wordsz[$point = $point % 10] : '';
-        return "Only " . globle_currency . $result . " " . ($points ? "" . $points . " Cents" : "") . "";
+        return "Only " . globle_currency ." ". $result . " " . ($points ? "" . $points . " Cents" : "") . "";
     }
 
 ///*******  Get data for deepth of the array  ********///
@@ -575,7 +575,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             );
             $this->db->insert('user_order_log', $orderlog);
 
-            $subject = "Order Placed - Your Order with www.octopuscart.com [" . $order_no . "] has been successfully placed!";
+            $subject = "Order Placed - Your Order with www.prkfashions.com [" . $order_no . "] has been successfully placed!";
             $this->email->subject($subject);
 
             if ($checkcode) {
@@ -820,7 +820,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $quantity = $value['quantity'];
             $product_id = $value['product_id'];
 
-            $product_details = $this->productDetails($product_id, $item_id);
+            $product_details = $this->productDetails($product_id);
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
@@ -837,6 +837,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
             $custom_dict = [];
+            print_r($product_dict);
             $this->db->insert('cart', $product_dict);
             $last_id = $this->db->insert_id();
             $display_index = 1;
@@ -846,6 +847,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     public function newArrival() {
         $this->db->select("title, file_name, id, category_id, price");
         $this->db->limit(8);
+        $this->db->order_by('id', 'RANDOM');
+        $this->db->where('category_id!=', '');
         $query = $this->db->get("products");
         $results = $query->result_array();
         $newproducts = [];
@@ -854,8 +857,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where("id", $value['category_id']);
             $query = $this->db->get("category");
             $category = $query->row_array();
-            if($category){
-            $value = array_merge($value, $category);
+            if ($category) {
+                $value = array_merge($value, $category);
             }
             array_push($newproducts, $value);
         }
@@ -865,6 +868,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     public function topProducts() {
         $this->db->select("title, file_name, id, category_id, price");
         $this->db->limit(18);
+        $this->db->where('category_id!=', '');
+        $this->db->order_by('id', 'RANDOM');
         $query = $this->db->get("products");
         $results = $query->result_array();
         $newproducts = [];
@@ -873,8 +878,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $this->db->where("id", $value['category_id']);
             $query = $this->db->get("category");
             $category = $query->row_array();
-            if($category){
-            $value = array_merge($value, $category);
+            if ($category) {
+                $value = array_merge($value, $category);
             }
             array_push($newproducts, $value);
         }

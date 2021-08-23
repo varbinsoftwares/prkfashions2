@@ -21,13 +21,13 @@ $this->load->view('layout/header');
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main">
     <!-- Slider Section -->
-    
+
     <div class="mb-5">
         <div class="bg-img-hero" style="background-image: url(<?php echo base_url(); ?>assets/theme2/img/1920X422/img1.jpg);">
             <div class="container min-height-420 overflow-hidden">
                 <div class="js-slick-carousel u-slick"
                      data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1">
-                   
+
                     <div class="js-slide">
                         <div class="row pt-7 py-md-0">
                             <div class="d-none d-wd-block offset-1"></div>
@@ -44,7 +44,7 @@ $this->load->view('layout/header');
 
                                         <stong class="font-weight-bold">MIN. 40% OFF</stong>
                                     </h1>
-                                    <a href="<?php echo site_url();?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
                                        data-scs-animation-delay="300">
                                         Start Buying
@@ -74,7 +74,7 @@ $this->load->view('layout/header');
 
                                         <stong class="font-weight-bold">Great Discounts</stong>
                                     </h1>
-                                    <a href="<?php echo site_url();?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
                                        data-scs-animation-delay="300">
                                         Start Buying
@@ -104,7 +104,7 @@ $this->load->view('layout/header');
 
                                         <stong class="font-weight-bold">Lowest Price</stong>
                                     </h1>
-                                    <a href="<?php echo site_url();?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
                                        data-scs-animation-delay="300">
                                         Start Buying
@@ -174,7 +174,7 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
- 
+
 
     <!--one and other section-->
     <div class="container">
@@ -182,66 +182,66 @@ $this->load->view('layout/header');
         <div class="mb-5">
             <div class="row">
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
+                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
                             <div class="col-12 col-xl-12 col-wd-6 pr-0">
                                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/jeans1.jpg" alt="Image Description">
                             </div>
-                        
+
                         </div>
-                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
-                                    Shop now
-                                    <span class="link__icon ml-1">
-                                        <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
-                                    </span>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url(); ?>product/productlist/0/0">
+                            Shop now
+                            <span class="link__icon ml-1">
+                                <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
+                            </span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
+                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
                             <div class="col-12 col-xl-12 col-wd-6 pr-0">
                                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/off.jpg" alt="Image Description">
                             </div>
-                        
+
                         </div>
-                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
-                                    Shop now
-                                    <span class="link__icon ml-1">
-                                        <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
-                                    </span>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url(); ?>product/productlist/0/0">
+                            Shop now
+                            <span class="link__icon ml-1">
+                                <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
+                            </span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
+                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
                             <div class="col-12 col-xl-12 col-wd-6 pr-0">
                                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/ass.jpg" alt="Image Description">
                             </div>
-                        
+
                         </div>
-                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
-                                    Shop now
-                                    <span class="link__icon ml-1">
-                                        <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
-                                    </span>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url(); ?>product/productlist/0/0">
+                            Shop now
+                            <span class="link__icon ml-1">
+                                <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
+                            </span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
-                    <a href="<?php echo site_url();?>product/productlist/0/0" class="d-black text-gray-90">
+                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">
                             <div class="col-12 col-xl-12 col-wd-6 pr-0">
                                 <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/shirt.jpg" alt="Image Description">
                             </div>
-                        
+
                         </div>
-                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url();?>product/productlist/0/0">
-                                    Shop now
-                                    <span class="link__icon ml-1">
-                                        <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
-                                    </span>
+                        <div style="margin-left:80px;" class="link text-gray-90 font-weight-bold font-size-15 " style="text-align:center;" href="<?php echo site_url(); ?>product/productlist/0/0">
+                            Shop now
+                            <span class="link__icon ml-1">
+                                <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
+                            </span>
                         </div>
                     </a>
                 </div>
@@ -299,19 +299,19 @@ $this->load->view('layout/header');
                                 <div class="product-item__outer h-100">
                                     <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                         <div class="product-item__body pb-xl-2">
-                                            <div class="mb-2"><a href="https://prkfashions.com/product/productlist/0/0" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
-                                            <h5 class="mb-1 product-item__title"><a href="<?php echo site_url('product/productdetails/'). $pvalue['id']?>" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
+                                            <div class="mb-2"><a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
+                                            <h5 class="mb-1 product-item__title"><a href="<?php echo site_url('product/productdetails/') . $pvalue['id'] ?>" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
                                             <div class="mb-2">
-                                                <a href="#" class="d-block text-center">
+                                                <a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="d-block text-center">
                                                     <img class="img-fluid backgroundsetimage" src="<?php echo base_url(); ?>assets/theme2/img/212X200/blank.png" style="background:url('<?php echo PRODUCTIMAGELINK . $pvalue['file_name'] ?>')" alt="Image Description">
                                                 </a>
                                             </div>
                                             <div class="flex-center-between mb-1">
-                                                 <div class="prodcut-price">
-                                                        <div class="text-gray-100">{{<?php echo $pvalue['price']; ?>|currency:"<?php echo globle_currency;?>"}}</div>
-                                                    </div>
+                                                <div class="prodcut-price">
+                                                    <div class="text-gray-100">{{<?php echo $pvalue['price']; ?>|currency:"<?php echo globle_currency; ?>"}}</div>
+                                                </div>
                                                 <div class="d-none d-xl-block prodcut-add-cart">
-                                                    <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                                    <a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -368,19 +368,19 @@ $this->load->view('layout/header');
                                     <div class="product-item__outer h-100">
                                         <div class="product-item__inner p-md-3 row no-gutters">
                                             <div class="col col-lg-auto product-media-left">
-                                                <a href="#" class="max-width-150 d-block"><img class="img-fluid backgroundsetimage" src="<?php echo base_url(); ?>assets/theme2/img/150X140/blank.png" style="background:url('<?php echo PRODUCTIMAGELINK . $productt['file_name'] ?>')"  alt="Image Description"></a>
+                                                <a href="<?php echo site_url("product/ProductDetails/" . $productt['id']); ?>" class="max-width-150 d-block"><img class="img-fluid backgroundsetimage" src="<?php echo base_url(); ?>assets/theme2/img/150X140/blank.png" style="background:url('<?php echo PRODUCTIMAGELINK . $productt['file_name'] ?>')"  alt="Image Description"></a>
                                             </div>
                                             <div class="col product-item__body pl-2 pl-lg-3 mr-xl-2 mr-wd-1">
                                                 <div class="mb-4">
-                                                    <div class="mb-2"><a href="#" class="font-size-12 text-gray-5"><?php echo $productt['category_name']; ?></a></div>
-                                                    <h5 class="product-item__title"><a href="#" class="text-blue font-weight-bold"><?php echo $productt['title']; ?></a></h5>
+                                                    <div class="mb-2"><a href="<?php echo site_url("product/ProductDetails/" . $productt['id']); ?>" class="font-size-12 text-gray-5"><?php echo $productt['category_name']; ?></a></div>
+                                                    <h5 class="product-item__title"><a href="<?php echo site_url("product/ProductDetails/" . $productt['id']); ?>" class="text-blue font-weight-bold"><?php echo $productt['title']; ?></a></h5>
                                                 </div>
                                                 <div class="flex-center-between mb-3">
                                                     <div class="prodcut-price">
-                                                        <div class="text-gray-100">{{<?php echo $productt['price']; ?>|currency:"<?php echo globle_currency;?>"}}</div>
+                                                        <div class="text-gray-100">{{<?php echo $productt['price']; ?>|currency:"<?php echo globle_currency; ?>"}}</div>
                                                     </div>
                                                     <div class="d-none d-xl-block prodcut-add-cart">
-                                                        <a href="" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                                        <a href="<?php echo site_url("product/ProductDetails/" . $productt['id']); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                                     </div>
                                                 </div>
 
@@ -425,7 +425,7 @@ $this->load->view('layout/header');
         <!-- End Full banner -->
 
         <!-- Brand Carousel -->
-           <!-- Recently viewed -->
+        <!-- Recently viewed -->
         <div class="mb-6">
             <div class="position-relative">
                 <div class="border-bottom border-color-1 mb-2">
@@ -474,16 +474,16 @@ $this->load->view('layout/header');
                                     <div class="product-item__inner px-wd-4 p-2 p-md-3">
                                         <div class="product-item__body pb-xl-2">
                                             <div class="mb-2"><a href="#" class="font-size-12 text-gray-5"><?php echo $pvalue['category_name']; ?></a></div>
-                                            <h5 class="mb-1 product-item__title"><a href="#" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
+                                            <h5 class="mb-1 product-item__title"><a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="text-blue font-weight-bold"><?php echo $pvalue['title']; ?></a></h5>
                                             <div class="mb-2">
-                                                <a href="#" class="d-block text-center">
+                                                <a href="<?php echo site_url("product/ProductDetails/" . $pvalue['id']); ?>" class="d-block text-center">
                                                     <img class="img-fluid backgroundsetimage" src="<?php echo base_url(); ?>assets/theme2/img/212X200/blank.png" style="background:url('<?php echo PRODUCTIMAGELINK . $pvalue['file_name'] ?>')" alt="Image Description">
                                                 </a>
                                             </div>
                                             <div class="flex-center-between mb-1">
-                                                 <div class="prodcut-price">
-                                                        <div class="text-gray-100">{{<?php echo $pvalue['price']; ?>|currency:"<?php echo globle_currency;?>"}}</div>
-                                                    </div>
+                                                <div class="prodcut-price">
+                                                    <div class="text-gray-100">{{<?php echo $pvalue['price']; ?>|currency:"<?php echo globle_currency; ?>"}}</div>
+                                                </div>
                                                 <div class="d-none d-xl-block prodcut-add-cart">
                                                     <a href="<?php echo site_url('Product/productDetailsView/' . $key); ?>" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
                                                 </div>
