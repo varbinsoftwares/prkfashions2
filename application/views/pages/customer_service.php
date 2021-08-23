@@ -34,7 +34,7 @@ $this->load->view('layout/header');
                     <p> <strong>You can also mail us:</strong> pavitramod11@gmail.com</p>
                     <p><strong>Submit query: </strong>  <a href="<?php echo site_url('contact');?>">Leave us a Message</a></p>
                    </div>
-                   <div  class="col-lg-6 col-sm-12 ">
+                   <div  class="col-lg-6 col-sm-12">
                        
                      <img src="<?php echo base_url();?>assets/theme2/images/banner/cservice.jpg" alt="customer services" height="400px" width ="500px" style="max-width:350px; ">
                    </div>
