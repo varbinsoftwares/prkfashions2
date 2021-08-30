@@ -18,7 +18,12 @@ class Shop extends CI_Controller {
         
         $topproducts = $this->Product_model->topProducts();
         $data['topproducts'] = $topproducts;
-
+        $sliders = [];
+        $this->db->where('status', "Active");
+        $query = $this->db->get('settings_slider');
+        $sliders = $query->result_array();
+        $data["homepageslider"] = $sliders;
+  
         $this->load->view('home', $data);
     }
 

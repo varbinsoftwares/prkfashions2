@@ -895,6 +895,8 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         return $limitproducts;
     }
 
+
+
     public function testProducts() {
         $products = array(
             "2" => array(

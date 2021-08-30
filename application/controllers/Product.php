@@ -9,6 +9,7 @@ class Product extends CI_Controller {
         $this->load->model('Product_model');
         $this->load->library('session');
         $sessionuser = $this->session->userdata('logged_in');
+        $this->currentuser = $this->session->userdata('logged_in');
         $this->user_id = $sessionuser ? $sessionuser['login_id'] : 0;
     }
 
@@ -98,6 +99,81 @@ class Product extends CI_Controller {
         $query = $this->db->get('products');
         $product = $query->row_array();
         $prodct_details = $product;
+               
+          $avg_rating=0;
+          $five_star=0;
+          $four_star=0;
+          $three_star=0;
+          $two_star=0;
+          $one_star=0;
+          $total_review=0;
+          $total_rating=0;
+          $review_content= array();
+
+         
+
+            $query = $this->db->get("product_review");
+            $reviews = $query->result_array();
+            $data['reviews'] = $reviews;
+            foreach($reviews as $row){
+
+                if ($row['rating']=='5') {
+                  $five_star++;
+                }
+                if ($row['rating']=='4') {
+                  $four_star++;
+                }
+                if ($row['rating']=='3') {
+                  $three_star++;
+                }
+                if ($row['rating']=='2') {
+                  $two_star++;
+                }
+                if ($row['rating']=='1') {
+                  $one_star++;
+                }
+                $total_review++; 
+                $total_rating= $total_rating + $row['rating'];
+               
+              }
+              print_r($total_rating);
+              $avg_rating = $total_rating / $total_review;
+      
+                $review_content = array(
+                  "avg_rating" =>  number_format($avg_rating, 1),
+                  "total_rating" => $total_rating,
+                  "total_review" => $total_review,
+                  "five_star"  => $five_star,
+                  "four_star" => $four_star,
+                  "three_star" => $three_star,
+                  "two_star"    => $two_star ,
+                  "one_star"  => $one_star ,
+                );
+                $data['review_content']= $review_content;
+     if($this->user_id){
+        if (isset($_POST['submit_review'])) {
+
+            $reviewArray=  array("product_id" => $product_id ,
+           "user_id"=>  $this->user_id ,
+           "name"=> $this->currentuser['first_name']. " ".$this->currentuser['last_name'] ,
+           "email"=> $this->currentuser['username'],
+           "status"=> 'unseen' ,
+           "comment"=> $this->input->post('comment') ,
+           "rating"=>$this->input->post('rating') ,
+           "review_date"=>date('Y-m-d'),
+           "review_time"=> date('h:i:sa'),
+        );
+  
+          $this->db->insert('product_review', $reviewArray);
+
+      }
+      
+     }
+     else {
+         
+         $sessionlogin = $this->session->set_flashdata('login','Please Login or Register to review !'); 
+     }
+        
         if ($prodct_details) {
             $pquery = "SELECT pa.attribute, cav.attribute_value FROM product_attribute as pa
       join category_attribute_value as cav on cav.id = pa.attribute_value_id
@@ -142,7 +218,10 @@ class Product extends CI_Controller {
             $this->config->set_item('seo_keywords', $prodct_details['keywords']);
             $this->config->set_item('seo_imgurl', imageserver . $prodct_details['file_name']);
 
+        
             $this->load->view('Product/productdetail', $data);
+
+            
         } else {
             $this->load->view('errors/html/error_404');
         }

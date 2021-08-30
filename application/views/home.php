@@ -27,7 +27,35 @@ $this->load->view('layout/header');
             <div class="container min-height-420 overflow-hidden">
                 <div class="js-slick-carousel u-slick"
                      data-pagi-classes="text-center position-absolute right-0 bottom-0 left-0 u-slick__pagination u-slick__pagination--long justify-content-start mb-3 mb-md-4 offset-xl-3 pl-2 pb-1">
+             <?php
 
+             $slideArray= [ array( "line1"=>"SHOP TO GET WHAT YOU LOVE" , 
+                                   "line2"=>" Shop from the latest collection of Shirts for men online. </br><strong>MIN 
+                                            40% OFF</strong>" , 
+                                   "btnlink"=>"https://localhost/prkfashions2/product/productlist/0/0" ,
+                                    "btntitle"=>"Start Buying",
+                                    "image"=> "1.jpg"),
+
+                            array("line1"=>"NEW ARRIVAL DAILY" ,
+                                  "line2"=>"We have latest and trending arrival of jeans for men. </br>
+                                          <strong>Great Discounts</strong>" , 
+                                   "btnlink"=>"https://localhost/prkfashions2/product/productlist/0/0" ,
+                                   "btntitle"=>"Start Buying", 
+                                    "image"=> "2.jpg"),
+
+                            array("line1"=>"WE FOLLOW THE TREND" , 
+                                  "line2"=>"Trending and classy collection for womens. </br>
+                                         <strong >Lowest Price</strong>" , 
+                                  "btnlink"=>"https://localhost/prkfashions2/product/productlist/0/0" , 
+                                  "btntitle"=>"Start Buying",
+                                   "image"=> "3.jpg"),
+
+                        ];
+
+                        foreach ($homepageslider as $key => $value) {
+                            
+             ?>  
+            
                     <div class="js-slide">
                         <div class="row pt-7 py-md-0">
                             <div class="d-none d-wd-block offset-1"></div>
@@ -35,90 +63,33 @@ $this->load->view('layout/header');
                                 <div class="ml-xl-4">
                                     <h6 class="font-size-15 font-weight-bold mb-2 text-cyan"
                                         data-scs-animation-in="fadeInUp">
-                                        SHOP TO GET WHAT YOU LOVE
+                                        <?php echo $value["line_1"]; ?>
                                     </h6>
                                     <h1 class="font-size-46 text-lh-50 font-weight-light mb-8"
                                         data-scs-animation-in="fadeInUp"
                                         data-scs-animation-delay="200">
-                                        Shop from the latest collection of Shirts for men online. </br>
+                                        <?php echo $value["line_2"]; ?> 
 
-                                        <stong class="font-weight-bold">MIN. 40% OFF</stong>
+                                
                                     </h1>
-                                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
+                                    <a href="<?php echo $value["button_link"]; ?>" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                        data-scs-animation-in="fadeInUp"
                                        data-scs-animation-delay="300">
-                                        Start Buying
+                                        <?php echo $value['button_title'];?>
+
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
                                  data-scs-animation-in="fadeInRight"
                                  data-scs-animation-delay="500">
-                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo base_url(); ?>assets/theme2/img/416X420/1.jpg" alt="Image Description">
+                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo ADMINURL; ?>/assets/slider_images/<?php echo $value["image"]; ?>" alt="Image Description">
                             </div>
                         </div>
                     </div>
-                    <div class="js-slide">
-                        <div class="row pt-7 py-md-0">
-                            <div class="d-none d-wd-block offset-1"></div>
-                            <div class="col-xl col col-md-6 mt-md-8 mt-lg-8">
-                                <div class="ml-xl-4">
-                                    <h6 class="font-size-15 font-weight-bold mb-2 text-cyan"
-                                        data-scs-animation-in="fadeInUp">
-                                        NEW ARRIVAL DAILY
-                                    </h6>
-                                    <h1 class="font-size-46 text-lh-50 font-weight-light mb-8"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">
-                                        We have latest and trending arrival of jeans for men. </br>
-
-                                        <stong class="font-weight-bold">Great Discounts</stong>
-                                    </h1>
-                                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
-                                       data-scs-animation-in="fadeInUp"
-                                       data-scs-animation-delay="300">
-                                        Start Buying
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
-                                 data-scs-animation-in="fadeInRight"
-                                 data-scs-animation-delay="500">
-                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo base_url(); ?>assets/theme2/img/416X420/2.jpg" alt="Image Description">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="js-slide">
-                        <div class="row pt-7 py-md-0">
-                            <div class="d-none d-wd-block offset-1"></div>
-                            <div class="col-xl col col-md-6 mt-md-8 mt-lg-8">
-                                <div class="ml-xl-4">
-                                    <h6 class="font-size-15 font-weight-bold mb-2 text-cyan"
-                                        data-scs-animation-in="fadeInUp">
-                                        WE FOLLOW THE TREND
-                                    </h6>
-                                    <h1 class="font-size-46 text-lh-50 font-weight-light mb-8"
-                                        data-scs-animation-in="fadeInUp"
-                                        data-scs-animation-delay="200">
-                                        Trending and classy collection for womens. </br>
-
-                                        <stong class="font-weight-bold">Lowest Price</stong>
-                                    </h1>
-                                    <a href="<?php echo site_url(); ?>product/productlist/0/0" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
-                                       data-scs-animation-in="fadeInUp"
-                                       data-scs-animation-delay="300">
-                                        Start Buying
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
-                                 data-scs-animation-in="fadeInRight"
-                                 data-scs-animation-delay="500">
-                                <img class="img-fluid ml-auto mr-10 mr-wd-auto" src="<?php echo base_url(); ?>assets/theme2/img/416X420/3.jpg" alt="Image Description">
-                            </div>
-                        </div>
-                    </div>
-
+                    <?php }
+                    ?>
+                   
                 </div>
             </div>
         </div>
@@ -181,6 +152,16 @@ $this->load->view('layout/header');
         <!-- Banner -->
         <div class="mb-5">
             <div class="row">
+
+            <?php
+            // $adArray= array[
+            //     array(),
+            //     array(),
+            //     array(),
+            //     array(),
+            // ];
+            
+            ?>
                 <div class="col-md-6 mb-4 mb-xl-0 col-xl-3">
                     <a href="<?php echo site_url(); ?>product/productlist/0/0" class="d-black text-gray-90">
                         <div class="min-height-132 py-1 d-flex bg-gray-1 align-items-center">

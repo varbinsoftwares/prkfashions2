@@ -1,6 +1,7 @@
 <?php
 $this->load->view('layout/header');
 ?>
+
 <style>
 
     .product_image_detail{
@@ -25,6 +26,7 @@ $this->load->view('layout/header');
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
                         <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="<?php echo base_url(); ?>">Home</a></li>
+                       
                         <?php
                         foreach ($categorie_parent as $key => $categorylists) {
                             ?>
@@ -216,11 +218,23 @@ $this->load->view('layout/header');
                                     </div>-->
                                     <div class="mb-3">
                                         <h3 class="font-size-18 mb-6">Be First To Review</h3>
-                                        <h2 class="font-size-30 font-weight-bold text-lh-1 mb-0">0</h2>
+                                        <div class="mb-3">
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_1"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_2"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_3"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_4"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_5"></i>
+
+                                    
+                                        </div>
+                                        <input type="hidden" id="avg_rate" name="average_rate" value="<?php echo ceil($review_content['avg_rating']);?>">
+                                        
+                                        <h2 id="avg_rating" class="font-size-30 font-weight-bold text-lh-1 mb-0"><?php echo $review_content['avg_rating'];?> / 5</h2>
                                         <div class="text-lh-1">overall</div>
                                     </div>
                                     <?php
                                     $ratingstructure = array(
+
                                         5 => array("count" => "0"),
                                         4 => array("count" => "0"),
                                         3 => array("count" => "0"),
@@ -257,151 +271,98 @@ $this->load->view('layout/header');
                                                             <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </div>
+                                                   
                                                     <div class="col-auto text-right">
                                                         <span class="text-gray-90"><?php echo $rtvalue["count"] ?></span>
                                                     </div>
+                                                    
                                                 </a>
                                             </li>
                                             <?php
                                         }
                                         ?>
-                                    </ul>
+                                    </ul><br>
+                                    <h4><span id="total_review"><?php echo $review_content['total_review'];?></span> Reviews</h4>
                                     <!-- End Ratings -->
                                 </div>
                                 <div class="col-md-6">
                                     <h3 class="font-size-18 mb-5">Add a review</h3>
                                     <!-- Form -->
-                                    <form class="js-validate">
+                                    <form class="js-validate" method="post" action="">
+                                    <input type="hidden" id="" name="status" value="0">
+                             
+                                    <input type="hidden" id="star_rating" name="rating" value="" required=""/>
                                         <div class="row align-items-center mb-4">
                                             <div class="col-md-4 col-lg-3">
                                                 <label for="rating" class="form-label mb-0">Your Review</label>
                                             </div>
                                             <div class="col-md-8 col-lg-9">
-                                                <a href="#" class="d-block">
-                                                    <div class="text-warning text-ls-n2 font-size-16">
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                        <small class="far fa-star text-muted"></small>
-                                                    </div>
-                                                </a>
+                                            <a href="" style="color:gray"><i class="fas fa-star star-light submit_star mr-1" id="star_1"  data-rating="1"></i></a>  
+                                             <a href="" style="color:gray"><i class="fas fa-star star-light submit_star  mr-1 " id="star_2"  data-rating="2"></i>  </a> 
+                                             <a href="" style="color:gray"><i class="fas fa-star star-light submit_star  mr-1 " id="star_3" data-rating="3"></i> </a>  
+                                             <a href="" style="color:gray"><i class="fas fa-star star-light submit_star  mr-1" id="star_4"  data-rating="4"></i></a>   
+                                              <a href="" style="color:gray"><i class="fas fa-star star-light submit_star  mr-1 " id="star_5"  data-rating="5"></i></a> 
+                                                
                                             </div>
+                                            
                                         </div>
                                         <div class="js-form-message form-group mb-3 row">
                                             <div class="col-md-4 col-lg-3">
                                                 <label for="descriptionTextarea" class="form-label">Your Review</label>
                                             </div>
                                             <div class="col-md-8 col-lg-9">
-                                                <textarea class="form-control" rows="3" id="descriptionTextarea"
+                                                <textarea class="form-control" rows="3" name="comment" id="descriptionTextarea"
                                                           data-msg="Please enter your message."
                                                           data-error-class="u-has-error"
                                                           data-success-class="u-has-success"></textarea>
                                             </div>
                                         </div>
-                                        <div class="js-form-message form-group mb-3 row">
-                                            <div class="col-md-4 col-lg-3">
-                                                <label for="inputName" class="form-label">Name <span class="text-danger">*</span></label>
-                                            </div>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input type="text" class="form-control" name="name" id="inputName" aria-label="Alex Hecker" required
-                                                       data-msg="Please enter your name."
-                                                       data-error-class="u-has-error"
-                                                       data-success-class="u-has-success">
-                                            </div>
-                                        </div>
-                                        <div class="js-form-message form-group mb-3 row">
-                                            <div class="col-md-4 col-lg-3">
-                                                <label for="emailAddress" class="form-label">Email <span class="text-danger">*</span></label>
-                                            </div>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input type="email" class="form-control" name="emailAddress" id="emailAddress" aria-label="alexhecker@pixeel.com" required
-                                                       data-msg="Please enter a valid email address."
-                                                       data-error-class="u-has-error"
-                                                       data-success-class="u-has-success">
-                                            </div>
-                                        </div>
+                                        
+                                       
                                         <div class="row">
                                             <div class="offset-md-4 offset-lg-3 col-auto">
-                                                <button type="submit" class="btn btn-primary-dark btn-wide transition-3d-hover">Add Review</button>
+                                                <button id="save_review" type="submit" name="submit_review" class="btn btn-primary-dark btn-wide transition-3d-hover">Add Review</button>
                                             </div>
                                         </div>
+
+                                       <h5 class="p-1 mt-2 bg-light text-success"><?php echo $this->session->flashdata('login');?> <h5>
                                     </form>
                                     <!-- End Form -->
                                 </div>
                             </div>
-                            <!--                             Review 
+                                                   <?php foreach($reviews as $key=>$value) {
+                                                       if ($value['status']=='Approved') {
+                                                       
+                                                       ?>     
+                                                    
                                                         <div class="border-bottom border-color-1 pb-4 mb-4">
-                                                             Review Rating 
+                                                              
                                                             <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
                                                                 <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="far fa-star text-muted"></small>
-                                                                    <small class="far fa-star text-muted"></small>
+                                                                    <small class="fas fa-star user_star text-muted" id="users_1"></small>
+                                                                    <small class="fas fa-star user_star text-muted" id="users_2"></small>
+                                                                    <small class="fas fa-star user_star text-muted" id="users_3"></small>
+                                                                    <small class="fas fa-star user_star text-muted" id="users_4"></small>
+                                                                    <small class="fas fa-star user_star text-muted" id="users_5"></small>
                                                                 </div>
                                                             </div>
-                                                             End Review Rating 
+                                                           
                             
-                                                            <p class="text-gray-90">Fusce vitae nibh mi. Integer posuere, libero et ullamcorper facilisis, enim eros tincidunt orci, eget vestibulum sapien nisi ut leo. Cras finibus vel est ut mollis. Donec luctus condimentum ante et euismod.</p>
+                                                            <p class="text-gray-90"><?php echo $value['comment'] ?></p>
                             
-                                                             Reviewer 
+                                                            
                                                             <div class="mb-2">
-                                                                <strong>John Doe</strong>
-                                                                <span class="font-size-13 text-gray-23">- April 3, 2019</span>
+                                                                <strong><?php echo $value['name']?></strong>
+                                                                <span class="font-size-13 text-gray-23">- <?php echo $value['review_date']; ?>  At <?php echo $value['review_time']; ?></span>
                                                             </div>
-                                                             End Reviewer 
+                                                           
                                                         </div>
-                                                         End Review 
-                                                         Review 
-                                                        <div class="border-bottom border-color-1 pb-4 mb-4">
-                                                             Review Rating 
-                                                            <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
-                                                                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                </div>
-                                                            </div>
-                                                             End Review Rating 
-                            
-                                                            <p class="text-gray-90">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse eget facilisis odio. Duis sodales augue eu tincidunt faucibus. Etiam justo ligula, placerat ac augue id, volutpat porta dui.</p>
-                            
-                                                             Reviewer 
-                                                            <div class="mb-2">
-                                                                <strong>Anna Kowalsky</strong>
-                                                                <span class="font-size-13 text-gray-23">- April 3, 2019</span>
-                                                            </div>
-                                                             End Reviewer 
-                                                        </div>
-                                                         End Review 
-                                                         Review 
-                                                        <div class="pb-4 mb-4">
-                                                             Review Rating 
-                                                            <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
-                                                                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="fas fa-star"></small>
-                                                                    <small class="far fa-star text-muted"></small>
-                                                                </div>
-                                                            </div>
-                                                             End Review Rating 
-                            
-                                                            <p class="text-gray-90">Sed id tincidunt sapien. Pellentesque cursus accumsan tellus, nec ultricies nulla sollicitudin eget. Donec feugiat orci vestibulum porttitor sagittis.</p>
-                            
-                                                             Reviewer 
-                                                            <div class="mb-2">
-                                                                <strong>Peter Wargner</strong>
-                                                                <span class="font-size-13 text-gray-23">- April 3, 2019</span>
-                                                            </div>
-                                                             End Reviewer 
-                                                        </div>
-                                                         End Review -->
+                                                        <?php
+                                                         }
+                                                        }
+                                                        ?>
+                                                         
+                                                        <!-- End Review -->
                         </div>
                     </div>
                 </div>
@@ -525,4 +486,93 @@ $this->load->view('layout/footer');
     });
     //end of zoom
 
+    function reset_background(){
+        var rating_data= 0;
+     for(var count =1; count<=5; count++){
+        $('#star_'+count).addClass('star-light');
+        $('#star_'+count).removeClass('text-warning');
+     }
+    }
+    
+    // $(document).on('mouseleave' , '.submit_star', function(){
+
+    //  reset_background();
+
+    // });
+    $(document).on('click' , '.submit_star', function(){
+        $('.submit_star').addClass('star-light');
+        $('.submit_star').removeClass('text-warning');
+        
+         rating_data =$(this).data('rating');
+
+        for (var count =1; count <= rating_data; count++)
+        {
+          $('#star_'+count).addClass('text-warning');
+        }
+
+        $("#star_rating").val(count-1);
+        console.log(count-1);
+        
+        
+    });
+    $(document).on('dblclick' , '.submit_star', function(){
+
+      
+        
+         ratingd =$(this).data('rating');
+
+        for (var count =1; count <= ratingd; count++)
+        {
+          $('#star_'+count).addClass('star-light');
+          $('#star_'+count).removeClass('text-warning');
+        }
+    
+         
+    });
+      
+    $('.main_star').each(function(){
+    var count_star =0;
+      
+     var avg_rating = $('#avg_rate').val();
+
+     for (count_star =1; count_star <= avg_rating; count_star++) {
+         $('#sub_star_'+count_star).addClass('text-warning');
+         $('#sub_star_'+count_star).removeClass('text-muted');
+     }
+     
+     console.log(count_star);
+    });
+
+    $('.user_star').each(function(){
+    var count1 =0;
+      
+     var star_rate = $('#star_rating').val();
+
+     for (count1 =1; count1 <= star_rate; count1++) {
+         $('#users_'+count1).addClass('text-warning');
+         $('#users_'+count1).removeClass('text-muted');
+     }
+     
+     console.log(count1);
+    });
+
+    $('#save_review').click(function(){
+
+     var comment = $('#descriptionTextarea').val();
+     var rating = $('#star_rating').val();
+
+     if(comment =='' || rating==''){
+         alert("Please fill your Review");
+         return false;
+     }
+     if(rating==''){
+         alert("Please fill Star rating");
+         return false;
+     }
+     $("#star_rating").val(count-1);
+    
+   
+    });
+   
 </script>
+

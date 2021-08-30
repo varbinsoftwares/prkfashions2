@@ -21,10 +21,10 @@ switch ($baselink) {
 
 switch ($baselink) {
     case "http://localhost":
-        $adminlinkmain = $baselink . "/shopadmin";
+        $adminlinkmain = $baselink . "/prkfashionsadmin";
         break;
     case "http://192.168.1.2":
-          $adminlinkmain = $baselink . "/shopadmin";
+          $adminlinkmain = $baselink . "/prkfashionsadmin";
         break;
     default:
         $adminlinkmain = "https://admin.prkfashions.com/";
