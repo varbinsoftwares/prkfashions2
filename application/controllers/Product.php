@@ -111,7 +111,7 @@ class Product extends CI_Controller {
           $review_content= array();
 
          
-
+                    $this->db->where('product_id',$product_id);
             $query = $this->db->get("product_review");
             $reviews = $query->result_array();
             $data['reviews'] = $reviews;
@@ -136,7 +136,7 @@ class Product extends CI_Controller {
                 $total_rating= $total_rating + $row['rating'];
                
               }
-              print_r($total_rating);
+            
               $avg_rating = $total_rating / $total_review;
       
                 $review_content = array(
@@ -150,7 +150,7 @@ class Product extends CI_Controller {
                   "one_star"  => $one_star ,
                 );
                 $data['review_content']= $review_content;
-     if($this->user_id){
+       if($this->user_id){
         if (isset($_POST['submit_review'])) {
 
             $reviewArray=  array("product_id" => $product_id ,
@@ -169,10 +169,7 @@ class Product extends CI_Controller {
       }
       
      }
-     else {
-         
-         $sessionlogin = $this->session->set_flashdata('login','Please Login or Register to review !'); 
-     }
+     
         
         if ($prodct_details) {
             $pquery = "SELECT pa.attribute, cav.attribute_value FROM product_attribute as pa

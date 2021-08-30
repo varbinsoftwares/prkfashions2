@@ -227,7 +227,7 @@ $this->load->view('layout/header');
 
                                     
                                         </div>
-                                        <input type="hidden" id="avg_rate" name="average_rate" value="<?php echo ceil($review_content['avg_rating']);?>">
+                                        <input type="hidden" id="avg_rate" name="average_rate" value="<?php if( ceil($review_content['avg_rating']) != 0 ) { echo ceil($review_content['avg_rating']) ; }  else{ echo '0'; }?>">
                                         
                                         <h2 id="avg_rating" class="font-size-30 font-weight-bold text-lh-1 mb-0"><?php echo $review_content['avg_rating'];?> / 5</h2>
                                         <div class="text-lh-1">overall</div>
@@ -273,7 +273,7 @@ $this->load->view('layout/header');
                                                     </div>
                                                    
                                                     <div class="col-auto text-right">
-                                                        <span class="text-gray-90"><?php echo $rtvalue["count"] ?></span>
+                                                        <span class="text-gray-90"><?php echo $review_content["five_star"] ;?></span>
                                                     </div>
                                                     
                                                 </a>
