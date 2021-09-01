@@ -150,6 +150,7 @@ class Product extends CI_Controller {
                   "one_star"  => $one_star ,
                 );
                 $data['review_content']= $review_content;
+               
        if($this->user_id){
         if (isset($_POST['submit_review'])) {
 
@@ -160,14 +161,20 @@ class Product extends CI_Controller {
            "status"=> 'unseen' ,
            "comment"=> $this->input->post('comment') ,
            "rating"=>$this->input->post('rating') ,
-           "review_date"=>date('Y-m-d'),
-           "review_time"=> date('h:i:sa'),
+           "review_date"=>date('F j, Y'),
+           "review_time"=> date('g:i a'),
         );
-  
+         
+          
           $this->db->insert('product_review', $reviewArray);
+
+          $this->session->set_flashdata('login', 'Thanks for Review!');
 
       }
       
+     }
+     else{
+        $this->session->set_flashdata('login', 'Login or Register to Review. !');
      }
      
         

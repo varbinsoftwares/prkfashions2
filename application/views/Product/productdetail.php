@@ -102,14 +102,14 @@ $this->load->view('layout/header');
                             <h2 class="font-size-25 text-lh-1dot2"><?php echo $product_details['title']; ?></h2>
                             <div class="mb-2">
                                 <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
-                                    <div class="text-warning mr-2">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
-                                    </div>
-                                    <span class="text-secondary font-size-13">(3 customer reviews)</span>
+                                    <div class="mr-2">
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_1"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_2"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_3"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_4"></i>
+                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_5"></i>
+                                        </div>
+                                    <span class="text-secondary font-size-13">(<?php echo $review_content['total_review'];?> customer reviews)</span>
                                 </a>
                             </div>
                             <div class="d-md-flex align-items-center">
@@ -217,30 +217,37 @@ $this->load->view('layout/header');
                                         <div class="text-lh-1">overall</div>
                                     </div>-->
                                     <div class="mb-3">
+                                   <?php if ($review_content['total_review'] == '0'){?>
                                         <h3 class="font-size-18 mb-6">Be First To Review</h3>
+                                    <?php }?>                                 
                                         <div class="mb-3">
-                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_1"></i>
-                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_2"></i>
-                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_3"></i>
-                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_4"></i>
-                                            <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_5"></i>
-
-                                    
+                                            <i class="fas fa-star text-muted mr-1 avg_star" id="sub_1"></i>
+                                            <i class="fas fa-star text-muted mr-1 avg_star" id="sub_2"></i>
+                                            <i class="fas fa-star text-muted mr-1 avg_star" id="sub_3"></i>
+                                            <i class="fas fa-star text-muted mr-1 avg_star" id="sub_4"></i>
+                                            <i class="fas fa-star text-muted mr-1 avg_star" id="sub_5"></i>
                                         </div>
-                                        <input type="hidden" id="avg_rate" name="average_rate" value="<?php if( ceil($review_content['avg_rating']) != 0 ) { echo ceil($review_content['avg_rating']) ; }  else{ echo '0'; }?>">
+                                        <input type="hidden" id="avg_rate" name="average_rate" value="<?php echo ceil($review_content['avg_rating']);?>">
                                         
-                                        <h2 id="avg_rating" class="font-size-30 font-weight-bold text-lh-1 mb-0"><?php echo $review_content['avg_rating'];?> / 5</h2>
+                                        <h2 id="avg_rating" class="font-size-30 font-weight-bold text-lh-1 mb-0"><?php if( ceil($review_content['avg_rating']) != 0 ) { echo ceil($review_content['avg_rating']) ; }  else{ echo '0'; }?> / 5</h2>
                                         <div class="text-lh-1">overall</div>
                                     </div>
                                     <?php
+                                    
+                                    $one= $review_content['one_star'] ;
+                                    $two= $review_content['two_star'] ;
+                                    $three= $review_content['three_star'] ;
+                                    $four= $review_content['four_star'] ;
+                                    $five= $review_content['five_star'] ;
                                     $ratingstructure = array(
 
-                                        5 => array("count" => "0"),
-                                        4 => array("count" => "0"),
-                                        3 => array("count" => "0"),
-                                        2 => array("count" => "0"),
-                                        1 => array("count" => "0"),
+                                        5 => array("count"=> "$five", "id"=>"prg_five" ),
+                                        4 => array("count"=> "$four", "id"=>"prg_four"),
+                                        3 => array("count"=>"$three", "id"=>"prg_three"),
+                                        2 => array("count"=> "$two", "id"=>"prg_two"),
+                                        1 => array("count"=> "$one" ,"id"=>"prg_one"),
                                     );
+                                   
                                     foreach ($ratingstructure as $rtkey => $rtvalue) {
                                         ?>
 
@@ -268,12 +275,12 @@ $this->load->view('layout/header');
                                                     </div>
                                                     <div class="col-auto mb-2 mb-md-0">
                                                         <div class="progress ml-xl-5" style="height: 10px; width: 200px;">
-                                                            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 100%;" aria-valuenow="100" id="<?php echo $rtvalue["id"] ;?>" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </div>
                                                    
                                                     <div class="col-auto text-right">
-                                                        <span class="text-gray-90"><?php echo $review_content["five_star"] ;?></span>
+                                                        <span class="text-gray-90"><?php echo $rtvalue["count"] ;?></span>
                                                     </div>
                                                     
                                                 </a>
@@ -332,18 +339,29 @@ $this->load->view('layout/header');
                             </div>
                                                    <?php foreach($reviews as $key=>$value) {
                                                        if ($value['status']=='Approved') {
-                                                       
+                                                         
                                                        ?>     
+                                            
+                                                      <input type="hidden" id="user_rating" name="urate" value="<?php echo $value['rating'];?>"> 
                                                     
                                                         <div class="border-bottom border-color-1 pb-4 mb-4">
-                                                              
-                                                            <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2">
-                                                                <div class="text-warning text-ls-n2 font-size-16" style="width: 80px;">
-                                                                    <small class="fas fa-star user_star text-muted" id="users_1"></small>
-                                                                    <small class="fas fa-star user_star text-muted" id="users_2"></small>
-                                                                    <small class="fas fa-star user_star text-muted" id="users_3"></small>
-                                                                    <small class="fas fa-star user_star text-muted" id="users_4"></small>
-                                                                    <small class="fas fa-star user_star text-muted" id="users_5"></small>
+                                                    
+                                                            <div class="d-flex justify-content-between align-items-center text-secondary font-size-1 mb-2 ">
+                                                                <div class="text-ls-n2 font-size-16 star_user" style="width: 80px;">
+                                                                <?php 
+                                                                $rate= $value['rating'];
+                                                                for( $star=1; $star<=5; $star++){
+                                                                  if($star<=$rate){?>
+                                                                                <small class="fas fa-star text-warning user_star" id="users_1"></small>
+                                                                          <?php  }
+
+                                                                            else{?>
+                                                                                <small class="fas fa-star text-muted user_star" id="users_2"></small>
+                                                                                <?php
+                                                                            }
+                                                                        }
+                                                                        ?>
+                                                                    
                                                                 </div>
                                                             </div>
                                                            
@@ -511,25 +529,11 @@ $this->load->view('layout/footer');
         }
 
         $("#star_rating").val(count-1);
-        console.log(count-1);
+      
         
         
     });
-    $(document).on('dblclick' , '.submit_star', function(){
 
-      
-        
-         ratingd =$(this).data('rating');
-
-        for (var count =1; count <= ratingd; count++)
-        {
-          $('#star_'+count).addClass('star-light');
-          $('#star_'+count).removeClass('text-warning');
-        }
-    
-         
-    });
-      
     $('.main_star').each(function(){
     var count_star =0;
       
@@ -543,18 +547,26 @@ $this->load->view('layout/footer');
      console.log(count_star);
     });
 
-    $('.user_star').each(function(){
-    var count1 =0;
+    $('.avg_star').each(function(){
+    var count_star =0;
       
-     var star_rate = $('#star_rating').val();
+     var avg_rating = $('#avg_rate').val();
 
-     for (count1 =1; count1 <= star_rate; count1++) {
-         $('#users_'+count1).addClass('text-warning');
-         $('#users_'+count1).removeClass('text-muted');
+     for (count_star =1; count_star <= avg_rating; count_star++) {
+         $('#sub_'+count_star).addClass('text-warning');
+         $('#sub_'+count_star).removeClass('text-muted');
      }
      
-     console.log(count1);
-    });
+     console.log(count_star);                         
+    });                                                                        
+      
+    
+    $('#prg_five').css('width',(<?php echo $five;?> / <?php echo $review_content['total_review'];?>) * 100 + '%');
+    $('#prg_four').css('width',(<?php echo $four;?> / <?php echo $review_content['total_review'];?>) * 100 + '%');
+    $('#prg_three').css('width',(<?php echo $three;?> / <?php echo $review_content['total_review'];?>) * 100 + '%');
+    $('#prg_two').css('width',(<?php echo $two;?> / <?php echo $review_content['total_review'];?>) * 100 + '%');
+    $('#prg_one').css('width',(<?php echo $one;?> / <?php echo $review_content['total_review'];?>) * 100 + '%');
+
 
     $('#save_review').click(function(){
 
