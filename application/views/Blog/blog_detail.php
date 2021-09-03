@@ -102,15 +102,17 @@ $this->load->view('layout/header');
                                     <h4><?php  ?></h4>
                                     <h4 class="section-title mb-0 pb-3 font-size-25">Leave a Reply</h4>
                                 </div>
+                               <h3 class="text-success"> <?php echo $this->session->flashdata('login'); ?></h3>
                                 <p class="text-gray-90">Your email address will not be published. Required fields are marked <span class="text-dark">*</span></p>
                                 <form action="" method="POST" class="js-validate" novalidate="novalidate">
+                               
                                     <div class="js-form-message mb-4">
                                         <label class="form-label">
                                             Comment <span style="color:red;">*</span>
                                         </label>
 
                                         <div class="input-group">
-                                            <textarea class="form-control p-5" rows="4" name="comment" placeholder="" required=""></textarea>
+                                            <textarea class="form-control p-5" rows="4" name="comment" placeholder="" required=""></textarea>   
                                         </div>
                                     </div>
                                     <div class="row">
