@@ -83,7 +83,7 @@ $image2 = "";
             <div class="my-md-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="<?php echo site_url("/"); ?>">PrkFashions</a></li>
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="<?php echo site_url("/"); ?>">PrkFashions</a></li> 
                         <?php
                         foreach ($linklist as $key => $value) {
                             ?>
@@ -92,6 +92,7 @@ $image2 = "";
                             <?php
                         }
                         ?>
+                    
                     </ol>
                 </nav>
             </div>
@@ -240,9 +241,11 @@ $image2 = "";
                                                 <div class="mb-2"><a href="<?php echo site_url(); ?>product/ProductDetails/{{product.id}}" class="font-size-12 text-gray-5">{{product.category_name}}</a></div>
                                                 <h5 class="mb-1 product-item__title"><a href="" class="text-blue font-weight-bold">{{product.title}}</a></h5>
 
+
                                                 <div class="mb-3">
                                                     <a class="d-inline-flex align-items-center small font-size-14" href="#">
                                                         <div class="text-warning mr-2">
+                                                           
                                                             <small class="fas fa-star"></small>
                                                             <small class="fas fa-star"></small>
                                                             <small class="fas fa-star"></small>

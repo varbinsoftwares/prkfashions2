@@ -21,9 +21,7 @@ class Product extends CI_Controller {
     function ProductList($cat_id) {
 
         $tempcatid = $cat_id;
-
-
-
+      
         $categories = $this->Product_model->productListCategories($cat_id);
 
         $data["categorie_parent"] = $this->Product_model->getparent($cat_id);
@@ -82,7 +80,8 @@ class Product extends CI_Controller {
         $data["categories2"] = $categories2;
         $data["category"] = $cat_id;
         $session_last_custom = $this->session->userdata('session_last_custom');
-
+        
+       
 
 
         $this->load->view('Product/productList', $data);
@@ -171,11 +170,12 @@ class Product extends CI_Controller {
           $this->session->set_flashdata('login', 'Thanks for Review!');
 
       }
-      
-     }
-     else{
+      else{
         $this->session->set_flashdata('login', 'Login or Register to Review. !');
      }
+      
+     }
+     
      
         
         if ($prodct_details) {

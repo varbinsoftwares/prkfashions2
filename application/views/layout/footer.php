@@ -130,7 +130,7 @@
                                     </a></li>
                                 <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('contact') ?>">Contact Us
                                     </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url() ?>">Blogs
+                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('blog') ?>">Blogs
                                     </a></li>
                                 <li><a class="list-group-item list-group-item-action" href="https://www.justdial.com/Mandsaur/Prk-Fashion-Near-Bus-Office-Mandsaur-H-O/9999P7427-7427-210425113100-I2R3_BZDET">Justdial
                                     </a></li>

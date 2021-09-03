@@ -8,6 +8,7 @@ class Shop extends CI_Controller {
         parent::__construct();
         $this->load->model('Product_model');
         $this->load->library('session');
+        $this->currentuser = $this->session->userdata('logged_in');
        $sessionuser =  $this->session->userdata('logged_in');
         $this->user_id = $sessionuser ? $sessionuser['login_id'] : 0;
     }
@@ -184,9 +185,93 @@ class Shop extends CI_Controller {
     }
 
     public function blog($pageno = 0) {
-        $this->load->view('pages/blog');
-    }
+        $query = $this->db->get('style_tips');
+        $blogs = $query->result_array();
+        $data['blogs']= $blogs;
 
+        $query = $this->db->get('style_category');
+        $blog_cate = $query->result_array();
+        $data['blog_cate']= $blog_cate;
+
+        $query = $this->db->get('style_tags');
+        $blog_tag = $query->result_array();
+        $data['blog_tag']= $blog_tag;
+
+        $this->db->limit(5);
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get("style_tips");
+        $recents = $query->result_array();
+        $data['recents'] =$recents;
+
+        
+        $query4 = $this->db->get("user_comment");
+        $comments = $query4->result_array();
+        $data['comments'] = $comments;
+        foreach ($comments as $row){
+            $total_comment++;
+        }
+        $data['total_comment'] = $total_comment;
+        echo $total_comment;
+        $this->load->view('Blog/blog' ,$data);
+    }
+    
+    public function blogdetail($bid){
+        $query1 = $this->db->get('style_category');
+        $blog_cate = $query1->result_array();
+        $data['blog_cate']= $blog_cate;
+
+        $query2 = $this->db->get('style_tags');
+        $blog_tag = $query2->result_array();
+        $data['blog_tag']= $blog_tag;
+
+                $this->db->where('id', $bid);      
+        $query3 = $this->db->get('style_tips');
+        $blog_single = $query3->row_array();
+        $data['blog_single']= $blog_single;
+        
+        $this->db->limit(5);
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get("style_tips");
+        $recents = $query->result_array();
+        $data['recents'] =$recents; 
+
+            $this->db->where('post_id', $bid);
+        $query4 = $this->db->get("user_comment");
+        $comments = $query4->result_array();
+        $data['comments'] = $comments;
+        foreach ($comments as $row){
+            $total_comment++;
+        }
+        $data['total_comment'] = $total_comment;
+        if($this->user_id){
+            if (isset($_POST['blog_comment'])) {
+    
+                $commentdata=  array("post_id" => $bid ,
+               "user_id"=>  $this->user_id ,
+               "name"=> $this->currentuser['first_name']. " ".$this->currentuser['last_name'] ,
+               "email"=> $this->currentuser['username'],
+               //"status"=> 'unseen' ,
+               "comment"=> $this->input->post('comment') ,
+               "website" => $this->input->post('website'),
+               "op_date_time"=>date('d M, Y'),
+               
+            );
+             
+              
+              $this->db->insert('user_comment', $commentdata);
+    
+              $this->session->set_flashdata('login', 'Thanks for comment!');
+    
+          }
+          else{
+            $this->session->set_flashdata('login', 'Login or Register to comment. !');
+         }
+          
+         }
+         
+
+        $this->load->view('Blog/blog_detail' ,$data);
+    }
     function loyalprogram() {
         $this->load->view('pages/loyalprogram');
     }
