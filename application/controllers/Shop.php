@@ -24,9 +24,11 @@ class Shop extends CI_Controller {
         $query = $this->db->get('settings_slider');
         $sliders = $query->result_array();
         $data["homepageslider"] = $sliders;
-  
+
+
         $this->load->view('home', $data);
     }
+    
 
     public function contactus() {
         if (isset($_POST['sendmessage'])) {

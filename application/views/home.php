@@ -53,6 +53,8 @@ $this->load->view('layout/header');
                         ];
 
                         foreach ($homepageslider as $key => $value) {
+
+                            if ($value['status']=='Active') {
                             
              ?>  
             
@@ -87,7 +89,7 @@ $this->load->view('layout/header');
                             </div>
                         </div>
                     </div>
-                    <?php }
+                    <?php } }
                     ?>
                    
                 </div>

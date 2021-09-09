@@ -80,9 +80,12 @@ class Product extends CI_Controller {
         $data["categories2"] = $categories2;
         $data["category"] = $cat_id;
         $session_last_custom = $this->session->userdata('session_last_custom');
-        
-       
-
+    
+        $this->db->select('rating, product_id,');
+        $review = $this->db->get('product_review');
+        $productreview = $review->result_array();
+        $data['productreview'] = $productreview;
+      
 
         $this->load->view('Product/productList', $data);
     }
@@ -160,7 +163,7 @@ class Product extends CI_Controller {
            "status"=> 'unseen' ,
            "comment"=> $this->input->post('comment') ,
            "rating"=>$this->input->post('rating') ,
-           "review_date"=>date('F j, Y'),
+           "review_date"=>date('d-M-Y'),
            "review_time"=> date('g:i a'),
         );
          

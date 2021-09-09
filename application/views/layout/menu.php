@@ -1,18 +1,14 @@
 <?php
 
-$productcategory1 = [
-    array("title"=>"Mens Wear", "link"=>""),
-   
-];
-$productcategory2 = [
-    
-    array("title"=>"Womens Wear", "link"=>""),
-    
-];
-$productcategory3 = [
-    
-    array("title"=>"Kids Wear", "link"=>""),
-];
+
+$this->db->where('parent_id', '0');
+$query = $this->db->get('category');
+$parent_categories = $query->result_array();
+
+
+$query1 = $this->db->get('category');
+$sub_categories = $query1->result_array();
+
 ?> 
 <style>
     .menudescription{
@@ -31,21 +27,25 @@ $productcategory3 = [
                     <ul class="navbar-nav u-header__navbar-nav">
 
                         <?php
-                        foreach ($productcategory1 as $key => $value) {
+                        foreach ($parent_categories as $key => $value) {
                             ?>
                             <!-- TV & Audio -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                                <a id="TVMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="<?php echo $value['link']; ?>" aria-haspopup="true" aria-expanded="false"><?php echo $value['title'] ?></a>
+                        <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                <a id="TVMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="<?php echo $value['link']; ?>" aria-haspopup="true" aria-expanded="false"><?php echo $value['category_name'] ?></a>
 
+                                
+                                
                                 <!-- TV & Audio - Mega Menu -->
-                                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="MENSMegaMenu" style="display: none;">
+                            <?php foreach($sub_categories as $row => $svalue) { ?>
+                                    <?php if ($svalue['parent_id']==$value['id']) { ?>
+                                   <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="MENSMegaMenu"  style="display: none;">
                                     <div class="row u-header__mega-menu-wrapper">
 
                                         <div class="col-md-4">
                                             <span class="u-header__sub-menu-title">Latest Trend</span>
 
                                             <p class="menudescription">
-                                                Shop from the latest collection of Shirts for men online. Buy shirts, T-shirts, Jeans, Trousers & more at best price
+                                                Shop from the latest collection of Shirts for men online. Buy shirts, T-shirts, Jeans, Trousers & more at best price.
                                             </p>
                                             <ul class="u-header__sub-menu-nav-group mb-3">
                                                 <?php
@@ -57,12 +57,14 @@ $productcategory3 = [
                                                     array("title" => "Jackets", "link" => "Product/Productlist/0/0/"),
                                                     array("title" => "Accessories", "link" => "Product/Productlist/0/0/"),
                                                 ];
-                                                foreach ($menuarray as $key => $value) {
+                                                 
                                                     ?>
-                                                    <li><a href="<?php echo site_url();?><?php echo $value['link']; ?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
-                                                    <?php
-                                                }
-                                                ?>
+                                                    <?php foreach($sub_categories as $row => $svalue) { ?>
+                                                        <?php if ($svalue['parent_id']==$value['id']) { ?>
+                                                    
+                                                    <li><a href="<?php echo site_url();?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $svalue['category_name']; ?></a></li>
+                                                    <?php } ?>
+                                                    <?php  } ?>
                                             </ul>
                                             <span class="u-header__sub-menu-title">Shop By Discount</span>
 
@@ -135,44 +137,16 @@ $productcategory3 = [
                                         </div>
                                     </div>
                                 </div>
+                            <?php } ?>
+                                    <?php  }?>
+                                
                                 <!-- End TV & Audio - Mega Menu -->
                             </li>
                             <!-- End Pages -->
                             <?php
                         }
                         ?>
-                        <?php
-                        foreach ($productcategory2 as $key => $value) {
-                            ?>
-                            <!-- TV & Audio -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                                <a id="TVMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="<?php echo $value['link']; ?>" aria-haspopup="true" aria-expanded="false"><?php echo $value['title'] ?></a>
-
-                                <!-- TV & Audio - Mega Menu -->
-                                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="TVMegaMenu" style="display: none;">
-                                   
-                                </div>
-                                <!-- End TV & Audio - Mega Menu -->
-                            </li>
-                            <!-- End Pages -->
-                            <?php
-                        }
-                        ?>
-                        <?php
-                        foreach ($productcategory3 as $key => $value) {
-                            ?>
-                            <!-- TV & Audio -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
-                                <a id="TVMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="<?php echo $value['link']; ?>" aria-haspopup="true" aria-expanded="false"><?php echo $value['title'] ?></a>
-
-                                <!-- TV & Audio - Mega Menu -->
-                               
-                                <!-- End TV & Audio - Mega Menu -->
-                            </li>
-                            <!-- End Pages -->
-                            <?php
-                        }
-                        ?>
+                        
                         <!-- End Movies & Games -->
                     </ul>
                 </div>

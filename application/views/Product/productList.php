@@ -83,7 +83,7 @@ $image2 = "";
             <div class="my-md-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="<?php echo site_url("/"); ?>">PrkFashions</a></li> 
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="<?php echo site_url("/"); ?>">PrkFashions</a></li>
                         <?php
                         foreach ($linklist as $key => $value) {
                             ?>
@@ -245,12 +245,13 @@ $image2 = "";
                                                 <div class="mb-3">
                                                     <a class="d-inline-flex align-items-center small font-size-14" href="#">
                                                         <div class="text-warning mr-2">
-                                                           
-                                                            <small class="fas fa-star"></small>
-                                                            <small class="fas fa-star"></small>
-                                                            <small class="fas fa-star"></small>
-                                                            <small class="fas fa-star"></small>
-                                                            <small class="far fa-star text-muted"></small>
+                                                    
+                                                           <input type="hidden" name="avg_rate" value="">
+                                                        <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_1"></i>
+                                                        <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_2"></i>
+                                                        <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_3"></i>
+                                                        <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_4"></i>
+                                                        <i class="fas fa-star text-muted mr-1 main_star" id="sub_star_5"></i>
                                                         </div>
                                                         <span class="text-secondary">(40)</span>
                                                     </a>
@@ -333,5 +334,18 @@ $this->load->view('layout/footer');
 <script type="text/javascript">
     $(document).ready(function () {
 
+    });
+
+    $('.main_star').each(function(){
+    var count_star =0;
+      
+     var avg_rating = $('#avg_rate').val();
+
+     for (count_star =1; count_star <= avg_rating; count_star++) {
+         $('#sub_star_'+count_star).addClass('text-warning');
+         $('#sub_star_'+count_star).removeClass('text-muted');
+     }
+     
+     console.log(count_star);
     });
 </script>

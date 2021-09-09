@@ -307,6 +307,7 @@
 
                                                         <!-- List -->
                                                         <ul id="headerSidebarList" class="u-header-collapse__nav">
+                                                       
                                                             <!-- Value of the Day -->
                                                             <li class="">
                                                                 <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">Value of the Day</a>
@@ -324,64 +325,42 @@
                                                                 <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">New Arrivals</a>
                                                             </li>
                                                             <!-- End New Arrivals -->
+                                                            <?php
 
+
+                                                                $this->db->where('parent_id', '0');
+                                                                $query = $this->db->get('category');
+                                                                $parent_categories = $query->result_array();
+
+
+                                                                $query1 = $this->db->get('category');
+                                                                $sub_categories = $query1->result_array();
+
+                                                                ?> 
                                                             <!-- Computers & Accessories -->
+                                                            <?php foreach($parent_categories as $key => $value) { ?>
                                                             <li class="u-has-submenu u-header-collapse__submenu">
                                                                 <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
-                                                                    Mens Wear
+                                                                    <?php echo $value['category_name']; ?>
                                                                 </a>
 
                                                                 <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
                                                                     <ul class="u-header-collapse__nav-list">
-                                                                        <li><span class="u-header-sidebar__sub-menu-title">Mens &amp; Wear</span></li>
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Shirts</a></li>
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">T-shirts</a></li>
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Jeans</a></li>
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Trousers</a></li>
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Shorts</a></li>
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Formal shirts</a></li>
-                                                                        <li><span class="u-header-sidebar__sub-menu-title">Bottom Wear</span></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Jeans</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Trousers</a></li>
+
+                                                                        
+                                                                        <?php foreach($sub_categories as $row => $svalue) { ?>
+                                                                       <?php if ($svalue['parent_id']==$value['id']) { ?>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0"><?php echo $svalue['category_name']; ?></a></li>
+                                                                        <?php } }?>
+                                                                        
                                                                     </ul>
                                                                 </div>
                                                             </li>
                                                             <!-- End Computers & Accessories -->
 
-                                                            <!-- Cameras, Audio & Video -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="#" data-target="#headerSidebarCamerasCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarCamerasCollapse">
-                                                                    Womens Wear
-                                                                </a>
-
-                                                                <div id="headerSidebarCamerasCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
-                                                                        <li><span class="u-header-sidebar__sub-menu-title">Top</span></li>
-                                                                      
-                                                                        
-                                                                    
-                                                                        <li><span class="u-header-sidebar__sub-menu-title">Bottom</span></li>
-                                                                       
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <!-- End Cameras, Audio & Video -->
-
-                                                            <!-- Mobiles & Tablets -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="#" data-target="#headerSidebarMobilesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMobilesCollapse">
-                                                                    Kids Wear
-                                                                </a>
-
-                                                                <div id="headerSidebarMobilesCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
-                                                                        <li><span class="u-header-sidebar__sub-menu-title">Kids Wear</span></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="#">Dresses</a></li>
-                                                                    
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
+                                                            
+                                                            <?php }
+                                                            ?>
                                                             <!-- End Mobiles & Tablets -->
 
                                                             <!-- Movies, Music & Video -->
