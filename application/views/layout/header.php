@@ -421,10 +421,10 @@
                                             <footer id="SVGwaveWithDots" class=" u-header-sidebar__footer">
                                                 <ul class="list-inline mb-0">
                                                     <li class="list-inline-item pr-3">
-                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Privacy</a>
+                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="<?php echo site_url('privacy-policy') ?>">Privacy</a>
                                                     </li>
                                                     <li class="list-inline-item pr-3">
-                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Terms</a>
+                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="<?php echo site_url('terms-condition') ?>">Terms</a>
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a class="u-header-sidebar__footer-link text-gray-90" href="#">

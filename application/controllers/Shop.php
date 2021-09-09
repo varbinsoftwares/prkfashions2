@@ -25,6 +25,9 @@ class Shop extends CI_Controller {
         $sliders = $query->result_array();
         $data["homepageslider"] = $sliders;
 
+        $this->db->where('parent_id', "0");
+        $category = $this->db->get('category');
+        $data['category']= $category;
 
         $this->load->view('home', $data);
     }
