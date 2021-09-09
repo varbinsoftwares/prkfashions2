@@ -62,7 +62,7 @@ $sub_categories = $query1->result_array();
                                                     <?php foreach($sub_categories as $row => $svalue) { ?>
                                                         <?php if ($svalue['parent_id']==$value['id']) { ?>
                                                     
-                                                    <li><a href="<?php echo site_url();?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $svalue['category_name']; ?></a></li>
+                                                    <li><a href="<?php echo site_url(); ?>product/productlist/0/0" class="nav-link u-header__sub-menu-nav-link"><?php echo $svalue['category_name']; ?></a></li>
                                                     <?php } ?>
                                                     <?php  } ?>
                                             </ul>
