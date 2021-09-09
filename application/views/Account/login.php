@@ -147,13 +147,13 @@ $this->load->view('layout/header');
                         </div>
                         <!-- End Form Group -->
                         <div class="col-md-6">
-                            <p class="text-gray-90 mb-4">Your personal data will be used to support your experience throughout this website, to manage your account, and for other purposes described in our <a href="#" class="text-blue">privacy policy.</a></p>
+                            <p class="text-gray-90 mb-4">Your personal data will be used to support your experience throughout this website, to manage your account, and for other purposes described in our <a href="<?php echo site_url('privacy-policy'); ?>" class="text-blue">privacy policy.</a></p>
                         </div>
                         <!-- Button -->
                         <div class="col-md-6">
                             <div class="mb-6">
                                 <div class="mb-3">
-                                    <button type="submit" class="btn btn-primary-dark-w px-5" name="registration" value="registration   ">Register</button>
+                                    <button type="submit" class="btn btn-primary-dark-w px-5" name="registration" value="registration">Register</button>
                                 </div>
                             </div>
                         </div>

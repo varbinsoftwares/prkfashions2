@@ -35,7 +35,7 @@ $this->load->view('layout/header');
     }
 </style> 
 <!-- Inner Page Banner Area Start Here -->
-<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/res/images/sections/blog.jpg');   margin-top: -30px;    padding: 100px 0px;   " data-center="" data-top-bottom="">
+<section id="page-title" class="page-title-parallax page-title-center border-bottom" style="background-image: url('<?php echo base_url(); ?>assets/theme2/images/parallax/parallax-bg.jpg');   margin-top: -30px;    padding: 100px 0px;   " data-center="" data-top-bottom="">
     <div class="container clearfix">
         <h1 class="font-secondary capitalize ls0" style="font-size: 62px;color:white;">Account</h1>
     </div>

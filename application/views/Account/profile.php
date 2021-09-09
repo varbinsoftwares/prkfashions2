@@ -2,11 +2,6 @@
 $this->load->view('layout/header');
 ?>
 
-
-
-
-
-
 <!-- Content -->
 <div id="content" class="my-account-page-area"> 
 
@@ -40,7 +35,7 @@ $this->load->view('layout/header');
 
                         <div class=" woocommerce-MyAccount-content">  
                             <div class="woocommerce-MyAccount-content "> 
-                                <div class="border-bottom border-color-1 mb-1">
+                                <div class="border-bottom border-color-1 mb-1 mt-4">
                                     <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Access Your Account</h3>
                                 </div>  </br></br>
                                                             <h6><?php echo $user_details->email; ?> <small><strong>Email (For Login)</strong></small> </h6></br></br>
