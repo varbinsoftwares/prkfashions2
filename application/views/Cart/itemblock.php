@@ -142,6 +142,7 @@
                     <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
                         Cash On Delivery
                     </span> 
+                     
                 </a>
                 <?php
             }

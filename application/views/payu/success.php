@@ -11,7 +11,25 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
+    <?php
+$status=$_POST["status"];
+$txnid=$_POST["txnid"];
+$bankcode=$_POST["bankcode"];
+$amount= $_POST["amount"];
+$msg= $_POST["field6"];
 
+
+print_r($_POST);
+
+// Salt should be same Post Request 
+if (isset($_POST["txnid"])) {
+      echo  "<center> ". $msg ." </center>";
+     
+          echo "<h3>Thank You. Your order status is ". $status .".</h3>";
+          echo "<h4>Your Transaction ID for this transaction is ".$txnid.".</h4>";
+          echo "<h4>We have received a payment of Rs. " . $amount . " from " . $bankcode . ". Your order will soon be shipped.</h4>";
+}
+?>	
     
 </main>
 <!-- ========== END MAIN CONTENT ========== -->

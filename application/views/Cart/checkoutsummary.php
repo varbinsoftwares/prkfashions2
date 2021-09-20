@@ -1,3 +1,4 @@
+
 <div class="pl-lg-3 ">
     <div class="bg-gray-1 rounded-lg">
         <div class="p-4 mb-4 checkout-table">
@@ -59,7 +60,7 @@
                             <div class="border-bottom border-color-1 border-dotted-bottom">
                                 <div class="p-2" id="basicsHeadingThree">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="thirdpayment_type" name="payment_type" checked="" value="Cash On Delivery">
+                                        <input type="radio" class="custom-control-input" id="thirdpayment_type" name="payment_type" value="Cash On Delivery">
                                         <label class="custom-control-label form-label" for="thirdpayment_type" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
                                             Cash on delivery
                                         </label>
@@ -73,10 +74,29 @@
                             </div>
                             <!-- End Card -->
 
+                             <!-- Card -->
+                             <div class="border-bottom border-color-1 border-dotted-bottom">
+                                <div class="p-2" id="basicsHeadingFour">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="Fourpayment_type" name="payment_type" value="PayU">
+                                        <label class="custom-control-label form-label" for="Fourpayment_type" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
+                                            UPI, Netbanking, Credit Card, Debit card  
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="basicsCollapseFour" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion1">
+                                    <div class="p-4">
+                                       You can pay with your credit card, Debit Card, Netbanking, Google Pay, Phone Pay or PayTM
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Card -->
+
                            
 
                         </div>
                         <!-- End Basics Accordion -->
+                        
                     </div>
                     <div class="form-group d-flex align-items-center justify-content-between px-3 mb-3">
                         <div class="form-check">

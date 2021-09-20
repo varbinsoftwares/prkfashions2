@@ -1,11 +1,9 @@
+
 <?php
 $this->load->view('layout/header');
 ?>
 
 <style>
-
-
-
 
     .cartbutton{
         width: 100%;
@@ -206,3 +204,7 @@ $this->load->view('Cart/noproduct');
 <?php
 $this->load->view('layout/footer', array('custom_item' => 0, 'custom_id' => 0));
 ?>
+
+
+
+
