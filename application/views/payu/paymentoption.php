@@ -1,7 +1,7 @@
 <?php
 $this->load->view('layout/header');
 ?> 
-
+<html>
   <script>
     var hash = '<?php echo $hash ?>';
     function submitPayuForm() {
@@ -15,7 +15,13 @@ $this->load->view('layout/header');
   </head>
   <body onload="submitPayuForm()">
   
-    <h2>PayU Form</h2>
+    <h2 style="text-align:center">Payment Processing...</h2>
+
+    <div style="padding:50px;">
+    <img style="margin-left:540px; height:150px; width:150px;" src="<?php echo base_url();?>/assets/images/process.gif" alt="">
+    </div>
+
+    
     <br/>
     <?php if($formError) { ?>
 	
@@ -38,7 +44,8 @@ $this->load->view('layout/header');
          
        
     </form>
-  
+  </body>
+  </html>
 <?php
 $this->load->view('layout/footer');
 ?> 

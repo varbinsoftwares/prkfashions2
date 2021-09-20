@@ -11,6 +11,35 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
+    <div class="container mb-8 mb-lg-0">
+
+        <div class="row mb-8">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" style="text-align: center">
+                <h2><i class="fa fa-check-circle" style="color:green"></i>&nbsp;&nbsp;&nbsp;Order Successful</h2>
+                <p>Your order has been placed, please check your email.</p>
+                <h2>Order ID: <?php echo $order_details['order_data']->order_no; ?></h2>
+                <h4>Price: <b>{{<?php echo $order_amount; ?> |currency:"HKD"}}</b></h4>
+
+                <table class="table" style="text-align: left;width:400px;display: inline-block;margin-top: 50px;">
+                    <tr>
+                        <th style="width:50%">Customer Name</th>
+                        <td><?php echo $order_details['order_data']->name; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td><?php echo $order_details['order_data']->email; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Contact No.</th>
+                        <td> <?php echo $order_details['order_data']->contact_no; ?></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+    </div>
     <?php
 $status=$_POST["status"];
 $txnid=$_POST["txnid"];
