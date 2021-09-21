@@ -43,7 +43,7 @@ class PayuPayment extends CI_Controller {
         $data['key'] =  $paymentconf["payu_merchant_key"];
         $productinfo = "Order No. ".$orderobj->order_no.", total ".$orderobj->total_quantity." products in order";
         $payu_array = array(
-            "key" => $paymentconf["payu_merchant_key"],
+            "key" => "JpWlQ1",
             "email" => $orderobj->email, "amount" => $orderobj->total_price, "firstname" => $orderobj->name, "phone" => $orderobj->contact_no, "productinfo" => $productinfo, "surl" => $success, "furl" => $fail, "service_provider" => "payu_paisa");
 
 
@@ -51,7 +51,7 @@ class PayuPayment extends CI_Controller {
         $SALT =  $paymentconf["payu_salt_key"];
 // Merchant Key and Salt as provided by Payu.
 //$PAYU_BASE_URL = "https://sandboxsecure.payu.in";		// For Sandbox Mode
-        $PAYU_BASE_URL = "https://secure.payu.in";   // For Production Mode
+        $PAYU_BASE_URL = "https://secure.payu.in";     // For Production Mode
         $action = '';
         $posted = array();
         $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
@@ -79,19 +79,18 @@ class PayuPayment extends CI_Controller {
 
                 $hash_string .= $SALT;
 
-
                 $hash = strtolower(hash('sha512', $hash_string));
                 $action = $PAYU_BASE_URL . '/_payment';
+            
             }
         } elseif (!empty($posted['hash'])) {
             $hash = $posted['hash'];
+            
             $action = $PAYU_BASE_URL . '/_payment';
         }
-
-        $exportarray = array("action"=>$action, "hash"=>$hash, "payu_array"=>$payu_array);
-
-
-        $this->load->view('payu/paymentoption',  $exportarray);
+            $exportarray = array("action"=>$action, "hash"=>$hash, "payu_array"=>$payu_array);
+            
+        $this->load->view('payu/paymentoption', $exportarray);
     }
 
     function success() {
@@ -100,7 +99,7 @@ class PayuPayment extends CI_Controller {
 
       $data['successdata']= $postarray;
       print_r($data);
-        $this->load->view('payu/success');
+        $this->load->view('payu/success',$data);
     }
 
     function failure() {

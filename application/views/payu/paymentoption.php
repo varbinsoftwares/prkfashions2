@@ -2,6 +2,8 @@
 $this->load->view('layout/header');
 ?> 
 <html>
+ 
+  <head>
   <script>
     var hash = '<?php echo $hash ?>';
     function submitPayuForm() {
@@ -31,7 +33,7 @@ $this->load->view('layout/header');
     <?php } ?>
     <form action="<?php echo $action; ?>" method="post" name="payuForm">
       
-      <input type="hidden" name="hash" value="<?php echo $hash ?>"/>
+      <input type="hidden" name="hash" value="<?php echo $hash; ?>"/>
 
       <?php
       foreach ( $payu_array as $key => $value){
