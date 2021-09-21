@@ -28,11 +28,11 @@ $this->load->view('layout/header');
                     </tr>
                     <tr>
                         <th>Email</th>
-                        <td><?php echo $order_details['order_data']->email; ?></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <th>Contact No.</th>
-                        <td> <?php echo $order_details['order_data']->contact_no; ?></td>
+                        <td> </td>
                     </tr>
                 </table>
             </div>
