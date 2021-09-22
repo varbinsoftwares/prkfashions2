@@ -21,9 +21,9 @@ class PayuPayment extends CI_Controller {
         $this->db->where_in('attr_key', ["payu_merchant_key", "payu_salt_key",]);
         $query = $this->db->get('configuration_attr');
         $paymentattr = $query->result_array();
-        $paymentconf = array();
+        $this->paymentconf = array();
         foreach ($paymentattr as $key => $value) {
-            $paymentconf[$value['attr_key']] = $value['attr_val'];
+             $this->paymentconf[$value['attr_key']] = $value['attr_val'];
         }
         $this->mid = "";
         $this->secret_code = "";
@@ -38,17 +38,24 @@ class PayuPayment extends CI_Controller {
         $orderobj = ($order_details["order_data"]);
         $success = site_url('PayuPayment/success');
         $fail = site_url('PayuPayment/failure');
+        $MERCHANT_KEY = $this->paymentconf["payu_merchant_key"];
+        $SALT = $this->paymentconf["payu_salt_key"];
 
-    
-        $data['key'] =  $paymentconf["payu_merchant_key"];
-        $productinfo = "Order No. ".$orderobj->order_no.", total ".$orderobj->total_quantity." products in order";
+        $data['key'] = $MERCHANT_KEY;
+        $productinfo = "Order No. " . $orderobj->order_no . ", total " . $orderobj->total_quantity . " products in order";
         $payu_array = array(
-            "key" => "JpWlQ1",
-            "email" => $orderobj->email, "amount" => $orderobj->total_price, "firstname" => $orderobj->name, "phone" => $orderobj->contact_no, "productinfo" => $productinfo, "surl" => $success, "furl" => $fail, "service_provider" => "payu_paisa");
+            "key" => $MERCHANT_KEY,
+            "email" => $orderobj->email,
+            "amount" => $orderobj->total_price,
+            "firstname" => $orderobj->name,
+            "phone" => $orderobj->contact_no,
+            "productinfo" => $productinfo,
+            "surl" => $success,
+            "furl" => $fail,
+            "service_provider" => "payu_paisa");
 
 
-        $MERCHANT_KEY =  $paymentconf["payu_merchant_key"];
-        $SALT =  $paymentconf["payu_salt_key"];
+
 // Merchant Key and Salt as provided by Payu.
 //$PAYU_BASE_URL = "https://sandboxsecure.payu.in";		// For Sandbox Mode
         $PAYU_BASE_URL = "https://secure.payu.in";     // For Production Mode
@@ -81,32 +88,31 @@ class PayuPayment extends CI_Controller {
 
                 $hash = strtolower(hash('sha512', $hash_string));
                 $action = $PAYU_BASE_URL . '/_payment';
-            
             }
         } elseif (!empty($posted['hash'])) {
             $hash = $posted['hash'];
-            
+
             $action = $PAYU_BASE_URL . '/_payment';
         }
-            $exportarray = array("action"=>$action, "hash"=>$hash, "payu_array"=>$payu_array);
-            
+        $exportarray = array("action" => $action, "hash" => $hash, "payu_array" => $payu_array);
+
         $this->load->view('payu/paymentoption', $exportarray);
     }
 
     function success() {
 
-      $postarray = $this->input->post();
+        $postarray = $this->input->post();
 
-      $data['successdata']= $postarray;
-      print_r($data);
-        $this->load->view('payu/success',$data);
+        $data['successdata'] = $postarray;
+        print_r($data);
+        $this->load->view('payu/success', $data);
     }
 
     function failure() {
-      $postarray = $this->input->post();
-     print_r($postarray);
-      $data['faildata']= $postarray;
-        $this->load->view('payu/failure', $data );
+        $postarray = $this->input->post();
+        print_r($postarray);
+        $data['faildata'] = $postarray;
+        $this->load->view('payu/failure', $data);
     }
 
 }
