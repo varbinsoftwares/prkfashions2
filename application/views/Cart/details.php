@@ -71,17 +71,7 @@ $this->load->view('layout/header');
                             <div class="pt-md-3">
                                 <div class="d-block d-md-flex flex-center-between">
                                     <div class="mb-3 mb-md-0 w-xl-40">
-                                        <!-- Apply coupon Form -->
-
-                                        <label class="sr-only" for="subscribeSrEmailExample1">Coupon code</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="text" id="subscribeSrEmailExample1" placeholder="Coupon code" aria-label="Coupon code" aria-describedby="subscribeButtonExample2" required="">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-block btn-dark px-4" type="button" id="subscribeButtonExample2"><i class="fas fa-tags d-md-none"></i><span class="d-none d-md-inline">Apply coupon</span></button>
-                                            </div>
-                                        </div>
-
-                                        <!-- End Apply coupon Form -->
+                                        
                                     </div>
                                     <div class="d-md-flex">
                                         <!--<button type="button" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5 w-100 w-md-auto">Update cart</button>-->
@@ -95,7 +85,7 @@ $this->load->view('layout/header');
             </table>
 
         </form></div>
-    <div class="mb-8 cart-total">
+<!--    <div class="mb-8 cart-total">
         <div class="row">
             <div class="col-xl-5 col-lg-6 offset-lg-6 offset-xl-7 col-md-8 offset-md-4">
                 <div class="border-bottom border-color-1 mb-3">
@@ -128,7 +118,7 @@ $this->load->view('layout/header');
                 <a href="<?php echo site_url("Cart/checkoutInit"); ?>"  class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-md-none">Proceed to checkout</a>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 

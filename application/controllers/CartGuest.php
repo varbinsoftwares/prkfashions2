@@ -42,6 +42,11 @@ class CartGuest extends CI_Controller {
         $this->load->view('CartGuest/details');
     }
 
+    function test() {
+        $coupon_array = $this->Product_model->getDiscount("PRK99", 230);
+        print_r($coupon_array);
+    }
+
     function checkoutInit() {
         $this->redirectCart();
         redirect('CartGuest/checkoutShipping');
@@ -163,6 +168,19 @@ class CartGuest extends CI_Controller {
 
         $genstatus = "Confirmation Pending";
 
+        echo $sub_total_price = $session_cart['sub_total_price'];
+
+        $data["coupon_message"] = "";
+        if (isset($_POST["apply_coupon"])) {
+            $apply_coupon = $this->input->post('coupon_code');
+            $this->session->set_userdata('session_coupon', $apply_coupon);
+        }
+
+        if (isset($_POST["remove_apply_coupon"])) {
+
+            $this->session->set_userdata('session_coupon', "");
+        }
+
 
 //place order
         if (isset($_POST['place_order'])) {
@@ -174,31 +192,14 @@ class CartGuest extends CI_Controller {
                 $session_cart = $this->Product_model->cartData();
             }
 
-            $session_cart['shipping_price'] = 40;
-            if ($session_cart['total_price'] > 399) {
-                $session_cart['shipping_price'] = 0;
-            }
-            if ($address['zipcode'] == 'Tsim Sha Tsui') {
-                $session_cart['shipping_price'] = 0;
-            }
-            if ($address['zipcode'] == 'Pickup') {
-                $session_cart['shipping_price'] = 0;
-            }
-
-            $session_cart['sub_total_price'] = $session_cart['total_price'];
-
-            $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
-
-
             $sub_total_price = $session_cart['sub_total_price'];
             $total_quantity = $session_cart['total_quantity'];
             $total_price = $session_cart['total_price'];
             $shipping_price = $session_cart['shipping_price'];
 
-//place order
-
             $address = $user_address_details;
-            $paymentmathod = $this->input->post('place_order');
+
+            $paymentmathod = $this->input->post('payment_type');
             $order_array = array(
                 'name' => $user_details['name'],
                 'email' => $user_details['email'],
@@ -220,18 +221,25 @@ class CartGuest extends CI_Controller {
                 'status' => $genstatus,
                 'payment_mode' => $paymentmathod,
                 'measurement_style' => "",
-         
+                'coupon_discount' => "",
+                'coupon_code' => "",
+                'coupon_id' => "",
             );
+            if ($session_cart["has_coupon"] == 'yes') {
+                $order_array["coupon_discount"] = $session_cart["coupon"]["coupon_discount"];
+                $order_array["coupon_code"] = $session_cart["coupon"]["coupon_code"];
+                $order_array["coupon_id"] = $session_cart["coupon"]["coupon_id"];
+            }
 
             $this->db->insert('user_order', $order_array);
-             $last_id = $this->db->insert_id();
+            $last_id = $this->db->insert_id();
             $orderno = "PRK" . date('Ymd') . "" . $last_id;
             $orderkey = md5($orderno);
             $this->db->set('order_no', $orderno);
             $this->db->set('order_key', $orderkey);
             $this->db->where('id', $last_id);
             $this->db->update('user_order');
-            
+
             $this->Product_model->cartOperationCustomCopyOrder($last_id);
 
             $order_status_data = array(
@@ -250,8 +258,9 @@ class CartGuest extends CI_Controller {
                 'logged_in' => FALSE,
             );
 
-            $this->session->unset_userdata($newdata);
-            $this->session->sess_destroy();
+//            $this->session->unset_userdata($newdata);
+//            $this->session->sess_destroy();
+//  
             switch ($paymentmathod) {
                 case 'Alipay':
                     redirect('Order/orderPayment/' . $orderkey . "/ALIPAY");
@@ -259,6 +268,10 @@ class CartGuest extends CI_Controller {
                 case 'WeChat':
                     redirect('Order/orderPayment/' . $orderkey . "/WECHAT");
                     break;
+                case "PayU":
+                    redirect('PayuPayment/process/' . $orderkey);
+                    break;
+
                 default:
                     redirect('Order/orderdetails/' . $orderkey);
             }

@@ -13,7 +13,7 @@ class Api extends REST_Controller {
         $this->load->model('Movie');
         $this->load->library('session');
         $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] :"" ;
+        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] : "";
     }
 
     public function index() {
@@ -45,43 +45,7 @@ class Api extends REST_Controller {
             $session_cart = $this->Product_model->cartData();
         }
 
-        $session_cart['shipping_price'] = 40;
-        if ($session_cart['total_price'] > 399) {
-            $session_cart['shipping_price'] = 0;
-        }
-        if ($this->checklogin) {
-            $user_address_details2 = $this->User_model->user_address_details($this->user_id);
-            if ($user_address_details2) {
-                $user_address_details = $user_address_details2[0];
-            } else {
-                $user_address_details = "";
-            }
-        } else {
-            $user_address_details = $this->session->userdata('shipping_address');
-        }
-        if ($user_address_details) {
-
-            $addresscheck2 = $this->session->userdata('shipping_address');
-
-            if ($user_address_details['zipcode'] == 'Tsim Sha Tsui') {
-                $session_cart['shipping_price'] = 0;
-            }
-//            if ($addresscheck2['zipcode'] == 'Pickup') {
-//                $session_cart['shipping_price'] = 0;
-//            }
-        }
-
-
-  
-
-        $session_cart['shipping_price'] = 0;
-        
-        $session_cart['sub_total_price'] = $session_cart['total_price'];
-
-
-
-        $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
-
+      
 
 
         $this->response($session_cart);

@@ -73,7 +73,7 @@ class Product_model extends CI_Model {
         $points = ($point) ?
                 " and " . $wordsz[$point / 10] . " " .
                 $wordsz[$point = $point % 10] : '';
-        return "Only " . globle_currency ." ". $result . " " . ($points ? "" . $points . " Cents" : "") . "";
+        return "Only " . globle_currency . " " . $result . " " . ($points ? "" . $points . " Paise" : "") . "";
     }
 
 ///*******  Get data for deepth of the array  ********///
@@ -211,6 +211,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 /////Cart management 
 //get cart data
     function cartData($user_id = 0) {
+        $finalcartdata = array();
         if ($user_id != 0) {
             $this->db->where('user_id', $user_id);
             $this->db->where('order_id', '0');
@@ -242,16 +243,14 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $productlist[$value['product_id']]['custom_dict'] = $customdata;
             }
 
-            $cartdata = array(
+            $finalcartdata = array(
                 'products' => $productlist,
-                'custome_items_name' => $custome_items_name,
-                'custome_items' => $custome_items,
                 'total_quantity' => $total_quantity,
                 'total_price' => $total_price,
                 'total_credit_limit' => $total_credit_limit,
                 'used_credit' => 0
             );
-            return $cartdata;
+            $session_cart = $finalcartdata;
         } else {
             $session_cart = $this->session->userdata('session_cart');
             if ($session_cart) {
@@ -277,8 +276,63 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $session_cart['total_quantity'] += $value['quantity'];
                 $session_cart['total_price'] += $value['total_price'];
             }
-            return $session_cart;
         }
+
+        $session_cart['sub_total_price'] = $session_cart['total_price'];
+        $session_cart['shipping_price'] = 40;
+        if ($session_cart['sub_total_price'] > 399) {
+            $session_cart['shipping_price'] = 0;
+        }
+
+
+        $session_cart['has_coupon'] = "no";
+        $coupon_code = $this->session->userdata('session_coupon');
+
+        $coupon_discount = 0;
+        if ($coupon_code) {
+            $coupon_details = $this->Product_model->getDiscount($coupon_code, $session_cart['total_price']);
+            if ($coupon_details["coupon_discount"]) {
+                $session_cart['has_coupon'] = "yes";
+                $session_cart['coupon'] = $coupon_details;
+                $coupon_discount = $coupon_details["coupon_discount"];
+            }
+        }
+
+
+
+        $session_cart['total_price'] = ($session_cart['total_price'] - $coupon_discount) + $session_cart['shipping_price'];
+
+
+
+
+
+
+        return $session_cart;
+    }
+
+    function getDiscount($coupon_code, $total_amount) {
+        $this->db->where('coupon_code', $coupon_code);
+        $query = $this->db->get('coupon_setting');
+        $coupon_details = $query->row_array();
+        $discountdata = array("coupon_code" => "", "message" => "", "coupon_discount" => 0, "coupon_id" => "");
+        if ($coupon_details) {
+
+            $calval = $coupon_details["discount_amount"];
+
+            $coupon_discount = $calval;
+            $discountdata["coupon_discount"] = $coupon_discount;
+            $coupon_code = $coupon_details["coupon_code"];
+            if ($coupon_details["discount_type"] == "Percent") {
+                $coupon_discount = ($total_amount * $calval) / 100;
+                $discountdata["coupon_discount"] = $coupon_discount;
+            }
+            $discountdata["coupon_code"] = $coupon_details["coupon_code"];
+            $discountdata["coupon_id"] = $coupon_details["id"];
+            $discountdata["message"] = "Coupon code $coupon_code applied successfully.";
+        } else {
+            $discountdata["message"] = "Invalid coupon code.";
+        }
+        return $discountdata;
     }
 
 //get order details  
@@ -811,6 +865,39 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         }
     }
 
+    public function cartSessionOrder($order_id) {
+
+        $session_cart = $this->session->userdata('session_cart');
+        $productlist = $session_cart['products'];
+
+        foreach ($productlist as $key => $value) {
+            $quantity = $value['quantity'];
+            $product_id = $value['product_id'];
+
+            $product_details = $this->productDetails($product_id);
+            $product_dict = array(
+                'title' => $product_details['title'],
+                'price' => $product_details['price'],
+                'sku' => $product_details['sku'],
+                'attrs' => "",
+                'vendor_id' => $product_details['user_id'],
+                'total_price' => $value['total_price'],
+                'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
+                'quantity' => $quantity,
+                'user_id' => 'guest',
+                'credit_limit' => $product_details['credit_limit'] ? $product_details['credit_limit'] : 0,
+                'product_id' => $product_id,
+                'order_id' => $order_id,
+                'op_date_time' => date('Y-m-d H:i:s'),
+            );
+            $custom_dict = [];
+
+            $this->db->insert('cart', $product_dict);
+            $last_id = $this->db->insert_id();
+            $display_index = 1;
+        }
+    }
+
     public function cartOperationCustomCopyOrder($order_id) {
 
         $session_cart = $this->session->userdata('session_cart');
@@ -837,7 +924,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
             $custom_dict = [];
-            print_r($product_dict);
+
             $this->db->insert('cart', $product_dict);
             $last_id = $this->db->insert_id();
             $display_index = 1;
@@ -894,8 +981,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
 
         return $limitproducts;
     }
-
-
 
     public function testProducts() {
         $products = array(

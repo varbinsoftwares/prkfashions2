@@ -146,80 +146,67 @@ class Cart extends CI_Controller {
         $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
-
         $data['checkoutmode'] = '';
         $delivery_details = $this->session->userdata('delivery_details');
         $data['delivery_details'] = $delivery_details ? $this->session->userdata('delivery_details') : array();
-
-
-        $data["isguest"] = "false";            
-
+        $data["isguest"] = "false";
         $genstatus = "Confirmation Pending";
-
         $data['haspickup'] = 0;
-
+        $data["coupon_message"] = "";
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
             $user_details = $this->User_model->user_details($this->user_id);
             $data['user_details'] = $user_details;
-
             $user_address_details = $this->User_model->user_address_details($this->user_id);
-
             $data['user_address_details'] = $user_address_details;
-
             $user_credits = $this->User_model->user_credits($this->user_id);
             $data['user_credits'] = $user_credits;
-
             $checkaddress = $this->session->userdata('shipping_address');
 
+            if (isset($_POST["apply_coupon"])) {
+                $apply_coupon = $this->input->post('coupon_code');
+                $coupon_array = $this->Product_model->getDiscount($apply_coupon, $sub_total_price);
+                $data["coupon_message"] = $coupon_array["message"];
+                if ($coupon_array["coupon_discount"]) {
+                    $this->session->set_userdata('session_coupon', $coupon_array);
+                }
+            }
 
             if (isset($_POST['place_order'])) {
-
-
                 $paymentmathod = $this->input->post('payment_type');
                 $address = $user_address_details[0];
                 if ($paymentmathod == 'PayPal') {
                     redirect("PayPalPayment" . $checkoutmode . "/process");
                 }
-
                 if ($this->checklogin) {
                     $session_cart = $this->Product_model->cartData($this->user_id);
                 } else {
                     $session_cart = $this->Product_model->cartData();
                 }
-
                 $sub_total_price = $session_cart['total_price'];
                 $total_quantity = $session_cart['total_quantity'];
-
-                $user_details = $this->User_model->user_details($this->user_id);
+                if ($this->user_id) {
+                    $user_details = $this->User_model->user_details($this->user_id);
+                } else {
+                    
+                }
                 $data['user_details'] = $user_details;
-
                 $user_address_details = $this->User_model->user_address_details($this->user_id);
                 $data['user_address_details'] = $user_address_details;
-
                 $user_credits = $this->User_model->user_credits($this->user_id);
                 $data['user_credits'] = $user_credits;
                 $address = $user_address_details[0];
-
                 $session_cart['shipping_price'] = 0;
                 if ($session_cart['total_price'] > 399) {
                     $session_cart['shipping_price'] = 0;
                 }
-
                 $session_cart['sub_total_price'] = $session_cart['total_price'];
-
                 $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
-
 
                 $sub_total_price = $session_cart['sub_total_price'];
                 $total_quantity = $session_cart['total_quantity'];
                 $total_price = $session_cart['total_price'];
                 $shipping_price = $session_cart['shipping_price'];
-
-
-
-                //place order
-
 
                 $order_array = array(
                     'name' => $user_details->first_name . " " . $user_details->last_name,
@@ -244,27 +231,23 @@ class Cart extends CI_Controller {
                     'measurement_style' => '',
                     'credit_price' => $this->input->post('credit_price') || 0,
                 );
-
                 $this->db->insert('user_order', $order_array);
                 $last_id = $this->db->insert_id();
                 $orderno = "PRK" . date('Y/m/d') . "/" . $last_id;
+                $order_id = $last_id;
                 $orderkey = md5($orderno);
                 $this->db->set('order_no', $orderno);
                 $this->db->set('order_key', $orderkey);
                 $this->db->where('id', $last_id);
                 $this->db->update('user_order');
-
-                //measurwement data
-
-                $this->db->set('order_id', $last_id);
-                $this->db->where('order_id', '0');
-                $this->db->where('user_id', $this->user_id);
-                $this->db->update('cart');
-
-
-
-
-
+                if ($this->user_id) {
+                    $this->db->set('order_id', $last_id);
+                    $this->db->where('order_id', '0');
+                    $this->db->where('user_id', $this->user_id);
+                    $this->db->update('cart');
+                } else {
+                    $this->Product_model->cartSessionOrder($order_id);
+                }
                 $order_status_data = array(
                     'c_date' => date('Y-m-d'),
                     'c_time' => date('H:i:s'),
@@ -274,8 +257,7 @@ class Cart extends CI_Controller {
                     'remark' => "$genstatus " . ",  Waiting For Payment",
                 );
                 $this->db->insert('user_order_status', $order_status_data);
-//                    $this->Product_model->order_to_vendor($last_id);
-
+//
                 switch ($paymentmathod) {
                     case 'Alipay':
                         redirect('Order/orderPayment/' . $orderkey . "/ALIPAY");

@@ -23,7 +23,7 @@ class PayuPayment extends CI_Controller {
         $paymentattr = $query->result_array();
         $this->paymentconf = array();
         foreach ($paymentattr as $key => $value) {
-             $this->paymentconf[$value['attr_key']] = $value['attr_val'];
+            $this->paymentconf[$value['attr_key']] = $value['attr_val'];
         }
         $this->mid = "";
         $this->secret_code = "";
@@ -32,15 +32,12 @@ class PayuPayment extends CI_Controller {
     }
 
     function process($order_key) {
-
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
-
         $orderobj = ($order_details["order_data"]);
-        $success = site_url('PayuPayment/success');
-        $fail = site_url('PayuPayment/failure');
+        $success = site_url('PayuPayment/success/' . $order_key);
+        $fail = site_url('PayuPayment/failure/' . $order_key);
         $MERCHANT_KEY = $this->paymentconf["payu_merchant_key"];
         $SALT = $this->paymentconf["payu_salt_key"];
-
         $data['key'] = $MERCHANT_KEY;
         $productinfo = "Order No. " . $orderobj->order_no . ", total " . $orderobj->total_quantity . " products in order";
         $payu_array = array(
@@ -53,11 +50,8 @@ class PayuPayment extends CI_Controller {
             "surl" => $success,
             "furl" => $fail,
             "service_provider" => "payu_paisa");
-
-
-
-// Merchant Key and Salt as provided by Payu.
-//$PAYU_BASE_URL = "https://sandboxsecure.payu.in";		// For Sandbox Mode
+        // Merchant Key and Salt as provided by Payu.
+        //$PAYU_BASE_URL = "https://sandboxsecure.payu.in";		// For Sandbox Mode
         $PAYU_BASE_URL = "https://secure.payu.in";     // For Production Mode
         $action = '';
         $posted = array();
@@ -68,7 +62,7 @@ class PayuPayment extends CI_Controller {
         }
         $formError = 0;
         $hash = '';
-// Hash Sequence
+        // Hash Sequence
         $hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
         if (empty($posted['hash']) && sizeof($posted) > 0) {
             if (
@@ -95,24 +89,60 @@ class PayuPayment extends CI_Controller {
             $action = $PAYU_BASE_URL . '/_payment';
         }
         $exportarray = array("action" => $action, "hash" => $hash, "payu_array" => $payu_array);
-
         $this->load->view('payu/paymentoption', $exportarray);
     }
 
-    function success() {
-
+    function success($order_key) {
         $postarray = $this->input->post();
-
         $data['successdata'] = $postarray;
-        print_r($data);
+        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+        $data["order_details"] = $order_details;
+        $order_status = array(
+            'c_date' => date('Y-m-d'),
+            'c_time' => date('H:i:s'),
+            'status' => "Payment Confirmed",
+            'remark' => "Order payment confirmed.",
+            'description' => "Order payment success.",
+            'order_id' => $order_details["order_data"]->id
+        );
+        $this->db->insert('user_order_status', $order_status);
         $this->load->view('payu/success', $data);
     }
 
-    function failure() {
+    function failure($order_key) {
+        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+
         $postarray = $this->input->post();
-        print_r($postarray);
+        $data["order_details"] = $order_details;
         $data['faildata'] = $postarray;
+         $order_status = array(
+            'c_date' => date('Y-m-d'),
+            'c_time' => date('H:i:s'),
+            'status' => "Payment Failed",
+            'remark' => "Order payment failed.",
+            'description' => "Order payment failed, Payment canceled by customer.",
+            'order_id' => $order_details["order_data"]->id
+        );
+        $this->db->insert('user_order_status', $order_status);
         $this->load->view('payu/failure', $data);
+    }
+
+    function cancel($order_key) {
+        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+        $order_status = array(
+            'c_date' => date('Y-m-d'),
+            'c_time' => date('H:i:s'),
+            'status' => "Canceled",
+            'remark' => "Order has been canceled by customer.",
+            'description' => "Order payment failed, canceled by customer.",
+            'order_id' => $order_details["order_data"]->id
+        );
+        $this->db->insert('user_order_status', $order_status);
+        redirect('Order/orderdetails/' . $order_key);
+    }
+
+    function test() {
+        echo "1" + 2 * "007";
     }
 
 }

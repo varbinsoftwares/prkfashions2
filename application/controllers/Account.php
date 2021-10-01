@@ -134,6 +134,7 @@ class Account extends CI_Controller {
         }
 
         if (isset($_POST['registration'])) {
+          
 
             $email = $this->input->post('email');
             $password = $this->input->post('password');
@@ -142,12 +143,12 @@ class Account extends CI_Controller {
             $cpassword = $this->input->post('con_password');
 
 
-            $contact_no = $this->input->post('contact_no');
+            $contact_no = "";
 
-            $birth_date = $this->input->post('birth_date');
-            $gender = $this->input->post('gender');
-            $country = $this->input->post('country');
-            $profession = $this->input->post('profession');
+            $birth_date = "";
+            $gender = "";
+            $country = "";
+            $profession = "";
 
             if ($cpassword == $password) {
                 $user_check = $this->User_model->check_user($email);

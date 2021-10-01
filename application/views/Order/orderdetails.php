@@ -90,9 +90,9 @@ $paymentstatus = "";
 
                                 <div class="col-md-3" >
                                     <div class="col-md-12" style="    border: 1px solid #000;
-                                     padding: 6px;border-radius: 5px;
-                                   
-                                     border-radius: 5px;">
+                                         padding: 6px;border-radius: 5px;
+
+                                         border-radius: 5px;">
                                         <h3 class="headerorder">Order Status</h3>
 
                                         <?php
@@ -370,7 +370,7 @@ $paymentstatus = "";
                                                     </tr>
 
                                                     <tr>
-                                                        <td colspan="3"  rowspan="4" style="font-size: 12px">
+                                                        <td colspan="3"  rowspan="5" style="font-size: 12px">
                                                             <b>Total Amount in Words:</b><br/>
                                                             <span style="text-transform: capitalize"> <?php echo $order_data->amount_in_word; ?></span>
                                                         </td>
@@ -379,6 +379,21 @@ $paymentstatus = "";
                                                     <tr>
                                                         <td colspan="2" style="text-align: right">Sub Total</td>
                                                         <td style="text-align: right;width: 60px">{{"<?php echo $order_data->sub_total_price; ?>"|currency:"<?php echo globle_currency; ?> "}} </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <?php
+                                                        if ($order_data->coupon_discount) {
+                                                            ?>
+                                                            <td colspan="2" style="text-align: right">Coupon Discount</td>
+                                                            <td style="text-align: right;width: 60px">{{<?php echo $order_data->coupon_discount; ?>|currency:"<?php echo globle_currency; ?> "}}</td>
+                                                            <?php
+                                                        } else {
+                                                            ?>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <?php
+                                                        }
+                                                        ?>
                                                     </tr>
                                                     <tr>
                                                         <td colspan="2" style="text-align: right">Shipping</td>

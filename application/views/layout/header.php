@@ -11,7 +11,7 @@
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
-        
+
         <!-- CSS Implementing Plugins -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/font-awesome/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/css/font-electro.css">
@@ -64,8 +64,8 @@
                 padding-top: 5px;
             }
 
-            
-           
+
+
             .typeahead {
                 background-color: #fff;
             }
@@ -125,26 +125,26 @@
 
             }
 
-/*
-            .search-input, .search-input.typeahead  {
-                position: absolute!important;
-                top: -32px!important;
-                left:auto!important;
-                right: 20px!important;
-                z-index: 10!important;
-                height: 50px!important;
-                width: 604px!important;
-                background: rgba(17, 17, 17, 0.95);
-                border: 1px solid #111111!important;
-                padding: 5px 30px 8px!important;
-                color: #ffffff!important;
-                -webkit-border-radius: 45px;
-                -moz-border-radius: 45px;
-                -ms-border-radius: 45px;
-                -o-border-radius: 45px;
-                border-radius: 45px!important;
-                display: none;
-            }*/
+            /*
+                        .search-input, .search-input.typeahead  {
+                            position: absolute!important;
+                            top: -32px!important;
+                            left:auto!important;
+                            right: 20px!important;
+                            z-index: 10!important;
+                            height: 50px!important;
+                            width: 604px!important;
+                            background: rgba(17, 17, 17, 0.95);
+                            border: 1px solid #111111!important;
+                            padding: 5px 30px 8px!important;
+                            color: #ffffff!important;
+                            -webkit-border-radius: 45px;
+                            -moz-border-radius: 45px;
+                            -ms-border-radius: 45px;
+                            -o-border-radius: 45px;
+                            border-radius: 45px!important;
+                            display: none;
+                        }*/
 
             .searchholder{
                 height: auto;
@@ -155,7 +155,7 @@
             .serachbox-image{
                 height:50px;width:50px;float:left;
                 margin-right: 10px;
-                
+
             }
             .empty-message{
                 padding:10px;
@@ -237,9 +237,23 @@
                                     </li>
                                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                                         <!-- Account Sidebar Toggle Button -->
-                                        <a id="sidebarNavToggler" href="<?php echo site_url("Account/login"); ?>" role="button" class="u-header-topbar__nav-link target-of-invoker-has-unfolds" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
-                                            <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
-                                        </a>
+                                        <?php
+                                        $session_user = $this->session->userdata('logged_in');
+                                        if ($session_user) {
+                                            ?>
+                                            <a id="sidebarNavToggler" href="<?php echo site_url("Account/profile"); ?>" role="button" class="u-header-topbar__nav-link target-of-invoker-has-unfolds" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
+                                                <i class="ec ec-user mr-1"></i> My Profile
+                                            </a>
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a id="sidebarNavToggler" href="<?php echo site_url("Account/login"); ?>" role="button" class="u-header-topbar__nav-link target-of-invoker-has-unfolds" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
+                                                <i class="fa fa-lock mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
+                                            </a>
+                                            <?php
+                                        }
+                                        ?>
                                         <!-- End Account Sidebar Toggle Button -->
                                     </li>
                                 </ul>
@@ -305,143 +319,143 @@
                                                                 </a>
                                                                 <!-- End Logo -->
 
-                                                        <!-- List -->
-                                                        <ul id="headerSidebarList" class="u-header-collapse__nav">
-                                                       
-                                                            <!-- Value of the Day -->
-                                                            <li class="">
-                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">Value of the Day</a>
-                                                            </li>
-                                                            <!-- End Value of the Day -->
+                                                                <!-- List -->
+                                                                <ul id="headerSidebarList" class="u-header-collapse__nav">
 
-                                                            <!-- Top 100 Offers -->
-                                                            <li class="">
-                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">Top 100 Offers</a>
-                                                            </li>
-                                                            <!-- End Top 100 Offers -->
+                                                                    <!-- Value of the Day -->
+                                                                    <li class="">
+                                                                        <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">Value of the Day</a>
+                                                                    </li>
+                                                                    <!-- End Value of the Day -->
 
-                                                            <!-- New Arrivals -->
-                                                            <li class="">
-                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">New Arrivals</a>
-                                                            </li>
-                                                            <!-- End New Arrivals -->
-                                                            <?php
+                                                                    <!-- Top 100 Offers -->
+                                                                    <li class="">
+                                                                        <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">Top 100 Offers</a>
+                                                                    </li>
+                                                                    <!-- End Top 100 Offers -->
 
-
-                                                                $this->db->where('parent_id', '0');
-                                                                $query = $this->db->get('category');
-                                                                $parent_categories = $query->result_array();
+                                                                    <!-- New Arrivals -->
+                                                                    <li class="">
+                                                                        <a class="u-header-collapse__nav-link font-weight-bold" href="<?php echo site_url(); ?>product/productlist/0/0">New Arrivals</a>
+                                                                    </li>
+                                                                    <!-- End New Arrivals -->
+                                                                    <?php
+                                                                    $this->db->where('parent_id', '0');
+                                                                    $query = $this->db->get('category');
+                                                                    $parent_categories = $query->result_array();
 
 
-                                                                $query1 = $this->db->get('category');
-                                                                $sub_categories = $query1->result_array();
+                                                                    $query1 = $this->db->get('category');
+                                                                    $sub_categories = $query1->result_array();
+                                                                    ?> 
+                                                                    <!-- Computers & Accessories -->
+                                                                    <?php foreach ($parent_categories as $key => $value) { ?>
+                                                                        <li class="u-has-submenu u-header-collapse__submenu">
+                                                                            <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
+                                                                                <?php echo $value['category_name']; ?>
+                                                                            </a>
 
-                                                                ?> 
-                                                            <!-- Computers & Accessories -->
-                                                            <?php foreach($parent_categories as $key => $value) { ?>
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer" href="javascript:;" data-target="#headerSidebarComputersCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarComputersCollapse">
-                                                                    <?php echo $value['category_name']; ?>
-                                                                </a>
+                                                                            <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                                <ul class="u-header-collapse__nav-list">
 
-                                                                <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
 
-                                                                        
-                                                                        <?php foreach($sub_categories as $row => $svalue) { ?>
-                                                                       <?php if ($svalue['parent_id']==$value['id']) { ?>
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0"><?php echo $svalue['category_name']; ?></a></li>
-                                                                        <?php } }?>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <!-- End Computers & Accessories -->
+                                                                                    <?php foreach ($sub_categories as $row => $svalue) { ?>
+                                                                                        <?php if ($svalue['parent_id'] == $value['id']) { ?>
+                                                                                            <li class=""><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0"><?php echo $svalue['category_name']; ?></a></li>
+                                                                                            <?php
+                                                                                        }
+                                                                                    }
+                                                                                    ?>
 
-                                                            
-                                                            <?php }
-                                                            ?>
-                                                            <!-- End Mobiles & Tablets -->
+                                                                                </ul>
+                                                                            </div>
+                                                                        </li>
+                                                                        <!-- End Computers & Accessories -->
 
-                                                            <!-- Movies, Music & Video -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="" data-target="#headerSidebarMoviesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMoviesCollapse">
-                                                                   Shop by Discount
-                                                                </a>
 
-                                                                <div id="headerSidebarMoviesCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
-                                                                        
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 25% off</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 50% off</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 60% off</a></li>
-                                                             
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 80% off</a></li>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <!-- End Movies, Music & Video -->
+                                                                    <?php }
+                                                                    ?>
+                                                                    <!-- End Mobiles & Tablets -->
 
-                                                            <!-- TV & Audio -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="javascript:;" data-target="#headerSidebarTvCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarTvCollapse">
-                                                                    Shop by Price
-                                                                </a>
+                                                                    <!-- Movies, Music & Video -->
+                                                                    <li class="u-has-submenu u-header-collapse__submenu">
+                                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="" data-target="#headerSidebarMoviesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMoviesCollapse">
+                                                                            Shop by Discount
+                                                                        </a>
 
-                                                                <div id="headerSidebarTvCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
-                                                                        <li><span class="u-header-sidebar__sub-menu-title">Prices</span></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Below 300</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">300-500</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">500-600</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Above 600</a></li>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <!-- End TV & Audio -->
-                                                            <!-- Accessories -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="#" data-target="#headerSidebarAccessoriesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarAccessoriesCollapse">
-                                                                    Accessories
-                                                                </a>
+                                                                        <div id="headerSidebarMoviesCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                            <ul class="u-header-collapse__nav-list">
 
-                                                            </li>
-                                                            <!-- End Accessories -->
-                                                        </ul>
-                                                        <!-- End List -->
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 25% off</a></li>
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 50% off</a></li>
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 60% off</a></li>
+
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 80% off</a></li>
+
+                                                                            </ul>
+                                                                        </div>
+                                                                    </li>
+                                                                    <!-- End Movies, Music & Video -->
+
+                                                                    <!-- TV & Audio -->
+                                                                    <li class="u-has-submenu u-header-collapse__submenu">
+                                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="javascript:;" data-target="#headerSidebarTvCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarTvCollapse">
+                                                                            Shop by Price
+                                                                        </a>
+
+                                                                        <div id="headerSidebarTvCollapse" class="collapse" data-parent="#headerSidebarContent">
+                                                                            <ul class="u-header-collapse__nav-list">
+                                                                                <li><span class="u-header-sidebar__sub-menu-title">Prices</span></li>
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Below 300</a></li>
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">300-500</a></li>
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">500-600</a></li>
+                                                                                <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Above 600</a></li>
+
+                                                                            </ul>
+                                                                        </div>
+                                                                    </li>
+                                                                    <!-- End TV & Audio -->
+                                                                    <!-- Accessories -->
+                                                                    <li class="u-has-submenu u-header-collapse__submenu">
+                                                                        <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="#" data-target="#headerSidebarAccessoriesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarAccessoriesCollapse">
+                                                                            Accessories
+                                                                        </a>
+
+                                                                    </li>
+                                                                    <!-- End Accessories -->
+                                                                </ul>
+                                                                <!-- End List -->
+                                                            </div>
+                                                        </div>
+                                                        <!-- End Content -->
                                                     </div>
-                                                </div>
-                                                <!-- End Content -->
-                                            </div>
-                                            <!-- Footer -->
-                                           
-                                            </div> 
-                                            <footer id="SVGwaveWithDots" class=" u-header-sidebar__footer">
-                                                <ul class="list-inline mb-0">
-                                                    <li class="list-inline-item pr-3">
-                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="<?php echo site_url('privacy-policy') ?>">Privacy</a>
-                                                    </li>
-                                                    <li class="list-inline-item pr-3">
-                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="<?php echo site_url('terms-condition') ?>">Terms</a>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">
-                                                            <i class="fas fa-info-circle"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                                    <!-- Footer -->
 
-                                                <!-- SVG Background Shape -->
-                                                <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
-                                                    <img class="js-svg-injector" src="https://transvelo.github.io/electro-html/2.0/assets/svg/components/wave-bottom-with-dots.svg" alt="Image Description"
-                                                    data-parent="#SVGwaveWithDots">
-                                                </div>
-                                                <!-- End SVG Background Shape -->
-                                            </footer>
+                                                </div> 
+                                                <footer id="SVGwaveWithDots" class=" u-header-sidebar__footer">
+                                                    <ul class="list-inline mb-0">
+                                                        <li class="list-inline-item pr-3">
+                                                            <a class="u-header-sidebar__footer-link text-gray-90" href="<?php echo site_url('privacy-policy') ?>">Privacy</a>
+                                                        </li>
+                                                        <li class="list-inline-item pr-3">
+                                                            <a class="u-header-sidebar__footer-link text-gray-90" href="<?php echo site_url('terms-condition') ?>">Terms</a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a class="u-header-sidebar__footer-link text-gray-90" href="#">
+                                                                <i class="fas fa-info-circle"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <!-- SVG Background Shape -->
+                                                    <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
+                                                        <img class="js-svg-injector" src="https://transvelo.github.io/electro-html/2.0/assets/svg/components/wave-bottom-with-dots.svg" alt="Image Description"
+                                                             data-parent="#SVGwaveWithDots">
+                                                    </div>
+                                                    <!-- End SVG Background Shape -->
+                                                </footer>
+                                            </div>
                                         </div>
-                                    </div>
                                 </aside>
                                 <!-- ========== END HEADER SIDEBAR ========== -->
                             </div>
@@ -485,10 +499,34 @@
                                             <!-- End Input -->
                                         </li>
                                         <!-- End Search -->
-                                        <li class="col d-none d-xl-block"><a href="<?php echo site_url("Account/profile");?>" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My-Account" data-original-title="Compare"><i class="font-size-22 ec ec-user"></i></a></li>
-                                      <!--  <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li> -->
-                                        <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
-                                        <li class="col pr-xl-0 px-2 px-sm-3"><a href="<?php echo site_url("Cart/details");?>" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="" data-original-title="Cart">
+                                        <?php
+                                        if ($session_user) {
+                                            ?>
+                                            <li class="col d-none d-xl-block">
+                                                <a href="<?php echo site_url("Account/profile"); ?>" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My-Account" data-original-title="Compare">
+                                                   <span class="fa-stack fa-lg">
+                                                        <i class="fa fa-circle fa-stack-2x" style="color:#fed700;"></i>
+                                                        <i class="fa fa-user fa-stack-1x"></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <li class="col d-none d-xl-block">
+                                                <a href="<?php echo site_url("Account/profile"); ?>" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My-Account" data-original-title="Compare">
+                                                    <span class="fa-stack fa-lg">
+                                                        <i class="fa fa-circle fa-stack-2x" style="color:#fed700;"></i>
+                                                        <i class="fa fa-lock fa-stack-1x "></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+
+                                            <?php
+                                        }
+                                        ?>
+                                        <li class="col pr-xl-0 px-2 px-sm-3"><a href="<?php echo site_url("Cart/details"); ?>" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="" data-original-title="Cart">
                                                 <i class="font-size-22 ec ec-shopping-bag"></i>
                                                 <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{globleCartData.total_quantity}}</span>
                                                 <span class="d-none d-xl-block font-weight-bold font-size-16 text-gray-90 ml-3">{{globleCartData.sub_total_price|currency:""}}</span>

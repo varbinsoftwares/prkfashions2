@@ -115,6 +115,7 @@ $this->load->view('layout/header');
 
                             <div class="col-lg-7 order-lg-1">
                                 <?php
+                               
                                 if ($this->checklogin) {
                                     $this->load->view('Cart/itemblock', array('vtype' => 'useraccount'));
                                 }
