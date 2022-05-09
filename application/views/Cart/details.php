@@ -125,7 +125,7 @@ $this->load->view('layout/header');
                         </tr>
                     </tbody>
                 </table>
-                <a href="<?php echo site_url("Cart/checkoutInit"); ?>"  class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto d-md-none">Proceed to checkout</a>
+                <a href="<?php echo site_url("Cart/checkoutInit"); ?>"  class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5 w-100 w-md-auto ">Proceed to checkout</a>
             </div>
         </div>
     </div>
