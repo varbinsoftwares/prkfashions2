@@ -130,7 +130,7 @@ $this->load->view('layout/header');
         </div>
     </div>
 </div>
-<script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/angular/productController.js"></script>
 
 
 <?php

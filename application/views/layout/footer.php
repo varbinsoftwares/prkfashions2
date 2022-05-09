@@ -206,25 +206,25 @@
     <span class="fas fa-arrow-up u-go-to__inner"></span>
 </a>
 <!-- End Go to Top -->
- <link rel="stylesheet" href="https://transvelo.github.io/electro-html/2.0/assets/vendor/ion-rangeslider/css/ion.rangeSlider.css">
+ <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/ion-rangeslider/css/ion.rangeSlider.css">
 
 <!-- JS Global Compulsory -->
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/bootstrap/bootstrap.min.js"></script>
 
 <!-- JS Implementing Plugins -->
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/appear.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/jquery.countdown.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/fancybox/jquery.fancybox.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/typed.js/lib/typed.min.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/slick-carousel/slick/slick.js"></script>
-<script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/appear.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/jquery.countdown.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/svg-injector/dist/svg-injector.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/fancybox/jquery.fancybox.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/typed.js/lib/typed.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/slick-carousel/slick/slick.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 
 <!-- JS Electro -->
 <script src="https://transvelo.github.io/electro-html/2.0/assets/js/hs.core.js"></script>
@@ -243,7 +243,7 @@
 <script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.go-to.js"></script>
 <script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.selectpicker.js"></script>
    <script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.range-slider.js"></script>
- <script src="https://transvelo.github.io/electro-html/2.0/assets/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+ <script src="<?php echo base_url(); ?>assets/theme2/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 
 
 <!--         JS Global Compulsory 
