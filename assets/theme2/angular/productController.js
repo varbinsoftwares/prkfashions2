@@ -758,7 +758,7 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
     });
 
     $scope.getProductVeriants = function (base_product_id, product_id) {
-        $http.get(adminurl + "/index.php/Api/getProductVarients/" + base_product_id + "/" + product_id).then(function (rdata) {
+        $http.get(adminurl + "index.php/Api/getProductVarients/" + base_product_id + "/" + product_id).then(function (rdata) {
             $scope.productVeriants = rdata.data;
             for (ele in $scope.productVeriants.next_filter) {
 
