@@ -73,7 +73,7 @@ class Product_model extends CI_Model {
         $points = ($point) ?
                 " and " . $wordsz[$point / 10] . " " .
                 $wordsz[$point = $point % 10] : '';
-        return "Only " . globle_currency ." ". $result . " " . ($points ? "" . $points . " Cents" : "") . "";
+        return "Only " . globle_currency . " " . $result . " " . ($points ? "" . $points . " Cents" : "") . "";
     }
 
 ///*******  Get data for deepth of the array  ********///
@@ -107,6 +107,22 @@ where pa.product_id = $product_id group by attribute_value_id";
         return $arrayattr;
     }
 
+    function productAttributesSingle($product_id) {
+        $query = $this->db->where("product_id", $product_id)->get('product_attribute');
+        $attrarray = array();
+        if ($query) {
+            $attrs = $query->result_array();
+            foreach ($attrs as $key => $value) {
+                $atquery = $this->db->where("id", $value["attribute_id"])->get('attribute')->row_array();
+                $atvquery = $this->db->where("id", $value["attribute_value_id"])->get('attribute_value')->row_array();
+            
+               array_push($attrarray, ($atquery["title"] ." : ". $atvquery["attribute_value"]));
+               
+            }
+        }
+        return implode(", ", $attrarray);
+    }
+
 //product Details
     function productDetails($product_id, $custom_id = 0) {
         $this->db->where('id', $product_id);
@@ -123,7 +139,7 @@ where pa.product_id = $product_id group by attribute_value_id";
                 $productobj['item_name'] = $customeitem->item_name;
             }
             $productobj['item_id'] = $custom_id;
-            $productattr = $this->singleProductAttrs($productobj['id']);
+            $productattr = $this->productAttributesSingle($productobj['id']);
             $productobj['attrs'] = $productattr;
 
             $this->db->where('id', $productobj['user_id']);
@@ -190,7 +206,6 @@ where pa.product_id = $product_id group by attribute_value_id";
 join category_attribute_value as cav on cav.id = pa.attribute_value_id
 where pa.product_id in ($productatrvalue) group by attribute_value_id";
         $product_attr_value = $this->query_exe($query);
-
 
         $product_attrs = array();
         foreach ($product_attr_value as $key => $value) {
@@ -369,7 +384,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
                 'sku' => $product_details['sku'],
-                'attrs' => "",
+                'attrs' => $product_details['attrs'],
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $product_details['price'] * $quantity,
                 'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
@@ -418,7 +433,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'title' => $product_details['title'],
                     'price' => $product_details['price'],
                     'sku' => $product_details['sku'],
-                    'attrs' => "",
+                    'attrs' => $product_details['attrs'],
                     'vendor_id' => $product_details['user_id'],
                     'total_price' => $product_details['price'] * $quantity,
                     'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
@@ -511,7 +526,6 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
     function product_home_slider_bottom() {
         $pquery = "SELECT pa.* FROM products as pa where home_slider = 'on' and variant_product_of<1";
         $product_home_slider = $this->query_exe($pquery);
-
 
         $pquery = "SELECT pa.* FROM products as pa where home_bottom = 'on'  and variant_product_of<1";
         $product_home_bottom = $this->query_exe($pquery);
@@ -683,7 +697,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
                 'sku' => $product_details['sku'],
-                'attrs' => "",
+                'attrs' => $product_details['attrs'],
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $product_details['price'],
                 'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
@@ -750,7 +764,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'title' => $product_details['title'],
                     'price' => $product_details['price'],
                     'sku' => $product_details['sku'],
-                    'attrs' => "",
+                    'attrs' => $product_details['attrs'],
                     'vendor_id' => $product_details['user_id'],
                     'total_price' => $product_details['price'],
                     'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
@@ -784,7 +798,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
                 'sku' => $product_details['sku'],
-                'attrs' => "",
+                'attrs' => $product_details['attrs'],
                 'vendor_id' => $product_details['user_id'],
                 'total_price' => $value['total_price'],
                 'file_name' => PRODUCTIMAGELINK . $product_details['file_name'],
@@ -895,175 +909,88 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
         return $limitproducts;
     }
 
+    function productAttributes($product_id) {
+        $query = $this->db->where("product_id", $product_id)->get('product_attribute');
+        $attrarray = array();
+        if ($query) {
+            $attrs = $query->result_array();
+            foreach ($attrs as $key => $value) {
+                $atquery = $this->db->where("id", $value["attribute_id"])->get('attribute')->row_array();
+                $atvquery = $this->db->where("id", $value["attribute_value_id"])->get('attribute_value')->row_array();
+                $attrarray[$value["attribute_id"]] = array(
+                    "cr_id" => $value["attribute_value_id"],
+                    "attr_key" => $atquery["title"],
+                    "attr_val" => $atvquery["attribute_value"]
+                );
+            }
+        }
+        return $attrarray;
+    }
+
+    function arrayFilterByElement($element, $meinarray) {
+
+        $container = array();
+        foreach ($meinarray as $key => $value) {
+            if (in_array($element, $value["list"])) {
+                $result = array_diff($value["list"], array($element));
+                $container[array_values($result)[0]] = $key;
+            }
+        }
+        return $container;
+    }
+
+    function productVariants($base_product_id, $product_id) {
+        $query = $this->db->select("sku, id")->where("variant_product_of", $base_product_id)->get('products');
+        $totalVariants = array();
+        $productattrs = [];
+        $attrspearray = array();
+        $majorfilter = array();
+        if ($query) {
+            $vr_products = $query->result_array();
+
+            foreach ($vr_products as $key => $value) {
+                $pr_id = $value["id"];
+                $attrs = array();
+                $attrvlist = [];
+                $variantquery = $query = $this->db->where("product_id", $pr_id)->get('product_attribute');
+                if ($variantquery) {
+                    $variantresult = $variantquery->result_array();
+                    foreach ($variantresult as $akey => $avalue) {
+                        if (isset($totalVariants[$avalue["attribute_id"]])) {
+                            array_push($totalVariants[$avalue["attribute_id"]]["attr"], $avalue["attribute_value_id"]);
+                        } else {
+                            $totalVariants[$avalue["attribute_id"]] = array("product" => $pr_id, "attr" => [$avalue["attribute_value_id"]]);
+                        }
+                        array_push($attrvlist, $avalue["attribute_value_id"]);
+                        $attrs[$avalue["attribute_id"]] = $avalue["attribute_value_id"];
+                    }
+                }
+                $productattrs[$pr_id] = array("attr" => $attrs, "list" => $attrvlist);
+            }
 
 
-    public function testProducts() {
-        $products = array(
-            "2" => array(
-                "title" => "Full HD Smart Television HD TV 720p/1080iSmart Television",
-                "img" => ["3.jpg"],
-                "tag" => "Smart Television",
-                "sku" => "JT-68005ANS25GAM",
-                "spacs" => [
-                    "Dynamic Contrast Ratio",
-                    "WIFI & LAN Connect",
-                    "Full Android",
-                    "HDMI Port",
-                    "USB Function",
-                    "HD TV 720p/1080i",
-                    "Available In:1Gb RAM & 8Gb ROM",
-                ],
-                "has_attr" => false,
-                "moq" => "50",
-                "attr" => [
-                    array("title" => "55 4K Smart", "img" => ["3_55.jpg", "3_h55.jpg"]),
-                    array("title" => "43 Full HD 1080p", "img" => ["3_43.jpg", "3_h43.jpg"]),
-                    array("title" => "32 HD Ready 720p", "img" => ["3_32.jpg", "3_h32.jpg"]),
-                ]
-            ),
-            "1" =>
-            array(
-                "title" => "Full HD Smart Television HD TV 720p/1080iSmart Television",
-                "img" => ["1.jpg"],
-                "tag" => "Smart Television",
-                "sku" => "JT-SA32008GXSAMK",
-                "spacs" => [
-                    "Dynamic Contrast Ratio",
-                    "WIFI & LAN Connect",
-                    "Full Android",
-                    "HDMI Port",
-                    "USB Function",
-                    "HD TV 720p/1080i",
-                    "Available In:1Gb RAM & 8Gb ROM",
-                ],
-                "moq" => "50",
-                "has_attr" => true,
-                "attr" => [
-                    array("title" => "32 HD Ready 720p", "img" => ["1_32.jpg", "1_h32.jpg"]),
-                    array("title" => "43 Full HD 1080p", "img" => ["1_43.jpg", "1_h43.jpg"]),
-                    array("title" => "55 4K Smart", "img" => ["1_55.jpg", "1_h55.jpg"]),
-                ]
-            ),
-            "3" => array(
-                "title" => "Full HD Smart LED Televisio 720p/1080iSmart Television",
-                "img" => ["4.jpg"],
-                "tag" => "LED Television",
-                "sku" => "JT-32007DLED11",
-                "spacs" => [
-                    "Dynamic Contrast Ratio",
-                    "WIFI & LAN Connect",
-                    "Full Android",
-                    "HDMI Port",
-                    "USB Function",
-                    "HD TV 720p/1080i",
-                    "Available In:1Gb RAM & 8Gb ROM",
-                ],
-                "has_attr" => false,
-                "moq" => "50",
-                "attr" => [
-                    array("title" => "32 HD Ready 720p", "img" => ["1_32.jpg", "1_h32.jpg"]),
-                    array("title" => "43 Full HD 1080p", "img" => ["1_43.jpg", "1_h43.jpg"]),
-                    array("title" => "55 4K Smart", "img" => ["1_55.jpg", "1_h55.jpg"]),
-                ]
-            ),
-            "4" => array(
-                "title" => "DLP Smart Projector With Android OS and Wifi",
-                "img" => ["5.jpg"],
-                "tag" => "DLP Projector",
-                "sku" => "Q-2000",
-                "spacs" => [
-                    "DLP Projector",
-                    "WIFI Connect",
-                    "Full Android",
-                    "HDMI Port",
-                    "USB Function",
-                    "HD TV 720p/1080i",
-                    "Bluetooth",
-                ],
-                "has_attr" => false,
-                "moq" => "50",
-                "attr" => []
-            ),
-            "5" => array(
-                "title" => "Bluetooth Audio System With TWS Function Karaoke",
-                "img" => ["6.jpg"],
-                "tag" => "Audio System",
-                "sku" => "JM-8102DJ",
-                "spacs" => [
-                    "With TWS Function",
-                    "DJ Effect & Light",
-                    "Microphone Priority",
-                    "Line In/ Mic In",
-                    "USB/ SD Card",
-                    "Karaoke",
-                    "Bluetooth",
-                    "JM-8102DJ",
-                    "2 x 10” Speakers",
-                    "2 x 1” Tweeter Speakers",
-                ],
-                "has_attr" => false,
-                "moq" => "50",
-                "attr" => []
-            ),
-            "6" => array(
-                "title" => "Portable Trolley Bluetooth Speaker With TWS Function",
-                "img" => ["7.jpg"],
-                "tag" => "Audio System",
-                "sku" => "JM-799815",
-                "spacs" => [
-                    "15” Portable Speaker",
-                    "DJ Effect & Light",
-                    "Microphone Priority",
-                    "Line In/ Mic In",
-                    "USB/ SD Card",
-                    "Karaoke",
-                    "Bluetooth",
-                    "FM Radio",
-                ],
-                "has_attr" => false,
-                "moq" => "50",
-                "attr" => []
-            ),
-            "7" => array(
-                "title" => "12” Portable Speaker TWS Function Karaoke",
-                "img" => ["8.jpg"],
-                "tag" => "Audio System",
-                "sku" => "JM-558812",
-                "spacs" => [
-                    "12” Portable Speaker",
-                    "DJ Effect & Light",
-                    "Microphone Priority",
-                    "Line In/ Mic In",
-                    "USB/ SD Card",
-                    "Karaoke",
-                    "Bluetooth",
-                    "FM Radio",
-                ],
-                "has_attr" => false,
-                "moq" => "50",
-                "attr" => []
-            ),
-            "8" => array(
-                "title" => "Rechargeable Bluetooth Speaker With TWS Function Karaoke",
-                "img" => ["9.jpg"],
-                "tag" => "Rechargeable Speaker",
-                "sku" => "JM-8102DJ",
-                "spacs" => [
-                    "With TWS Function",
-                    "Rechargeable",
-                    "Microphone Priority",
-                    "Line In/ Mic In",
-                    "USB/ SD Card",
-                    "Karaoke",
-                    "Bluetooth",
-                    "6.5” x 2 Speakers",
-                ],
-                "has_attr" => false,
-                "moq" => "50",
-                "attr" => []
-            )
-        );
-        return $products;
+
+            foreach ($totalVariants as $akey => $avalue) {
+                $temp = array();
+                foreach ($avalue['attr'] as $key => $value) {
+                    $check = $this->arrayFilterByElement($value, $productattrs);
+                    $atvquery = $this->db->where("id", $value)->get('attribute_value')->row_array();
+                    $temp[$value] = array("meta" => $atvquery, "connect" => $check);
+                    $temp[$value]["meta"]["selected"] = false;
+                }
+                $atquery = $this->db->where("id", $akey)->get('attribute')->row_array();
+                $majorfilter[$akey] = array("meta" => $atquery, "values" => $temp);
+            }
+        }
+        $selectedproduct = ($productattrs[$product_id]["attr"]);
+        $selected = "77";
+        foreach ($selectedproduct as $key => $value) {
+            $majorfilter[$key]["values"][$value]["meta"]["selected"] = true;
+        }
+
+        $nextfilter = $majorfilter[$selected]["values"][$value];
+
+        return array("core" => $productattrs, "filterd" => $majorfilter, "filterproduct" => $totalVariants);
     }
 
 }

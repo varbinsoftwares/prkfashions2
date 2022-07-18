@@ -182,7 +182,7 @@ class Api extends REST_Controller {
         $product_query = "select pt.id as product_id,  ct.category_name, pt.*
             from products as pt 
             join category as ct on ct.id = pt.category_id 
-            where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery  order by id ";
+            where pt.category_id in ($categoriesString) and variant_product_of = pt.id $pricequery  order by id ";
         $product_result = $this->Product_model->query_exe($product_query);
 
 

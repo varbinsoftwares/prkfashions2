@@ -146,17 +146,17 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
                     // 3. Update range slider content (this will change handles positions)
                     my_range.update({
-                        from:  Number($scope.productResults.price.minprice),
-                        to:  Number($scope.productResults.price.maxprice),
-                        max:  Number($scope.productResults.price.maxprice),
+                        from: Number($scope.productResults.price.minprice),
+                        to: Number($scope.productResults.price.maxprice),
+                        max: Number($scope.productResults.price.maxprice),
                         maxResult: "#rangeSliderExample3MinResult",
                         maxResult: "#rangeSliderExample3MaxResult",
-                        onChange:function(result){
+                        onChange: function (result) {
                             console.log(result.from, result.to);
                         }
                     });
-                    
-                
+
+
                     $("#rangeSliderExample3MinResult").text($scope.productResults.price.minprice);
                     $("#rangeSliderExample3MaxResult").text($scope.productResults.price.maxprice);
 
@@ -727,3 +727,47 @@ App.controller('ShippingController', function ($scope, $http, $timeout, $interva
     $scope.shippingInit = {"delivery_date": delivery_date, "delivery_time": delivery_time};
     console.log($scope.shippingInit);
 })
+
+
+App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $filter) {
+    $scope.productver = {'quantity': 1};
+    $scope.productVeriants = {};
+
+    $scope.updateCartDetail = function (oper) {
+        console.log(oper)
+        if (oper == 'sub') {
+            if ($scope.productver.quantity == 1) {
+            } else {
+                $scope.productver.quantity = Number($scope.productver.quantity) - 1;
+            }
+        }
+        if (oper == 'add') {
+            if ($scope.productver.quantity > 5) {
+            } else {
+                $scope.productver.quantity = Number($scope.productver.quantity) + 1;
+            }
+        }
+    }
+
+    $(function () {
+        $(".select2").on('select2:select', function (e) {
+            var data = e.params.data;
+            var url = baseurl + "Product/ProductDetails/" + data.id + "";
+            window.location = url;
+        });
+    });
+
+    $scope.getProductVeriants = function (base_product_id, product_id) {
+        $http.get(adminurl + "/index.php/Api/getProductVarients/" + base_product_id + "/" + product_id).then(function (rdata) {
+            $scope.productVeriants = rdata.data;
+            for (ele in $scope.productVeriants.next_filter) {
+
+        
+
+
+            }
+        }, function () {});
+    }
+    $scope.getProductVeriants(base_product_id, product_id);
+})
+

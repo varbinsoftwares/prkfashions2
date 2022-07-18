@@ -34,7 +34,8 @@ $this->load->view('layout/header');
                         </td>
 
                         <td data-title="Product">
-                            <a href="#" class="text-gray-90">{{product.title}}</a>
+                            <a href="#" class="text-gray-90">{{product.title}}</a><br/>
+                            <small>{{product.attrs}}</small>
                         </td>
 
                         <td data-title="Price">

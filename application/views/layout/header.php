@@ -521,6 +521,7 @@
             var baseurl = "<?php echo site_url(); ?>";
             var imageurlg = "<?php echo PRODUCTIMAGELINK; ?>";
             var globlecurrency = "<?php echo globle_currency; ?>";
+            var adminurl = "<?php echo ADMINURL;?>";
             var avaiblecredits = 0;
         </script> 
 

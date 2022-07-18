@@ -283,7 +283,7 @@ $paymentstatus = "";
 
                                                             <?php echo $product->title; ?> 
                                                             <br/>
-                                                            <small style="font-size: 12px;">(<?php echo $product->sku; ?>)</small>
+                                                            <small style="font-size: 12px;">(<?php echo $product->attrs; ?>)</small>
 
 
 

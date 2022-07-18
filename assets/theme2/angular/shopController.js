@@ -372,34 +372,6 @@ App.controller('HomeController', function ($scope, $http, $timeout, $interval, $
 
 
 
-App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $filter) {
-    $scope.productver = {'quantity': 1};
-
-    $scope.updateCartDetail = function (oper) {
-        console.log(oper)
-        if (oper == 'sub') {
-            if ($scope.productver.quantity == 1) {
-            } else {
-                $scope.productver.quantity = Number($scope.productver.quantity) - 1;
-            }
-        }
-        if (oper == 'add') {
-            if ($scope.productver.quantity > 5) {
-            } else {
-                $scope.productver.quantity = Number($scope.productver.quantity) + 1;
-            }
-        }
-    }
-
-    $(function () {
-        $(".select2").on('select2:select', function (e) {
-            var data = e.params.data;
-            var url = baseurl + "Product/ProductDetails/" + data.id + "";
-            window.location = url;
-        });
-    })
-})
-
 
 
 function addToCartExt(productid, qnty, obj) {
