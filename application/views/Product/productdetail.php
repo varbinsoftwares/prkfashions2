@@ -29,6 +29,13 @@ $this->load->view('layout/header');
         cursor: default;
         border-color: #f1f1f1;
     }
+    
+    .description_block p{
+        padding:5px;
+        padding: 5px;
+    line-height: normal;
+    margin: auto;
+    }
 
 
 </style>
@@ -152,7 +159,7 @@ $this->load->view('layout/header');
                             
                          
                         </div>
-                        <div class="border-top border-bottom py-3 mb-4">
+                        <div class="border-top border-bottom py-3 mb-4 description_block">
                             <p style="white-space: break-spaces;"><?php echo $product_details['description']; ?></p>
                         </div>
                     </div>
