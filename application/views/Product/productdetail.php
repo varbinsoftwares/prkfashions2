@@ -208,12 +208,12 @@ $this->load->view('layout/header');
                                 <a href="#" class="btn px-5 btn btn-block  btn-primary-dark transition-3d-hover" ng-click="addToCart(<?php echo $product_details['id']; ?>, productver.quantity)"><i class="ec ec-add-to-cart mr-2 font-size-20"></i> Add to Cart</a>
                             </div>
                             <div class="mb-3">
-                                <a href="#" class="btn btn-block btn-dark">Buy Now</a>
+                                <a href="#" ng-click="addToBuy(<?php echo $product_details['id']; ?>, productver.quantity)" class="btn btn-block btn-dark">Buy Now</a>
                             </div>
-                            <div class="flex-content-center flex-wrap">
+<!--                            <div class="flex-content-center flex-wrap">
                                 <a href="#" class="text-gray-6 font-size-13 mr-2"><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
                                 <a href="#" class="text-gray-6 font-size-13 ml-2"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
