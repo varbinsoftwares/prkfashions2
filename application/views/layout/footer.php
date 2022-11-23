@@ -60,12 +60,12 @@
                     <div class="mb-4">
                         <h6 class="mb-1 font-weight-bold">Contact info</h6>
                         <address class="">
-                    
-                        11/2 Baser-Colony, Mandsaur,<br>
-                        MP, India<br>
 
-                        Mail  :   pavitramod11@gmail.com
-                        
+                            11/2 Baser-Colony, Mandsaur,<br>
+                            MP, India<br>
+
+                            Mail  :   pavitramod11@gmail.com
+
                         </address>
                     </div>
                     <div class="my-4 my-md-4">
@@ -104,24 +104,28 @@
                             <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Mens wear
-                                    </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Shirt collection
-                                    </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">T-shirt for men
-                                    </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Latest jeans
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Trousers and shorts
-                                    </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">jackets
-                                    </a></li>
-                                <li><a class="list-group-item list-group-item-action" href="<?php echo site_url('Product/productList/0/0') ?>">Accessories</a></li>
+                                <?php
+                                $this->db->where('parent_id', 0);
+                                $query = $this->db->get('category');
+                                $parent_categories = $query->result_array();
+                                foreach ($parent_categories as $key => $value) {
+                                    $linkid = $value["id"];
+                                    $category_title = $value["category_name"];
+                                    ?>
+                                    <li>
+                                        <a class="list-group-item list-group-item-action" href="<?php echo site_url("Product/productList/$linkid/$linkid") ?>">
+                                            <?php echo $category_title; ?>    
+                                        </a>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
                             </ul>
                             <!-- End List Group -->
                         </div>
 
                         <div class="col-12 col-md mb-4 mb-md-0">
-                        <h6 class="mb-3 font-weight-bold">Useful Links</h6>
+                            <h6 class="mb-3 font-weight-bold">Useful Links</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent ">
                                 <li><a class="list-group-item list-group-item-action" href="<?php echo site_url() ?>">Home
@@ -206,7 +210,7 @@
     <span class="fas fa-arrow-up u-go-to__inner"></span>
 </a>
 <!-- End Go to Top -->
- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/ion-rangeslider/css/ion.rangeSlider.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme2/vendor/ion-rangeslider/css/ion.rangeSlider.css">
 
 <!-- JS Global Compulsory -->
 <script src="<?php echo base_url(); ?>assets/theme2/vendor/jquery/dist/jquery.min.js"></script>
@@ -242,8 +246,8 @@
 <script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.svg-injector.js"></script>
 <script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.go-to.js"></script>
 <script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.selectpicker.js"></script>
-   <script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.range-slider.js"></script>
- <script src="<?php echo base_url(); ?>assets/theme2/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="https://transvelo.github.io/electro-html/2.0/assets/js/components/hs.range-slider.js"></script>
+<script src="<?php echo base_url(); ?>assets/theme2/vendor/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 
 
 <!--         JS Global Compulsory 

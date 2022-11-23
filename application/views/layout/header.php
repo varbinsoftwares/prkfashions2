@@ -363,52 +363,7 @@
                                                             ?>
                                                             <!-- End Mobiles & Tablets -->
 
-                                                            <!-- Movies, Music & Video -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="" data-target="#headerSidebarMoviesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarMoviesCollapse">
-                                                                   Shop by Discount
-                                                                </a>
-
-                                                                <div id="headerSidebarMoviesCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
-                                                                        
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 25% off</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 50% off</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 60% off</a></li>
-                                                             
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Upto 80% off</a></li>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <!-- End Movies, Music & Video -->
-
-                                                            <!-- TV & Audio -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="javascript:;" data-target="#headerSidebarTvCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarTvCollapse">
-                                                                    Shop by Price
-                                                                </a>
-
-                                                                <div id="headerSidebarTvCollapse" class="collapse" data-parent="#headerSidebarContent">
-                                                                    <ul class="u-header-collapse__nav-list">
-                                                                        <li><span class="u-header-sidebar__sub-menu-title">Prices</span></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Below 300</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">300-500</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">500-600</a></li>
-                                                                        <li><a class="u-header-collapse__submenu-nav-link" href="<?php echo site_url(); ?>product/productlist/0/0">Above 600</a></li>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                            <!-- End TV & Audio -->
-                                                            <!-- Accessories -->
-                                                            <li class="u-has-submenu u-header-collapse__submenu">
-                                                                <a class="u-header-collapse__nav-link u-header-collapse__nav-pointer font-weight-bold" href="#" data-target="#headerSidebarAccessoriesCollapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="headerSidebarAccessoriesCollapse">
-                                                                    Accessories
-                                                                </a>
-
-                                                            </li>
-                                                            <!-- End Accessories -->
+                                                          
                                                         </ul>
                                                         <!-- End List -->
                                                     </div>
@@ -486,8 +441,7 @@
                                         </li>
                                         <!-- End Search -->
                                         <li class="col d-none d-xl-block"><a href="<?php echo site_url("Account/profile");?>" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My-Account" data-original-title="Compare"><i class="font-size-22 ec ec-user"></i></a></li>
-                                      <!--  <li class="col d-none d-xl-block"><a href="../shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li> -->
-                                        <li class="col d-xl-none px-2 px-sm-3"><a href="../shop/my-account.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
+                                        <li class="col d-xl-none px-2 px-sm-3"><a href="<?php echo site_url("Account/profile");?>" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="" data-original-title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
                                         <li class="col pr-xl-0 px-2 px-sm-3"><a href="<?php echo site_url("Cart/details");?>" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="" data-original-title="Cart">
                                                 <i class="font-size-22 ec ec-shopping-bag"></i>
                                                 <span class="bg-lg-down-black width-22 height-22 bg-primary position-absolute d-flex align-items-center justify-content-center rounded-circle left-12 top-8 font-weight-bold font-size-12">{{globleCartData.total_quantity}}</span>
@@ -503,7 +457,7 @@
                 </div>
                 <!-- End Logo-Search-header-icons -->
                 <?php
-                $this->load->view('layout/menu');
+                $this->load->view('layout/menu_2');
                 ?>
             </div>
         </header>

@@ -84,57 +84,7 @@ $sub_categories = $query1->result_array();
                                                 ?>
                                             </ul>
                                         </div>
-                                        <div class="col-md-4">
-                                            <span class="u-header__sub-menu-title">Mens Fashion</span>
-                                            <p class="menudescription">
-                                                Amazing fashion collection by PrkFashions . 
-                                            </p>
-                                            <ul class="u-header__sub-menu-nav-group mb-3">
-                                                <?php
-                                                $menuarray = [
-                                                    array("img" => "jeans1.jpg", "link" => "Product/Productlist/0/0/"),
-                                                  
-                                                 
-                                                ];
-                                                foreach ($menuarray as $key => $value) {
-                                                    ?>
-                                                    <li><a href="<?php echo site_url();?><?php echo $value['link']; ?>" class="d-block mb-3">
-                                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/<?php echo $value['img']; ?>" alt="Image Description">
-                                            </a></li>
-                                                    <?php
-                                                }
-                                                ?>
-                                            </ul>
-
-                                            <span class="u-header__sub-menu-title">Shop By Price</span>
-
-                                            <ul class="u-header__sub-menu-nav-group mb-3">
-                                                <?php
-                                                $menuarray = [
-                                                    array("title" => "Below Rs. 300", "link" => "Product/Productlist/0/0/"),
-                                                    array("title" => "300 - 500", "link" => "Product/Productlist/0/0/"),
-                                                    array("title" => "500 - 600", "link" => "Product/Productlist/0/0/"),
-                                                    array("title" => "600 and Above", "link" => ""),
-                                                ];
-                                                foreach ($menuarray as $key => $value) {
-                                                    ?>
-                                                    <li><a href="<?php echo site_url();?><?php echo $value['link']; ?>" class="nav-link u-header__sub-menu-nav-link"><?php echo $value['title']; ?></a></li>
-                                                    <?php
-                                                }
-                                                ?>
-                                            </ul>
-
-                                        </div>
-                                       
-                                        <div class="col-md-4">
-
-                                            <a href="<?php echo site_url();?>Product/Productlist/0/0/" class="d-block mb-3 mt-8">
-                                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/theme2/images/ad-block/off.jpg" alt="Image Description">
-                                            </a>
-                                            <p>
-                                                Browse through a wide array of shirts and latest collection.      
-                                            </p>
-                                        </div>
+                                    
                                     </div>
                                 </div>
                             <?php } ?>
